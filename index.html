@@ -19,43 +19,44 @@
     body{ font-family:'Noto Sans JP',sans-serif; color:var(--black); line-height:1.8; background:#fff; }
     .bg-gold{ background-color:var(--gold); } .bg-cream{ background-color:var(--cream); }
     .text-gold{ color:var(--gold); } .text-black{ color:var(--black); }
-    .border-gold{ border-color:var(--gold); }
     .hero-gradient{ background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%); }
     .section-divider{ background:linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); height:2px; }
     .card-hover{ transition:transform .2s ease, box-shadow .2s ease; }
     .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
     .cta{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); color:#fff; }
-    .cta:hover{ filter:brightness(1.03); transform:translateY(-2px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
-    .pill{ background:#fff; border:1px solid var(--gold); border-radius:9999px; padding:.45rem .9rem; display:inline-flex; align-items:center; }
-    .badge{ background:#fff; border:1px solid var(--gold); border-radius:.5rem; padding:.35rem .6rem; font-size:.8rem; }
+    .cta:hover{ filter:brightness(1.04); transform:translateY(-1px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
 
-    /* iPhone画像の向き/EXIF対応 & 比率枠 */
+    /* iPhone EXIFの向き対応＋比率 */
     img{ image-orientation: from-image; }
     .frame{ position:relative; width:100%; border-radius:12px; overflow:hidden; background:#eee; }
-    .frame.portrait{ aspect-ratio: 4 / 5; }    /* 縦向き */
-    .frame.landscape{ aspect-ratio: 16 / 9; }  /* 横向き */
+    .frame.portrait{ aspect-ratio: 4 / 5; }       /* 縦 */
+    .frame.landscape{ aspect-ratio: 16 / 9; }     /* 横 */
     .frame > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 
-    /* みかさん：顔が切れないように全体表示 */
+    /* みかさん：顔が切れないようにcontain */
     .fit-contain{ object-fit: contain !important; background:#fff; }
 
     /* Before/After スライダー */
     .ba{ position:relative; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#000; }
     .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; user-select:none; pointer-events:none; }
     .ba .after{ clip-path: inset(0 50% 0 0); }
-    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:#fff; opacity:.9; left:50%; transform:translateX(-1px); }
-    .ba .knob{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:9999px; background:rgba(56,54,53,.85); display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; }
+    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:#fff; opacity:.95; left:50%; transform:translateX(-1px); }
+    .ba .knob{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:9999px; background:rgba(56,54,53,.88); display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; }
     .ba .tag{ position:absolute; top:.5rem; font-size:.75rem; color:#fff; background:rgba(0,0,0,.55); padding:.2rem .5rem; border-radius:.35rem; }
     .ba .tag.left{ left:.5rem; } .ba .tag.right{ right:.5rem; }
+    .ba-hint{ text-align:center; font-size:.85rem; color:#555; margin-top:.6rem; font-style:italic; }
 
-    /* Instagram 埋め込み最大幅 */
+    /* Instagram 幅制御 */
     .ig-embed{ max-width:540px; width:100%; margin:0 auto; }
+
+    /* フッターのGoogle Map */
+    iframe.map{ width:100%; height:320px; border:0; border-radius:8px; }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="bg-white shadow-sm border-b-2 border-gold">
+  <header class="bg-white shadow-sm border-b-2" style="border-color:var(--gold)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
@@ -65,14 +66,16 @@
             class="h-10 w-auto"
             onerror="this.src='c21-logo-gold-white.png';"
           />
-          <span class="badge text-black">採用サイト</span>
+          <span class="bg-white border border-current rounded px-2 py-0.5 text-sm" style="color:var(--gold)">採用サイト</span>
         </div>
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#voices" class="hover:text-gold">社員の声</a>
           <a href="#training" class="hover:text-gold">3ヶ月研修</a>
           <a href="#works" class="hover:text-gold">自社施工</a>
           <a href="#office" class="hover:text-gold">働く環境</a>
-          <a href="https://form.run/@c21-member" class="pill text-gold"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
+          <a href="https://form.run/@c21-member" class="inline-flex items-center border rounded-full px-3 py-1.5" style="color:var(--gold); border-color:var(--gold);">
+            <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+          </a>
         </nav>
       </div>
     </div>
@@ -89,16 +92,16 @@
         センチュリー21の研修と現場OJT、そして<span class="font-semibold">人を守る組織づくり</span>で、未経験から確実に伸ばします。
       </p>
       <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <span class="pill"><i class="fas fa-seedling text-gold mr-2"></i>未経験歓迎</span>
-        <span class="pill"><i class="fas fa-people-group text-gold mr-2"></i>自分たちで決めるチーム</span>
-        <span class="pill"><i class="fas fa-hands-helping text-gold mr-2"></i>助け合いの文化</span>
-        <span class="pill"><i class="fas fa-yen-sign text-gold mr-2"></i>年収1,000万円以上も現実的*</span>
+        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-seedling text-gold mr-2"></i>未経験歓迎</span>
+        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-people-group text-gold mr-2"></i>自分たちで決めるチーム</span>
+        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-hands-helping text-gold mr-2"></i>助け合いの文化</span>
+        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-yen-sign text-gold mr-2"></i>年収1,000万円以上も現実的*</span>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
           <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
-        <a href="tel:0120438639" class="bg-white text-gold border-2 border-gold px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-cream transition-all">
+        <a href="tel:0120438639" class="bg-white text-gold border-2 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-cream transition-all" style="border-color:var(--gold)">
           <i class="fas fa-phone mr-2"></i>電話で相談（0120-43-8639）
         </a>
       </div>
@@ -106,7 +109,7 @@
     </div>
   </section>
 
-  <!-- 社員の声（バラバラ配置＋顔写真中心） -->
+  <!-- 社員の声（3名） -->
   <section id="voices" class="py-16 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -115,7 +118,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- たくま（縦向き想定） -->
+        <!-- たくま -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover">
           <div class="frame portrait mb-4">
             <img src="takuma.jpeg" alt="職人 たくま" loading="lazy"/>
@@ -127,7 +130,7 @@
           </p>
         </article>
 
-        <!-- ひな（縦向き想定） -->
+        <!-- ひな -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:mt-8">
           <div class="frame portrait mb-4">
             <img src="hina.jpeg" alt="事務 ひな" loading="lazy"/>
@@ -139,7 +142,7 @@
           </p>
         </article>
 
-        <!-- みか（顔が切れない：contain） -->
+        <!-- みか（顔が切れない） -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:-mt-4">
           <div class="frame portrait mb-4">
             <img src="mika.jpeg" alt="経理 みか" loading="lazy" class="fit-contain"/>
@@ -151,29 +154,24 @@
           </p>
         </article>
       </div>
+    </div>
+  </section>
 
-      <!-- 代表（他と同サイズのportrait枠で統一） -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
-        <aside class="bg-white rounded-2xl p-6 shadow card-hover lg:col-start-2">
-          <div class="flex flex-col sm:flex-row gap-6 items-center">
-            <div class="frame portrait" style="width:180px;">
-              <img src="inui.jpeg" alt="代表 乾 佑企"/>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">乾 佑企 <span class="text-gold text-sm font-semibold">代表</span></h3>
-              <p class="text-black mt-2">
-                「<span class="font-semibold">成績が上がらないのは教える側の責任</span>。
-                未経験でも“楽しい営業”に変えていく。営業が無い日は現場を覚え、提案力で勝つ。
-                全国のセンチュリー21には<span class="font-semibold">良きライバル</span>がたくさん。
-                <span class="font-semibold">大阪のトップには半年で7,000万円を売上げた営業</span>もいます。
-                夢のある舞台で一緒に挑戦しましょう。」
-              </p>
-            </div>
-          </div>
-        </aside>
+  <!-- 代表（写真大きく独立・同比率） -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <div class="frame portrait mx-auto mb-6" style="max-width:300px;">
+        <img src="inui.jpeg" alt="代表 乾 佑企"/>
       </div>
-
-      <div class="mt-10 text-center">
+      <h3 class="text-2xl font-bold mb-2">乾 佑企 <span class="text-gold text-base font-semibold">代表</span></h3>
+      <p class="text-black mt-4 leading-relaxed">
+        「<span class="font-semibold">成績が上がらないのは教える側の責任</span>。<br>
+        未経験でも“楽しい営業”に変えていく。営業が無い日は現場を覚え、提案力で勝つ。<br>
+        全国のセンチュリー21には<span class="font-semibold">良きライバル</span>がたくさん。<br>
+        <span class="font-semibold">大阪のトップには半年で7,000万円を売上げた営業</span>もいます。<br>
+        夢のある舞台で一緒に挑戦しましょう。」
+      </p>
+      <div class="mt-8">
         <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
           <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
@@ -208,7 +206,7 @@
     </div>
   </section>
 
-  <!-- 自社施工 Before/After（縦＝portrait / 横＝landscape） -->
+  <!-- 自社施工 Before/After（使い方のヒント付き） -->
   <section id="works" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -229,10 +227,10 @@
               <span class="tag left">Before</span><span class="tag right">After</span>
             </div>
           </div>
-          <p class="text-sm text-black mt-3 text-center">清掃性・耐水性・収納導線を最適化</p>
+          <p class="ba-hint">中央の ◀▶ を左右にドラッグして比較できます</p>
         </div>
 
-        <!-- トイレ（縦×横でもOK：coverで吸収） -->
+        <!-- トイレ（縦×横でもcoverで吸収） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">トイレリフォーム</h3>
           <div class="frame portrait">
@@ -244,7 +242,7 @@
               <span class="tag left">Before</span><span class="tag right">After</span>
             </div>
           </div>
-          <p class="text-sm text-black mt-3 text-center">機能性×デザイン性を高次元で両立</p>
+          <p class="ba-hint">スライドして違いを体感してください</p>
         </div>
 
         <!-- 浴室（横×横） -->
@@ -259,7 +257,7 @@
               <span class="tag left">Before</span><span class="tag right">After</span>
             </div>
           </div>
-          <p class="text-sm text-black mt-3 text-center">断熱・防水・清掃の“体感”を変える</p>
+          <p class="ba-hint">快適さの進化を指先でスライドして確認</p>
         </div>
 
         <!-- キッチン（横×横） -->
@@ -274,7 +272,7 @@
               <span class="tag left">Before</span><span class="tag right">After</span>
             </div>
           </div>
-          <p class="text-sm text-black mt-3 text-center">動線×収納×メンテ性で“家事時間”を短縮</p>
+          <p class="ba-hint">BeforeとAfterを自由に重ねて比較</p>
         </div>
       </div>
 
@@ -286,7 +284,7 @@
     </div>
   </section>
 
-  <!-- 働く環境（事務所写真） -->
+  <!-- 働く環境（office.jpg） -->
   <section id="office" class="py-16 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
@@ -329,30 +327,20 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-xl font-bold mb-3 text-gold">センチュリー21ホームマート</h3>
-          <p class="text-sm">不動産売買・仲介／リフォーム・リノベーション／住宅設備工事</p>
-          <p class="text-sm mt-2">〒635-0821　奈良県北葛城郡広陵町笠287-1</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-3 text-gold">お問い合わせ</h4>
-          <p class="text-sm"><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:0120438639" class="underline">0120-43-8639</a></p>
-          <p class="text-xs text-gray-400 mt-1">※ メールアドレスは不要です。お電話にてお気軽に。</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-3 text-gold">SNS</h4>
-          <a href="https://www.instagram.com/century21homemart/" target="_blank" rel="noopener" class="text-sm underline">Instagram（@century21homemart）</a>
-        </div>
+  <!-- Footer（住所＋Google Map） -->
+  <footer class="bg-black text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-gold mb-2">センチュリー21ホームマート</h3>
+        <p class="text-sm">不動産売買・仲介／リフォーム・リノベーション／住宅設備工事</p>
+        <p class="text-sm mt-2">〒635-0821　奈良県北葛城郡広陵町笠287-1</p>
+        <p class="text-sm mt-1"><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:0120438639">0120-43-8639</a></p>
       </div>
-      <div class="section-divider my-6"></div>
-      <div class="text-center text-sm">
-        <p>&copy; 2025 センチュリー21ホームマート. All rights reserved.</p>
+      <div>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.322459412753!2d135.7463112!3d34.5453901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60012d16fef4735b%3A0xb49d8a4f54fd9786!2z44K744Oz44OB44Ol44Oq44O8MjHjg5vjg7zjg6Djg57jg7zjg4g!5e0!3m2!1sja!2sjp!4v1756394207847!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+    <div class="text-center text-xs text-gray-400 mt-6">&copy; 2025 センチュリー21ホームマート. All rights reserved.</div>
   </footer>
 
   <!-- Scripts -->
@@ -361,25 +349,22 @@
     // Before/After: ドラッグ＆タッチでスライド
     function initBA(ba){
       const after = ba.querySelector('.after');
-      const handle = document.createElement('div');
-      handle.className = 'handle';
-      const knob = document.createElement('div');
-      knob.className = 'knob';
-      knob.innerHTML = '<i class="fas fa-arrows-left-right"></i>';
-      ba.appendChild(handle); ba.appendChild(knob);
-
+      const handle = ba.querySelector('.handle');
+      const knob = ba.querySelector('.knob');
       let down = false;
-      const set = (px) => {
+
+      const setFromX = (clientX) => {
         const rect = ba.getBoundingClientRect();
-        let x = Math.min(Math.max(px - rect.left, 0), rect.width);
+        const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
         const pct = (x / rect.width) * 100;
         after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
         handle.style.left = pct + '%';
         knob.style.left = pct + '%';
       };
-      const start = (e)=>{ down = true; set(e.touches ? e.touches[0].clientX : e.clientX); };
-      const move  = (e)=>{ if(!down) return; set(e.touches ? e.touches[0].clientX : e.clientX); };
-      const end   = ()=>{ down = false; };
+
+      const start = e => { down = true; setFromX(e.touches ? e.touches[0].clientX : e.clientX); };
+      const move  = e => { if (!down) return; setFromX(e.touches ? e.touches[0].clientX : e.clientX); };
+      const end   = () => { down = false; };
 
       ba.addEventListener('mousedown', start);
       ba.addEventListener('mousemove', move);
@@ -388,9 +373,9 @@
       ba.addEventListener('touchmove', move, {passive:true});
       window.addEventListener('touchend', end);
 
-      // 初期位置50%
+      // 初期位置：中央
       const rect = ba.getBoundingClientRect();
-      set(rect.left + rect.width/2);
+      setFromX(rect.left + rect.width/2);
     }
     document.querySelectorAll('.ba').forEach(initBA);
   </script>
