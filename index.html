@@ -20,29 +20,33 @@
     .bg-gold{ background-color:var(--gold); } .bg-cream{ background-color:var(--cream); }
     .text-gold{ color:var(--gold); } .text-black{ color:var(--black); }
     .border-gold{ border-color:var(--gold); }
-    .hero-gradient{ background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%);}
+    .hero-gradient{ background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%); }
     .section-divider{ background:linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); height:2px; }
-    .card-hover{ transition:all .2s ease; } .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
-    .cta-button{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); transition:all .2s ease; }
-    .cta-button:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
+    .card-hover{ transition:transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
+    .cta{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); color:#fff; }
+    .cta:hover{ filter:brightness(1.03); transform:translateY(-2px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
     .pill{ background:#fff; border:1px solid var(--gold); border-radius:9999px; padding:.45rem .9rem; display:inline-flex; align-items:center; }
-    .badge{ background:#fff; border:1px solid var(--gold); border-radius:.5rem; padding:.35rem .6rem; font-size:.8rem;}
-    .ratio-16x9{ position:relative; padding-top:56.25%; }
-    .ratio-4x5{ position:relative; padding-top:125%; }
-    .ratio-16x9 > *, .ratio-4x5 > *{ position:absolute; inset:0; width:100%; height:100%; }
-    .ig-embed{ max-width:540px; width:100%; margin:0 auto; }
+    .badge{ background:#fff; border:1px solid var(--gold); border-radius:.5rem; padding:.35rem .6rem; font-size:.8rem; }
 
-    /* --- Before/After Slider --- */
-    .ba{ position:relative; border-radius:12px; overflow:hidden; background:#000; }
-    .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    /* 画像表示の安定化（iPhoneの向き/EXIF考慮） */
+    img{ image-orientation: from-image; }
+    .frame{ position:relative; width:100%; border-radius:12px; overflow:hidden; background:#eee; }
+    .frame.portrait{ aspect-ratio: 4 / 5; }   /* 縦向き */
+    .frame.landscape{ aspect-ratio: 16 / 9; } /* 横向き */
+    .frame > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    /* Before/After スライダー */
+    .ba{ position:relative; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#000; }
+    .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; user-select:none; pointer-events:none; }
     .ba .after{ clip-path: inset(0 50% 0 0); }
-    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:rgba(255,255,255,.85); left:50%; transform:translateX(-1px); }
+    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:#fff; opacity:.9; left:50%; transform:translateX(-1px); }
     .ba .knob{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:9999px; background:rgba(56,54,53,.85); display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; }
     .ba .tag{ position:absolute; top:.5rem; font-size:.75rem; color:#fff; background:rgba(0,0,0,.55); padding:.2rem .5rem; border-radius:.35rem; }
     .ba .tag.left{ left:.5rem; } .ba .tag.right{ right:.5rem; }
-    .ba input[type="range"]{ position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; }
-    /* form.run fallback height */
-    .formrun-embed iframe{ min-height: 1200px; }
+
+    /* Instagram 埋め込み最大幅 */
+    .ig-embed{ max-width:540px; width:100%; margin:0 auto; }
   </style>
 </head>
 <body>
@@ -64,8 +68,8 @@
           <a href="#voices" class="hover:text-gold">社員の声</a>
           <a href="#training" class="hover:text-gold">3ヶ月研修</a>
           <a href="#works" class="hover:text-gold">自社施工</a>
-          <a href="#insta" class="hover:text-gold">雰囲気</a>
-          <a href="#apply" class="pill text-gold"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
+          <a href="#office" class="hover:text-gold">働く環境</a>
+          <a href="https://form.run/@c21-member" class="pill text-gold"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
         </nav>
       </div>
     </div>
@@ -88,7 +92,7 @@
         <span class="pill"><i class="fas fa-yen-sign text-gold mr-2"></i>年収1,000万円以上も現実的*</span>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
           <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
         <a href="tel:0120438639" class="bg-white text-gold border-2 border-gold px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-cream transition-all">
@@ -99,7 +103,7 @@
     </div>
   </section>
 
-  <!-- 社員の声（賑やか・バラバラ配置） -->
+  <!-- 社員の声（バラバラ配置＋顔写真中心） -->
   <section id="voices" class="py-16 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -108,10 +112,10 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- たくま -->
+        <!-- たくま（横向き＝landscape/縦ならportraitに変更） -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover">
-          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
-            <img src="takuma.jpeg" alt="職人 たくま"/>
+          <div class="frame portrait mb-4">
+            <img src="takuma.jpeg" alt="職人 たくま" loading="lazy"/>
           </div>
           <h3 class="text-xl font-bold">たくま <span class="text-gold text-sm font-semibold">工務</span></h3>
           <p class="text-black mt-2">
@@ -122,8 +126,8 @@
 
         <!-- ひな -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:mt-8">
-          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
-            <img src="hina.jpeg" alt="事務 ひな"/>
+          <div class="frame portrait mb-4">
+            <img src="hina.jpeg" alt="事務 ひな" loading="lazy"/>
           </div>
           <h3 class="text-xl font-bold">ひな <span class="text-gold text-sm font-semibold">事務・SNS編集</span></h3>
           <p class="text-black mt-2">
@@ -134,8 +138,8 @@
 
         <!-- みか -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:-mt-4">
-          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
-            <img src="mika.jpeg" alt="経理 みか"/>
+          <div class="frame portrait mb-4">
+            <img src="mika.jpeg" alt="経理 みか" loading="lazy"/>
           </div>
           <h3 class="text-xl font-bold">みか <span class="text-gold text-sm font-semibold">経理</span></h3>
           <p class="text-black mt-2">
@@ -145,12 +149,12 @@
         </article>
       </div>
 
-      <!-- 代表（控えめに別カードで） -->
+      <!-- 代表（控えめに） -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
         <aside class="bg-white rounded-2xl p-6 shadow card-hover lg:col-start-2">
           <div class="flex flex-col sm:flex-row gap-6 items-center">
-            <div class="w-40 h-52 rounded-xl overflow-hidden shadow">
-              <img src="inui.jpeg" alt="代表 乾 佑企" class="w-full h-full object-cover"/>
+            <div class="frame portrait" style="width:160px;">
+              <img src="inui.jpeg" alt="代表 乾 佑企"/>
             </div>
             <div>
               <h3 class="text-xl font-bold">乾 佑企 <span class="text-gold text-sm font-semibold">代表</span></h3>
@@ -167,7 +171,7 @@
       </div>
 
       <div class="mt-10 text-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
           <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
       </div>
@@ -196,12 +200,12 @@
         </div>
       </div>
       <div class="mt-8 text-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
       </div>
     </div>
   </section>
 
-  <!-- 自社施工 Before/After（スライダーで美しく） -->
+  <!-- 自社施工 Before/After（縦＝portrait / 横＝landscape） -->
   <section id="works" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -213,30 +217,28 @@
         <!-- 洗面（縦×縦） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">洗面台リフォーム</h3>
-          <div class="ratio-4x5">
-            <div class="ba">
+          <div class="frame portrait">
+            <div class="ba" data-orient="portrait">
               <img src="washroom_before.jpg" alt="洗面台 施工前"/>
               <img src="washroom_after.jpg" alt="洗面台 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
               <span class="tag left">Before</span><span class="tag right">After</span>
-              <input type="range" min="0" max="100" value="50" aria-label="洗面台の比較スライダー"/>
             </div>
           </div>
           <p class="text-sm text-black mt-3 text-center">清掃性・耐水性・収納導線を最適化</p>
         </div>
 
-        <!-- トイレ（縦×横でも美しく見せる） -->
+        <!-- トイレ（縦×横でもOK：coverで吸収） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">トイレリフォーム</h3>
-          <div class="ratio-4x5">
-            <div class="ba">
+          <div class="frame portrait">
+            <div class="ba" data-orient="portrait">
               <img src="toilet_before.jpg" alt="トイレ 施工前"/>
               <img src="toilet_after.jpg" alt="トイレ 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
               <span class="tag left">Before</span><span class="tag right">After</span>
-              <input type="range" min="0" max="100" value="50" aria-label="トイレの比較スライダー"/>
             </div>
           </div>
           <p class="text-sm text-black mt-3 text-center">機能性×デザイン性を高次元で両立</p>
@@ -245,14 +247,13 @@
         <!-- 浴室（横×横） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">浴室リフォーム</h3>
-          <div class="ratio-16x9">
-            <div class="ba">
+          <div class="frame landscape">
+            <div class="ba" data-orient="landscape">
               <img src="bathroom_before.jpg" alt="浴室 施工前"/>
               <img src="bathroom_after.jpg" alt="浴室 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
               <span class="tag left">Before</span><span class="tag right">After</span>
-              <input type="range" min="0" max="100" value="50" aria-label="浴室の比較スライダー"/>
             </div>
           </div>
           <p class="text-sm text-black mt-3 text-center">断熱・防水・清掃の“体感”を変える</p>
@@ -261,14 +262,13 @@
         <!-- キッチン（横×横） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">キッチンリフォーム</h3>
-          <div class="ratio-16x9">
-            <div class="ba">
+          <div class="frame landscape">
+            <div class="ba" data-orient="landscape">
               <img src="kitchen_before.jpg" alt="キッチン 施工前"/>
               <img src="kitchen_after.jpg" alt="キッチン 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
               <span class="tag left">Before</span><span class="tag right">After</span>
-              <input type="range" min="0" max="100" value="50" aria-label="キッチンの比較スライダー"/>
             </div>
           </div>
           <p class="text-sm text-black mt-3 text-center">動線×収納×メンテ性で“家事時間”を短縮</p>
@@ -276,7 +276,25 @@
       </div>
 
       <div class="mt-10 text-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 働く環境（事務所写真 復活） -->
+  <section id="office" class="py-16 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3"><span class="text-gold">働く環境</span> — 近未来×あたたかさ</h2>
+        <p class="text-lg text-black">明るく開放的、でも温度のあるオフィス。日常の自動化で“面倒”を減らし、仕事に集中できます。</p>
+      </div>
+      <div class="frame landscape mx-auto" style="max-width: 1100px;">
+        <img src="office.jpg" alt="センチュリー21ホームマートのオフィス" loading="lazy"/>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
           <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
       </div>
@@ -284,7 +302,7 @@
   </section>
 
   <!-- Instagram（照明ボイス動画のみ。最新投稿は削除） -->
-  <section id="insta" class="py-16 bg-cream">
+  <section id="insta" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-6">
         <div>
@@ -294,44 +312,17 @@
         <a class="text-sm underline" href="https://www.instagram.com/century21homemart/" target="_blank" rel="noopener">公式Instagramへ</a>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- 照明ボイス操作の証拠動画のみ -->
-        <div class="lg:col-span-2">
-          <h3 class="text-lg font-bold mb-3"><i class="fas fa-bolt mr-2 text-gold"></i>音声で照明操作：店舗の自動化</h3>
-          <div class="ig-embed">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMUuOH7zdlj/" data-instgrm-version="14" data-instgrm-captioned style=" background:#FFF; border:0; border-radius:8px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%;"></blockquote>
-          </div>
+      <div class="grid grid-cols-1">
+        <div class="ig-embed">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMUuOH7zdlj/" data-instgrm-version="14" data-instgrm-captioned style=" background:#FFF; border:0; border-radius:8px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%;"></blockquote>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 応募（form.run埋め込み） -->
-  <section id="apply" class="py-16 bg-gold">
-    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">まずは、3ヶ月研修から。</h2>
-      <p class="text-lg text-white mb-8">“自分たちで決められるチーム”で、一緒に強くなる。<br/>雰囲気が合うか、まずは面談でお話しましょう。</p>
-
-      <!-- 電話 -->
-      <div class="mb-6">
-        <a href="tel:0120438639" class="bg-white text-gold px-6 py-3 rounded-lg font-bold text-base shadow-lg hover:bg-cream transition-all inline-flex items-center">
-          <i class="fas fa-phone mr-2"></i>電話で応募・相談（0120-43-8639）
+      <div class="mt-10 text-center">
+        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
         </a>
       </div>
-
-      <!-- form.run embed（公式／失敗時フォールバック付き） -->
-      <div class="bg-white rounded-xl shadow-lg p-4">
-        <div
-          class="formrun-embed"
-          data-formrun-form="@c21-member"
-          data-formrun-redirect="true"
-        ></div>
-        <noscript>
-          <iframe src="https://form.run/embed/@c21-member" frameborder="no" style="width:100%; height:1400px; background:#fff;"></iframe>
-        </noscript>
-      </div>
-
-      <p class="text-xs text-white mt-4 opacity-90">※ 送信後は完了ページへ遷移します。</p>
     </div>
   </section>
 
@@ -362,22 +353,39 @@
 
   <!-- Scripts -->
   <script async src="https://www.instagram.com/embed.js"></script>
-  <script src="https://sdk.form.run/js/v2/embed.js"></script>
   <script>
-    // Before/After slider logic
-    document.querySelectorAll('.ba').forEach(function(ba){
+    // Before/After: ドラッグ＆タッチでスライド
+    function initBA(ba){
       const after = ba.querySelector('.after');
       const handle = ba.querySelector('.handle');
       const knob = ba.querySelector('.knob');
-      const range = ba.querySelector('input[type="range"]');
-      const setPos = (val) => {
-        after.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
-        handle.style.left = val + '%';
-        knob.style.left = val + '%';
+      let down = false;
+
+      const set = (px) => {
+        const rect = ba.getBoundingClientRect();
+        let x = Math.min(Math.max(px - rect.left, 0), rect.width);
+        const pct = (x / rect.width) * 100;
+        after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+        handle.style.left = pct + '%';
+        knob.style.left = pct + '%';
       };
-      range.addEventListener('input', e => setPos(e.target.value));
-      setPos(range.value);
-    });
+
+      const start = (e)=>{ down = true; set(e.touches ? e.touches[0].clientX : e.clientX); };
+      const move  = (e)=>{ if(!down) return; set(e.touches ? e.touches[0].clientX : e.clientX); };
+      const end   = ()=>{ down = false; };
+
+      ba.addEventListener('mousedown', start);
+      ba.addEventListener('mousemove', move);
+      window.addEventListener('mouseup', end);
+      ba.addEventListener('touchstart', start, {passive:true});
+      ba.addEventListener('touchmove', move, {passive:true});
+      window.addEventListener('touchend', end);
+
+      // 初期位置50%
+      set(ba.getBoundingClientRect().left + ba.getBoundingClientRect().width/2);
+    }
+
+    document.querySelectorAll('.ba').forEach(initBA);
   </script>
 </body>
 </html>
