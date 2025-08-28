@@ -1,0 +1,50 @@
+// app/components/InstagramEmbed.tsx
+'use client';
+
+import { useEffect } from 'react';
+import Script from 'next/script';
+
+type Props = {
+  url: string;
+  captioned?: boolean;
+  maxWidth?: number;
+  className?: string;
+};
+
+export default function InstagramEmbed({
+  url,
+  captioned = true,
+  maxWidth = 540,
+  className = '',
+}: Props) {
+  useEffect(() => {
+    const hydrate = () => {
+      // @ts-ignore
+      if (window?.instgrm?.Embeds?.process) window.instgrm.Embeds.process();
+    };
+    hydrate();
+    window.addEventListener('load', hydrate);
+    return () => window.removeEventListener('load', hydrate);
+  }, []);
+
+  return (
+    <div className={`w-full flex justify-center ${className}`}>
+      <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
+      <blockquote
+        className="instagram-media"
+        data-instgrm-permalink={url}
+        data-instgrm-version="14"
+        {...(captioned ? { 'data-instgrm-captioned': '' } : {})}
+        style={{
+          background: '#FFF',
+          border: 0,
+          borderRadius: 8,
+          boxShadow: '0 1px 10px rgba(0,0,0,0.15)',
+          margin: '1px',
+          maxWidth: `${maxWidth}px`,
+          width: 'calc(100% - 2px)',
+        }}
+      />
+    </div>
+  );
+}
