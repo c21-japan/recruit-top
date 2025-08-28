@@ -29,12 +29,15 @@
     .pill{ background:#fff; border:1px solid var(--gold); border-radius:9999px; padding:.45rem .9rem; display:inline-flex; align-items:center; }
     .badge{ background:#fff; border:1px solid var(--gold); border-radius:.5rem; padding:.35rem .6rem; font-size:.8rem; }
 
-    /* 画像表示の安定化（iPhoneの向き/EXIF考慮） */
+    /* iPhone画像の向き/EXIF対応 & 比率枠 */
     img{ image-orientation: from-image; }
     .frame{ position:relative; width:100%; border-radius:12px; overflow:hidden; background:#eee; }
-    .frame.portrait{ aspect-ratio: 4 / 5; }   /* 縦向き */
-    .frame.landscape{ aspect-ratio: 16 / 9; } /* 横向き */
+    .frame.portrait{ aspect-ratio: 4 / 5; }    /* 縦向き */
+    .frame.landscape{ aspect-ratio: 16 / 9; }  /* 横向き */
     .frame > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    /* みかさん：顔が切れないように全体表示 */
+    .fit-contain{ object-fit: contain !important; background:#fff; }
 
     /* Before/After スライダー */
     .ba{ position:relative; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#000; }
@@ -112,7 +115,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- たくま（横向き＝landscape/縦ならportraitに変更） -->
+        <!-- たくま（縦向き想定） -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover">
           <div class="frame portrait mb-4">
             <img src="takuma.jpeg" alt="職人 たくま" loading="lazy"/>
@@ -124,7 +127,7 @@
           </p>
         </article>
 
-        <!-- ひな -->
+        <!-- ひな（縦向き想定） -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:mt-8">
           <div class="frame portrait mb-4">
             <img src="hina.jpeg" alt="事務 ひな" loading="lazy"/>
@@ -136,10 +139,10 @@
           </p>
         </article>
 
-        <!-- みか -->
+        <!-- みか（顔が切れない：contain） -->
         <article class="bg-white rounded-2xl p-6 shadow card-hover md:-mt-4">
           <div class="frame portrait mb-4">
-            <img src="mika.jpeg" alt="経理 みか" loading="lazy"/>
+            <img src="mika.jpeg" alt="経理 みか" loading="lazy" class="fit-contain"/>
           </div>
           <h3 class="text-xl font-bold">みか <span class="text-gold text-sm font-semibold">経理</span></h3>
           <p class="text-black mt-2">
@@ -149,11 +152,11 @@
         </article>
       </div>
 
-      <!-- 代表（控えめに） -->
+      <!-- 代表（他と同サイズのportrait枠で統一） -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
         <aside class="bg-white rounded-2xl p-6 shadow card-hover lg:col-start-2">
           <div class="flex flex-col sm:flex-row gap-6 items-center">
-            <div class="frame portrait" style="width:160px;">
+            <div class="frame portrait" style="width:180px;">
               <img src="inui.jpeg" alt="代表 乾 佑企"/>
             </div>
             <div>
@@ -218,7 +221,7 @@
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">洗面台リフォーム</h3>
           <div class="frame portrait">
-            <div class="ba" data-orient="portrait">
+            <div class="ba">
               <img src="washroom_before.jpg" alt="洗面台 施工前"/>
               <img src="washroom_after.jpg" alt="洗面台 施工後" class="after"/>
               <div class="handle"></div>
@@ -233,7 +236,7 @@
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">トイレリフォーム</h3>
           <div class="frame portrait">
-            <div class="ba" data-orient="portrait">
+            <div class="ba">
               <img src="toilet_before.jpg" alt="トイレ 施工前"/>
               <img src="toilet_after.jpg" alt="トイレ 施工後" class="after"/>
               <div class="handle"></div>
@@ -248,7 +251,7 @@
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">浴室リフォーム</h3>
           <div class="frame landscape">
-            <div class="ba" data-orient="landscape">
+            <div class="ba">
               <img src="bathroom_before.jpg" alt="浴室 施工前"/>
               <img src="bathroom_after.jpg" alt="浴室 施工後" class="after"/>
               <div class="handle"></div>
@@ -263,7 +266,7 @@
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">キッチンリフォーム</h3>
           <div class="frame landscape">
-            <div class="ba" data-orient="landscape">
+            <div class="ba">
               <img src="kitchen_before.jpg" alt="キッチン 施工前"/>
               <img src="kitchen_after.jpg" alt="キッチン 施工後" class="after"/>
               <div class="handle"></div>
@@ -283,7 +286,7 @@
     </div>
   </section>
 
-  <!-- 働く環境（事務所写真 復活） -->
+  <!-- 働く環境（事務所写真） -->
   <section id="office" class="py-16 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
@@ -301,7 +304,7 @@
     </div>
   </section>
 
-  <!-- Instagram（照明ボイス動画のみ。最新投稿は削除） -->
+  <!-- Instagram（照明ボイス動画のみ） -->
   <section id="insta" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-6">
@@ -333,6 +336,7 @@
         <div>
           <h3 class="text-xl font-bold mb-3 text-gold">センチュリー21ホームマート</h3>
           <p class="text-sm">不動産売買・仲介／リフォーム・リノベーション／住宅設備工事</p>
+          <p class="text-sm mt-2">〒635-0821　奈良県北葛城郡広陵町笠287-1</p>
         </div>
         <div>
           <h4 class="font-semibold mb-3 text-gold">お問い合わせ</h4>
@@ -357,10 +361,14 @@
     // Before/After: ドラッグ＆タッチでスライド
     function initBA(ba){
       const after = ba.querySelector('.after');
-      const handle = ba.querySelector('.handle');
-      const knob = ba.querySelector('.knob');
-      let down = false;
+      const handle = document.createElement('div');
+      handle.className = 'handle';
+      const knob = document.createElement('div');
+      knob.className = 'knob';
+      knob.innerHTML = '<i class="fas fa-arrows-left-right"></i>';
+      ba.appendChild(handle); ba.appendChild(knob);
 
+      let down = false;
       const set = (px) => {
         const rect = ba.getBoundingClientRect();
         let x = Math.min(Math.max(px - rect.left, 0), rect.width);
@@ -369,7 +377,6 @@
         handle.style.left = pct + '%';
         knob.style.left = pct + '%';
       };
-
       const start = (e)=>{ down = true; set(e.touches ? e.touches[0].clientX : e.clientX); };
       const move  = (e)=>{ if(!down) return; set(e.touches ? e.touches[0].clientX : e.clientX); };
       const end   = ()=>{ down = false; };
@@ -382,9 +389,9 @@
       window.addEventListener('touchend', end);
 
       // 初期位置50%
-      set(ba.getBoundingClientRect().left + ba.getBoundingClientRect().width/2);
+      const rect = ba.getBoundingClientRect();
+      set(rect.left + rect.width/2);
     }
-
     document.querySelectorAll('.ba').forEach(initBA);
   </script>
 </body>
