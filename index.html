@@ -7,6 +7,13 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+  <meta name="description" content="“怖い営業”から“楽しい営業”へ。センチュリー21ホームマートの3ヶ月研修で未経験から成長。助け合いの現場経験×大手ブランド研修で営業力が伸びる。"/>
+  <meta property="og:title" content="採用情報 | センチュリー21ホームマート"/>
+  <meta property="og:description" content="社員の生の声と自社施工の実績で、安心して飛び込める環境。3ヶ月研修に応募する。"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="office.jpg"/>
+  <meta property="og:site_name" content="センチュリー21ホームマート 採用"/>
+
   <style>
     :root{ --gold:#A19276; --black:#383635; --cream:#F8F6F3; }
     body{ font-family:'Noto Sans JP',sans-serif; color:var(--black); line-height:1.8; background:#fff; }
@@ -15,21 +22,28 @@
     .border-gold{ border-color:var(--gold); }
     .hero-gradient{ background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%);}
     .section-divider{ background:linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); height:2px; }
-    .card-hover{ transition:all .25s ease; } .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
-    .cta-button{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); transition:all .25s ease; }
+    .card-hover{ transition:all .2s ease; } .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
+    .cta-button{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); transition:all .2s ease; }
     .cta-button:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
     .pill{ background:#fff; border:1px solid var(--gold); border-radius:9999px; padding:.45rem .9rem; display:inline-flex; align-items:center; }
     .badge{ background:#fff; border:1px solid var(--gold); border-radius:.5rem; padding:.35rem .6rem; font-size:.8rem;}
-    .ratio-4x5{ position:relative; padding-top:125%; } .ratio-4x5 > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .pair img{ width:100%; height:auto; display:block; border-radius:.5rem; }
+    .ratio-16x9{ position:relative; padding-top:56.25%; }
+    .ratio-4x5{ position:relative; padding-top:125%; }
+    .ratio-16x9 > *, .ratio-4x5 > *{ position:absolute; inset:0; width:100%; height:100%; }
     .ig-embed{ max-width:540px; width:100%; margin:0 auto; }
+
+    /* --- Before/After Slider --- */
+    .ba{ position:relative; border-radius:12px; overflow:hidden; background:#000; }
+    .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .ba .after{ clip-path: inset(0 50% 0 0); }
+    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:rgba(255,255,255,.85); left:50%; transform:translateX(-1px); }
+    .ba .knob{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:9999px; background:rgba(56,54,53,.85); display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; }
+    .ba .tag{ position:absolute; top:.5rem; font-size:.75rem; color:#fff; background:rgba(0,0,0,.55); padding:.2rem .5rem; border-radius:.35rem; }
+    .ba .tag.left{ left:.5rem; } .ba .tag.right{ right:.5rem; }
+    .ba input[type="range"]{ position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; }
+    /* form.run fallback height */
+    .formrun-embed iframe{ min-height: 1200px; }
   </style>
-  <meta name="description" content="“怖い営業”から“楽しい営業”へ。センチュリー21ホームマートの3ヶ月研修で未経験から成長。助け合いの現場経験×大手ブランド研修で営業力が伸びる。"/>
-  <meta property="og:title" content="採用情報 | センチュリー21ホームマート"/>
-  <meta property="og:description" content="助け合える仲間と、自分たちで決められるチームへ。3ヶ月研修に応募する。"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="office.jpg"/>
-  <meta property="og:site_name" content="センチュリー21ホームマート 採用"/>
 </head>
 <body>
 
@@ -38,14 +52,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <div class="text-2xl font-extrabold text-gold">
-            <i class="fas fa-home mr-2"></i>センチュリー21ホームマート
-          </div>
+          <img
+            src="③-2%20センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png"
+            alt="センチュリー21 ロゴ"
+            class="h-10 w-auto"
+            onerror="this.src='c21-logo-gold-white.png';"
+          />
           <span class="badge text-black">採用サイト</span>
         </div>
         <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#voices" class="hover:text-gold">社員の声</a>
           <a href="#training" class="hover:text-gold">3ヶ月研修</a>
-          <a href="#support" class="hover:text-gold">助け合いの働き方</a>
           <a href="#works" class="hover:text-gold">自社施工</a>
           <a href="#insta" class="hover:text-gold">雰囲気</a>
           <a href="#apply" class="pill text-gold"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
@@ -82,21 +99,96 @@
     </div>
   </section>
 
+  <!-- 社員の声（賑やか・バラバラ配置） -->
+  <section id="voices" class="py-16 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-2"><span class="text-gold">社員の声</span> — 現場のリアル</h2>
+        <p class="text-black">写真と“生のひと言”で、雰囲気をそのまま伝えます。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- たくま -->
+        <article class="bg-white rounded-2xl p-6 shadow card-hover">
+          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
+            <img src="takuma.jpeg" alt="職人 たくま"/>
+          </div>
+          <h3 class="text-xl font-bold">たくま <span class="text-gold text-sm font-semibold">工務</span></h3>
+          <p class="text-black mt-2">
+            「営業がない日は現場を手伝います。道具の名前、段取り、内装・水回り…全部が提案の説得力に変わる。
+            <span class="font-semibold">“口だけじゃない営業”</span>になれるのが当店の良さです。」
+          </p>
+        </article>
+
+        <!-- ひな -->
+        <article class="bg-white rounded-2xl p-6 shadow card-hover md:mt-8">
+          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
+            <img src="hina.jpeg" alt="事務 ひな"/>
+          </div>
+          <h3 class="text-xl font-bold">ひな <span class="text-gold text-sm font-semibold">事務・SNS編集</span></h3>
+          <p class="text-black mt-2">
+            「Instagramは私が編集。リアルな空気感をそのまま発信しています。
+            堅すぎず、でも<span class="font-semibold">お客様にも仲間にも誠実</span>でいたい職場です。」
+          </p>
+        </article>
+
+        <!-- みか -->
+        <article class="bg-white rounded-2xl p-6 shadow card-hover md:-mt-4">
+          <div class="ratio-4x5 rounded-xl overflow-hidden mb-4">
+            <img src="mika.jpeg" alt="経理 みか"/>
+          </div>
+          <h3 class="text-xl font-bold">みか <span class="text-gold text-sm font-semibold">経理</span></h3>
+          <p class="text-black mt-2">
+            「<span class="font-semibold">努力が数字で正しく評価</span>される仕組み。
+            困ったら“すぐ助けてもらえる”安心感があるから、挑戦できます。」
+          </p>
+        </article>
+      </div>
+
+      <!-- 代表（控えめに別カードで） -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+        <aside class="bg-white rounded-2xl p-6 shadow card-hover lg:col-start-2">
+          <div class="flex flex-col sm:flex-row gap-6 items-center">
+            <div class="w-40 h-52 rounded-xl overflow-hidden shadow">
+              <img src="inui.jpeg" alt="代表 乾 佑企" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">乾 佑企 <span class="text-gold text-sm font-semibold">代表</span></h3>
+              <p class="text-black mt-2">
+                「<span class="font-semibold">成績が上がらないのは教える側の責任</span>。
+                未経験でも“楽しい営業”に変えていく。営業が無い日は現場を覚え、提案力で勝つ。
+                全国のセンチュリー21には<span class="font-semibold">良きライバル</span>がたくさん。
+                <span class="font-semibold">大阪のトップには半年で7,000万円を売上げた営業</span>もいます。
+                夢のある舞台で一緒に挑戦しましょう。」
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 3ヶ月研修 -->
   <section id="training" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3"><span class="text-gold">3ヶ月研修</span>で安心のスタート</h2>
-        <p class="text-lg text-black">センチュリー21の新人研修＋現場OJT。<span class="font-semibold">「成績が上がらないのは教える側の責任」</span>の姿勢で、代表と先輩が伴走します。</p>
+        <p class="text-lg text-black">センチュリー21の新人研修＋現場OJT。代表と先輩が伴走します。</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-cream rounded-xl p-6 card-hover">
           <h3 class="text-xl font-bold text-black mb-2">1ヶ月目：基礎と同行</h3>
-          <p class="text-black">座学とロープレで基礎を固め、先輩同行で実務の流れと言い回しを体得。</p>
+          <p class="text-black">座学とロープレ＋先輩同行。言い回し・段取り・安全な提案を体得。</p>
         </div>
         <div class="bg-cream rounded-xl p-6 card-hover">
           <h3 class="text-xl font-bold text-black mb-2">2ヶ月目：OJTで小さな成功</h3>
-          <p class="text-black">扱いやすい案件から担当。チームで“勝ち筋”を作り、成功体験を積み上げる。</p>
+          <p class="text-black">扱いやすい案件から担当。チームで“勝ち筋”を作り成功体験を積む。</p>
         </div>
         <div class="bg-cream rounded-xl p-6 card-hover">
           <h3 class="text-xl font-bold text-black mb-2">3ヶ月目：独り立ち＋伴走</h3>
@@ -109,110 +201,89 @@
     </div>
   </section>
 
-  <!-- 助け合いの働き方（営業×現場） -->
-  <section id="support" class="py-16 bg-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-4"><span class="text-gold">助け合い</span>で強くなる。</h2>
-          <p class="text-black mb-4">
-            営業がない時間は、<span class="font-semibold">現場で工事のお手伝い</span>も。段取り・設備・内装・水回りの知識が身につき、
-            <span class="font-semibold">提案の質が上がる＝成績が上がる</span>。自社施工の強みを“自分の言葉”で語れる営業になります。
-          </p>
-          <p class="text-black mb-4">
-            さらに、センチュリー21グループには全国に良きライバルがいます。<span class="font-semibold">数字で上位を目指せる舞台</span>があり、
-            <span class="font-semibold">大阪のトップには半年で7,000万円の売上達成者</span>も。夢が持てる環境で、一緒に挑戦しましょう。
-          </p>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="pill"><i class="fas fa-tools text-gold mr-2"></i>現場知識が武器に</span>
-            <span class="pill"><i class="fas fa-chart-line text-gold mr-2"></i>全国上位を狙える</span>
-            <span class="pill"><i class="fas fa-user-shield text-gold mr-2"></i>代表が伴走</span>
-          </div>
-          <div class="mt-8">
-            <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
-          </div>
-        </div>
-        <div class="rounded-xl overflow-hidden shadow">
-          <img src="office.jpg" alt="センチュリー21ホームマートのオフィス" class="w-full h-auto"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 自社施工 Before/After -->
+  <!-- 自社施工 Before/After（スライダーで美しく） -->
   <section id="works" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3">自社施工の<span class="text-gold">“凄さ”</span>が営業の武器</h2>
-        <p class="text-lg text-black">大工・内装・設備・水道・電気・ガス・防水まで自社で完結。品質・スピード・価格訴求で選ばれます。</p>
+        <p class="text-lg text-black">大工・内装・設備・水道・電気・ガス・防水まで一貫。品質・スピード・価格訴求で選ばれます。</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- 洗面（縦→縦） -->
+        <!-- 洗面（縦×縦） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">洗面台リフォーム</h3>
-          <div class="pair space-y-2">
-            <figure>
-              <img src="washroom_before.jpg" alt="洗面台 施工前（収納不足・清掃性の課題）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">Before</figcaption>
-            </figure>
-            <figure>
-              <img src="washroom_after.jpg" alt="洗面台 施工後（清掃性・耐水性・収納導線を最適化）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">After</figcaption>
-            </figure>
+          <div class="ratio-4x5">
+            <div class="ba">
+              <img src="washroom_before.jpg" alt="洗面台 施工前"/>
+              <img src="washroom_after.jpg" alt="洗面台 施工後" class="after"/>
+              <div class="handle"></div>
+              <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
+              <span class="tag left">Before</span><span class="tag right">After</span>
+              <input type="range" min="0" max="100" value="50" aria-label="洗面台の比較スライダー"/>
+            </div>
           </div>
+          <p class="text-sm text-black mt-3 text-center">清掃性・耐水性・収納導線を最適化</p>
         </div>
-        <!-- トイレ（縦→横） -->
+
+        <!-- トイレ（縦×横でも美しく見せる） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">トイレリフォーム</h3>
-          <div class="pair space-y-2">
-            <figure>
-              <img src="toilet_before.jpg" alt="トイレ 施工前（狭さ・使い勝手の課題）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">Before</figcaption>
-            </figure>
-            <figure>
-              <img src="toilet_after.jpg" alt="トイレ 施工後（機能性とデザイン性を高次元で両立）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">After</figcaption>
-            </figure>
+          <div class="ratio-4x5">
+            <div class="ba">
+              <img src="toilet_before.jpg" alt="トイレ 施工前"/>
+              <img src="toilet_after.jpg" alt="トイレ 施工後" class="after"/>
+              <div class="handle"></div>
+              <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
+              <span class="tag left">Before</span><span class="tag right">After</span>
+              <input type="range" min="0" max="100" value="50" aria-label="トイレの比較スライダー"/>
+            </div>
           </div>
+          <p class="text-sm text-black mt-3 text-center">機能性×デザイン性を高次元で両立</p>
         </div>
-        <!-- 浴室（横→横） -->
+
+        <!-- 浴室（横×横） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">浴室リフォーム</h3>
-          <div class="pair space-y-2">
-            <figure>
-              <img src="bathroom_before.jpg" alt="浴室 施工前（断熱・防水・清掃性の課題）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">Before</figcaption>
-            </figure>
-            <figure>
-              <img src="bathroom_after.jpg" alt="浴室 施工後（断熱・防水・清掃性の改善）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">After</figcaption>
-            </figure>
+          <div class="ratio-16x9">
+            <div class="ba">
+              <img src="bathroom_before.jpg" alt="浴室 施工前"/>
+              <img src="bathroom_after.jpg" alt="浴室 施工後" class="after"/>
+              <div class="handle"></div>
+              <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
+              <span class="tag left">Before</span><span class="tag right">After</span>
+              <input type="range" min="0" max="100" value="50" aria-label="浴室の比較スライダー"/>
+            </div>
           </div>
+          <p class="text-sm text-black mt-3 text-center">断熱・防水・清掃の“体感”を変える</p>
         </div>
-        <!-- キッチン（横→横） -->
+
+        <!-- キッチン（横×横） -->
         <div class="bg-cream rounded-xl p-5 shadow card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">キッチンリフォーム</h3>
-          <div class="pair space-y-2">
-            <figure>
-              <img src="kitchen_before.jpg" alt="キッチン 施工前（動線・収納・メンテの課題）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">Before</figcaption>
-            </figure>
-            <figure>
-              <img src="kitchen_after.jpg" alt="キッチン 施工後（動線×収納×メンテ性を最適化）"/>
-              <figcaption class="text-center text-xs text-gray-600 mt-1">After</figcaption>
-            </figure>
+          <div class="ratio-16x9">
+            <div class="ba">
+              <img src="kitchen_before.jpg" alt="キッチン 施工前"/>
+              <img src="kitchen_after.jpg" alt="キッチン 施工後" class="after"/>
+              <div class="handle"></div>
+              <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
+              <span class="tag left">Before</span><span class="tag right">After</span>
+              <input type="range" min="0" max="100" value="50" aria-label="キッチンの比較スライダー"/>
+            </div>
           </div>
+          <p class="text-sm text-black mt-3 text-center">動線×収納×メンテ性で“家事時間”を短縮</p>
         </div>
       </div>
 
       <div class="mt-10 text-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
+        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
+          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Instagram（雰囲気：ひな編集 & 照明ボイス動画） -->
+  <!-- Instagram（照明ボイス動画のみ。最新投稿は削除） -->
   <section id="insta" class="py-16 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-6">
@@ -224,67 +295,13 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- 照明ボイス操作の証拠動画 -->
-        <div>
+        <!-- 照明ボイス操作の証拠動画のみ -->
+        <div class="lg:col-span-2">
           <h3 class="text-lg font-bold mb-3"><i class="fas fa-bolt mr-2 text-gold"></i>音声で照明操作：店舗の自動化</h3>
           <div class="ig-embed">
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMUuOH7zdlj/" data-instgrm-version="14" data-instgrm-captioned style=" background:#FFF; border:0; border-radius:8px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%;"></blockquote>
           </div>
         </div>
-        <!-- 最新投稿（運用で差し替え） -->
-        <div>
-          <h3 class="text-lg font-bold mb-3"><i class="fas fa-camera mr-2 text-gold"></i>最新投稿（運用で差し替え）</h3>
-          <div class="ig-embed">
-            <!-- 例：別投稿URLを月1で差し替え -->
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cx_________/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:8px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%;"></blockquote>
-          </div>
-          <p class="text-xs text-gray-500 mt-2">※ 表示が重い場合は埋め込み数を1点に。残りはInstagramへ誘導。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 募集要項 / モデル年収 -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3">募集職種</h2>
-        <p class="text-lg text-black">経験よりも“素直さと前向きさ”。助け合いながら、一歩ずつ強くなりましょう。</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-cream rounded-xl p-8 shadow card-hover">
-          <div class="flex items-center mb-6">
-            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4"><i class="fas fa-handshake text-white text-xl"></i></div>
-            <h3 class="text-2xl font-bold text-black">営業スタッフ</h3>
-          </div>
-          <ul class="space-y-3 text-black">
-            <li><span class="text-gold font-semibold">対象：</span>未経験歓迎／普通免許あれば尚可</li>
-            <li><span class="text-gold font-semibold">業務：</span>不動産売買仲介／リフォーム提案</li>
-            <li><span class="text-gold font-semibold">支援：</span>センチュリー21研修＋現場OJT＋チーム支援</li>
-            <li><span class="text-gold font-semibold">評価：</span>努力と成果を正しく評価（歩合制度）</li>
-            <li><span class="text-gold font-semibold">収入：</span><strong>年収1,000万円以上も現実的</strong>（成果・役割により変動）</li>
-          </ul>
-          <div class="mt-6 p-4 bg-white rounded-lg text-sm text-black border border-gold">
-            <p class="font-semibold mb-1">モデル年収（例）</p>
-            <p>1年目：400〜700万円 / 2年目：600〜1,000万円 / 3年目：800〜1,200万円<br/><span class="text-gray-500">※ 詳細は面談でご説明します。</span></p>
-          </div>
-        </div>
-
-        <div class="bg-cream rounded-xl p-8 shadow card-hover">
-          <div class="flex items-center mb-6">
-            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4"><i class="fas fa-tools text-white text-xl"></i></div>
-            <h3 class="text-2xl font-bold text-black">リフォーム職人</h3>
-          </div>
-          <ul class="space-y-3 text-black">
-            <li><span class="text-gold font-semibold">対象：</span>多能工を目指したい方歓迎</li>
-            <li><span class="text-gold font-semibold">業務：</span>大工・内装・設備・水道・電気・ガス・防水</li>
-            <li><span class="text-gold font-semibold">成長：</span>現場で幅広く習得／資格取得支援あり</li>
-            <li><span class="text-gold font-semibold">環境：</span>自社施工だから段取りと品質が学べる</li>
-          </ul>
-        </div>
-      </div>
-      <div class="mt-10 text-center">
-        <a href="#apply" class="cta-button text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
       </div>
     </div>
   </section>
@@ -302,14 +319,16 @@
         </a>
       </div>
 
-      <!-- form.run embed -->
+      <!-- form.run embed（公式／失敗時フォールバック付き） -->
       <div class="bg-white rounded-xl shadow-lg p-4">
-        <script src="https://sdk.form.run/js/v2/embed.js"></script>
         <div
           class="formrun-embed"
           data-formrun-form="@c21-member"
           data-formrun-redirect="true"
         ></div>
+        <noscript>
+          <iframe src="https://form.run/embed/@c21-member" frameborder="no" style="width:100%; height:1400px; background:#fff;"></iframe>
+        </noscript>
       </div>
 
       <p class="text-xs text-white mt-4 opacity-90">※ 送信後は完了ページへ遷移します。</p>
@@ -341,7 +360,24 @@
     </div>
   </footer>
 
-  <!-- Instagram embed script -->
+  <!-- Scripts -->
   <script async src="https://www.instagram.com/embed.js"></script>
+  <script src="https://sdk.form.run/js/v2/embed.js"></script>
+  <script>
+    // Before/After slider logic
+    document.querySelectorAll('.ba').forEach(function(ba){
+      const after = ba.querySelector('.after');
+      const handle = ba.querySelector('.handle');
+      const knob = ba.querySelector('.knob');
+      const range = ba.querySelector('input[type="range"]');
+      const setPos = (val) => {
+        after.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+        handle.style.left = val + '%';
+        knob.style.left = val + '%';
+      };
+      range.addEventListener('input', e => setPos(e.target.value));
+      setPos(range.value);
+    });
+  </script>
 </body>
 </html>
