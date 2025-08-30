@@ -53,7 +53,8 @@
     .strength-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px}
     .strength-card{background:var(--cream);padding:32px;border-radius:20px;text-align:center;transition:transform .3s}
     .strength-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.08)}
-    .strength-icon{width:80px;height:80px;margin:0 auto 20px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--gold)}
+    .strength-icon{width:80px;height:80px;margin:0 auto 20px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .strength-icon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .strength-stat{background:var(--white);padding:16px;border-radius:12px;margin-top:20px}
     .strength-stat-label{font-size:12px;color:var(--gold);font-weight:700;margin-bottom:4px}
     .strength-stat-value{font-size:24px;font-weight:900;color:var(--black)}
@@ -151,16 +152,6 @@
     .fun-tile{background:#fafafa;border:1px solid #eee;border-radius:12px;padding:10px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;overflow:hidden}
     .fun-tile img{width:100%;height:100%;object-fit:cover}
 
-    /* FAQ */
-    .faq-list{max-width:800px;margin:0 auto}
-    .faq-item{background:var(--white);border:2px solid var(--cream);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:.3s}
-    .faq-item:hover{border-color:var(--gold)}
-    .faq-question{padding:20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700}
-    .faq-icon{transition:transform .3s}
-    .faq-item.active .faq-icon{transform:rotate(180deg)}
-    .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s}
-    .faq-item.active .faq-answer{max-height:500px;padding:0 20px 20px}
-
     /* Entry flow (縦型・スマホ最適) */
     .entry-wrap{background:rgba(255,255,255,.2);padding:20px;border-radius:16px;margin:0 auto 32px;max-width:500px}
     .entry-flow{display:flex;flex-direction:column;align-items:center;gap:16px}
@@ -182,6 +173,12 @@
     .footer-instagram{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
     @media(min-width:768px){.footer-instagram{grid-template-columns:1fr 1fr}}
     .ig-embed{width:100%;aspect-ratio:9/16;border:0;border-radius:12px;overflow:hidden;background:#111}
+
+    /* Office slider */
+    .office-slider{width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-bottom:32px;position:relative;background:#000}
+    .office-track{display:flex;height:100%;transition:transform .6s ease}
+    .office-slide{flex:0 0 100%;height:100%}
+    .office-slide img{width:100%;height:100%;object-fit:cover}
 
     /* Bottom nav */
     .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid #e0e0e0;display:flex;justify-content:space-around;padding:8px 0;z-index:1000;box-shadow:0 -2px 10px rgba(0,0,0,.1)}
@@ -240,25 +237,25 @@
 
       <div class="strength-cards">
         <div class="strength-card">
-          <div class="strength-icon">🛡️</div>
+          <div class="strength-icon"><img src="reform_c21.JPG" alt="センチュリー21 × 自社施工"></div>
           <h3>センチュリー21 × 自社施工</h3>
           <p>大手ブランドの信頼性と、自社施工の提案力。この掛け算が最強の武器に。</p>
           <div class="strength-stat"><div class="strength-stat-label">実績</div><div class="strength-stat-value">施工実績豊富</div></div>
         </div>
         <div class="strength-card">
-          <div class="strength-icon">👥</div>
+          <div class="strength-icon"><img src="top_shain.JPG" alt="社員が社長より稼げる文化"></div>
           <h3>社員が社長より稼げる文化</h3>
           <p>“社長が決めるより社員の声を大事に”。32歳社長（20歳で創業）の下、フェアな評価で高収入を実現。</p>
           <div class="strength-stat"><div class="strength-stat-label">実績</div><div class="strength-stat-value">年収1,000万円超え多数</div></div>
         </div>
         <div class="strength-card">
-          <div class="strength-icon">💰</div>
+          <div class="strength-icon"><img src="incentive.jpeg" alt="現場でもインセンティブ"></div>
           <h3>現場でもインセンティブ</h3>
           <p>センチュリー21グループ×施工店だから実現。現場職も高収入を狙える独自制度。</p>
           <div class="strength-stat"><div class="strength-stat-label">実績</div><div class="strength-stat-value">年収700万円以上輩出</div></div>
         </div>
         <div class="strength-card">
-          <div class="strength-icon">🚀</div>
+          <div class="strength-icon"><img src="kigyo.JPG" alt="社内独立制度"></div>
           <h3>社内独立制度</h3>
           <p>C21ブランドを活かした社内独立制度あり。自社で不動産を積極的に買って売る実践型。</p>
           <div class="strength-stat"><div class="strength-stat-label">将来性</div><div class="strength-stat-value">安定した起業の道</div></div>
@@ -534,7 +531,7 @@
             <h3 class="voice-name">たくま</h3>
             <p class="voice-role">工務担当</p>
             <p class="voice-message">現場の仕事は本当にやりがいがあります。自分の手で空間が生まれ変わる瞬間、お客様の笑顔を見られる瞬間が最高です。ここは現場でもインセンティブがあるから、頑張りが収入に直結。施工の知識が営業提案にも活きるので、将来の選択肢も広がります。道具の名前から段取りまで、全部が自分の武器になっていく感覚が楽しいです。</p>
-            <div class="voice-badges"><span class="badge badge-info">🔨 多能工</span><span class="badge badge-success">📈 成長中</span></div>
+            <div class="voice-badges"><span class="badge badge-info">📷 SNS</span><span class="badge badge-success">📈 成長中</span></div>
           </div>
         </div>
 
@@ -589,7 +586,6 @@
         <div class="ba-item">
           <h3 class="ba-title">洗面台リフォーム</h3>
           <div class="ba-container">
-            <!-- Before / After の順を厳守 -->
             <img src="washroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
             <img src="washroom_after.jpg"  alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
             <div class="ba-handle"></div><div class="ba-knob">↔</div>
@@ -630,11 +626,21 @@
     </div>
   </section>
 
-  <!-- Office -->
+  <!-- Office (slider added) -->
   <section id="office" style="background:var(--cream)">
     <div class="container">
       <div class="section-title"><h2>働く環境</h2><p>明るく開放的、でも温度のあるオフィス</p></div>
-      <img src="office.jpg" alt="オフィス" loading="lazy" width="1200" height="675" style="width:100%;border-radius:16px;margin-bottom:32px">
+
+      <!-- 画像スライダー（office.jpg, tempo1.JPG, tempo2.jpeg, tempo3.jpeg） -->
+      <div class="office-slider" id="officeSlider">
+        <div class="office-track" id="officeTrack">
+          <div class="office-slide"><img src="office.jpg" alt="オフィス 1" width="1200" height="675" loading="lazy"></div>
+          <div class="office-slide"><img src="tempo1.JPG" alt="オフィス 2" width="1200" height="675" loading="lazy"></div>
+          <div class="office-slide"><img src="tempo2.jpeg" alt="オフィス 3" width="1200" height="675" loading="lazy"></div>
+          <div class="office-slide"><img src="tempo3.jpeg" alt="オフィス 4" width="1200" height="675" loading="lazy"></div>
+        </div>
+      </div>
+
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center">
         <div style="background:var(--white);padding:24px;border-radius:12px"><div style="font-size:32px;margin-bottom:12px">💻</div><h4>最新設備</h4><p style="font-size:14px">PC・スマホ完備</p></div>
         <div style="background:var(--white);padding:24px;border-radius:12px"><div style="font-size:32px;margin-bottom:12px">☕</div><h4>リフレッシュ</h4><p style="font-size:14px">休憩スペース充実</p></div>
@@ -661,27 +667,18 @@
     </div>
   </section>
 
-  <!-- Entry: 縦型で見やすいフローに変更 -->
+  <!-- Entry -->
   <section id="entry" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);padding:80px 0">
     <div class="container">
       <div class="section-title"><h2 style="color:var(--white)">一緒に最強のチームを作ろう</h2><p style="color:var(--white)">自分たちで決める。自分たちで作る。だから、仕事が楽しくなる。</p></div>
       <div class="entry-wrap">
         <h3 style="text-align:center;margin-bottom:16px">応募から入社までの流れ</h3>
         <div class="entry-flow">
-          <div class="entry-step">
-            <div class="entry-number">1</div>
-            <p>エントリー</p>
-          </div>
+          <div class="entry-step"><div class="entry-number">1</div><p>エントリー</p></div>
           <div class="entry-arrow">↓</div>
-          <div class="entry-step">
-            <div class="entry-number">2</div>
-            <p>面接（1回）</p>
-          </div>
+          <div class="entry-step"><div class="entry-number">2</div><p>面接（1回）</p></div>
           <div class="entry-arrow">↓</div>
-          <div class="entry-step">
-            <div class="entry-number">3</div>
-            <p>内定・入社</p>
-          </div>
+          <div class="entry-step"><div class="entry-number">3</div><p>内定・入社</p></div>
         </div>
       </div>
 
@@ -694,11 +691,13 @@
     </div>
   </section>
 
-  <!-- Footer with Map & Instagram（blockquote埋め込み＋自動処理） -->
+  <!-- Footer with Map & Instagram -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-info">
+          <!-- 追加：フッタータイトル上部に画像表示 -->
+          <img src="fotter.png" alt="フッター装飾画像" style="width:100%;height:auto;margin-bottom:12px;border-radius:8px">
           <h3>センチュリー21ホームマート</h3>
           <p>不動産売買・仲介／リフォーム・リノベーション</p>
           <p>〒635-0821 奈良県北葛城郡広陵町笠287-1</p>
@@ -718,7 +717,6 @@
 
         <div>
           <div class="footer-instagram">
-            <!-- ご指定の Instagram Embed （幅100%で表示） -->
             <div class="ig-wrap">
               <blockquote class="instagram-media"
                 data-instgrm-permalink="https://www.instagram.com/reel/DLWGc6Hzd9y/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -796,14 +794,25 @@
     // Training dots
     const trainingTrack=document.getElementById('trainingTrack');const trainingDots=document.querySelectorAll('.training-dot');let currentSlide=0;
     trainingDots.forEach((dot,i)=>{dot.addEventListener('click',()=>{currentSlide=i;const w=trainingTrack.children[0].offsetWidth+16;trainingTrack.scrollTo({left:w*currentSlide,behavior:'smooth'});trainingDots.forEach((d,idx)=>d.classList.toggle('active',idx===currentSlide));})});
+
+    // Office slider auto-loop
+    (function(){
+      const track=document.getElementById('officeTrack');
+      if(!track) return;
+      const slides=track.children.length;
+      let idx=0;
+      setInterval(()=>{
+        idx=(idx+1)%slides;
+        track.style.transform=`translateX(-${idx*100}%)`;
+      },3000); // 3秒ごとに右へスライド
+    })();
   </script>
 
-  <!-- Instagram公式埋め込みスクリプト（必須） -->
+  <!-- Instagram公式埋め込みスクリプト -->
   <script async src="//www.instagram.com/embed.js"></script>
 
-  <!-- Best-effort ループ再生: 一定間隔で埋め込みを再処理（環境依存） -->
+  <!-- Best-effort ループ再生（環境依存） -->
   <script>
-    // 再処理用: blockquoteを再挿入してembed.jsを再実行（簡易ループ）
     function setupIgLoop(intervalMs=45000){
       document.querySelectorAll('.ig-wrap').forEach(wrap=>{
         if(!wrap.dataset.original){ wrap.dataset.original = wrap.innerHTML; }
@@ -816,7 +825,6 @@
         }, intervalMs);
       });
     }
-    // Instagram埋め込み読み込み後に実行
     if(document.readyState === 'complete'){ setupIgLoop(); }
     else { window.addEventListener('load', ()=>setupIgLoop()); }
   </script>
