@@ -3,220 +3,1371 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>採用情報 | センチュリー21ホームマート</title>
+  <title>採用情報 | センチュリー21ホームマート - 自分たちで作る、最強の不動産チーム</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
-  <meta name="description" content="“怖い営業”から“楽しい営業”へ。センチュリー21ホームマートの3ヶ月研修で未経験から成長。助け合いの現場経験×大手ブランド研修で営業力が伸びる。"/>
+  <meta name="description" content="完全週休2日制・未経験から年収1000万円も可能。センチュリー21×自社施工の強みで、営業が楽しくなる。3ヶ月研修で確実に成長。"/>
   <meta property="og:title" content="採用情報 | センチュリー21ホームマート"/>
-  <meta property="og:description" content="社員の生の声と自社施工の実績で、安心して飛び込める環境。3ヶ月研修に応募する。"/>
+  <meta property="og:description" content="自分たちで決める会社。素直さ・誠実さ・助け合いの文化で、未経験から確実に成長できる環境です。"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="office.jpg"/>
-  <meta property="og:site_name" content="センチュリー21ホームマート 採用"/>
-
+  
   <style>
-    :root{ --gold:#A19276; --black:#383635; --cream:#F8F6F3; }
-    body{ font-family:'Noto Sans JP',sans-serif; color:var(--black); line-height:1.8; background:#fff; }
-    .bg-gold{ background-color:var(--gold); } .bg-cream{ background-color:var(--cream); }
-    .text-gold{ color:var(--gold); } .text-black{ color:var(--black); }
-    .hero-gradient{ background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%); }
-    .section-divider{ background:linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%); height:2px; }
-    .card-hover{ transition:transform .2s ease, box-shadow .2s ease; }
-    .card-hover:hover{ transform:translateY(-4px); box-shadow:0 16px 28px -10px rgba(161,146,118,.18); }
-    .cta{ background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); color:#fff; }
-    .cta:hover{ filter:brightness(1.04); transform:translateY(-1px); box-shadow:0 10px 20px rgba(161,146,118,.3); }
-
-    /* iPhone EXIFの向き対応＋比率 */
+    :root{ 
+      --gold:#A19276; 
+      --gold-light:#B8A082;
+      --black:#383635; 
+      --cream:#F8F6F3; 
+      --success:#22C55E;
+      --info:#3B82F6;
+    }
+    
+    body{ 
+      font-family:'Noto Sans JP',sans-serif; 
+      color:var(--black); 
+      line-height:1.8; 
+      background:#fff; 
+    }
+    
+    /* カラーパレット */
+    .bg-gold{ background-color:var(--gold); }
+    .bg-cream{ background-color:var(--cream); }
+    .text-gold{ color:var(--gold); }
+    .text-black{ color:var(--black); }
+    
+    /* グラデーション */
+    .hero-gradient{ 
+      background:linear-gradient(135deg, var(--cream) 0%, #ffffff 50%, var(--cream) 100%); 
+    }
+    
+    .gold-gradient{
+      background:linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    }
+    
+    /* アニメーション */
+    .card-hover{ 
+      transition:all .3s ease; 
+    }
+    .card-hover:hover{ 
+      transform:translateY(-6px); 
+      box-shadow:0 20px 40px -10px rgba(161,146,118,.25); 
+    }
+    
+    /* CTA */
+    .cta{ 
+      background:linear-gradient(135deg, var(--gold) 0%, #B8A082 100%); 
+      color:#fff;
+      transition:all .3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta:hover{ 
+      transform:translateY(-2px); 
+      box-shadow:0 12px 24px rgba(161,146,118,.35); 
+    }
+    .cta:before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      transition:left .5s ease;
+    }
+    .cta:hover:before{
+      left:100%;
+    }
+    
+    /* 画像処理 */
     img{ image-orientation: from-image; }
-    .frame{ position:relative; width:100%; border-radius:12px; overflow:hidden; background:#eee; }
-    .frame.portrait{ aspect-ratio: 4 / 5; }       /* 縦 */
-    .frame.landscape{ aspect-ratio: 16 / 9; }     /* 横 */
-    .frame > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-
-    /* みかさん：顔が切れないようにcontain */
-    .fit-contain{ object-fit: contain !important; background:#fff; }
-
-    /* Before/After スライダー */
-    .ba{ position:relative; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#000; }
-    .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; user-select:none; pointer-events:none; }
+    .frame{ 
+      position:relative; 
+      width:100%; 
+      border-radius:16px; 
+      overflow:hidden; 
+      background:#f5f5f5; 
+    }
+    .frame.portrait{ aspect-ratio: 4 / 5; }
+    .frame.landscape{ aspect-ratio: 16 / 9; }
+    .frame.square{ aspect-ratio: 1 / 1; }
+    .frame > img{ 
+      position:absolute; 
+      inset:0; 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+    }
+    .fit-contain{ 
+      object-fit: contain !important; 
+      background:#fff; 
+    }
+    
+    /* Before/After */
+    .ba{ 
+      position:relative; 
+      width:100%; 
+      height:100%; 
+      border-radius:16px; 
+      overflow:hidden; 
+      background:#000; 
+    }
+    .ba img{ 
+      position:absolute; 
+      inset:0; 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      user-select:none; 
+      pointer-events:none; 
+    }
     .ba .after{ clip-path: inset(0 50% 0 0); }
-    .ba .handle{ position:absolute; top:0; bottom:0; width:2px; background:#fff; opacity:.95; left:50%; transform:translateX(-1px); }
-    .ba .knob{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:9999px; background:rgba(56,54,53,.88); display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; }
-    .ba .tag{ position:absolute; top:.5rem; font-size:.75rem; color:#fff; background:rgba(0,0,0,.55); padding:.2rem .5rem; border-radius:.35rem; }
-    .ba .tag.left{ left:.5rem; } .ba .tag.right{ right:.5rem; }
-    .ba-hint{ text-align:center; font-size:.85rem; color:#555; margin-top:.6rem; font-style:italic; }
-
-    /* Instagram 幅制御 */
-    .ig-embed{ max-width:540px; width:100%; margin:0 auto; }
-
-    /* フッターのGoogle Map */
-    iframe.map{ width:100%; height:320px; border:0; border-radius:8px; }
+    .ba .handle{ 
+      position:absolute; 
+      top:0; 
+      bottom:0; 
+      width:3px; 
+      background:#fff; 
+      left:50%; 
+      transform:translateX(-50%);
+      box-shadow:0 0 12px rgba(0,0,0,.5);
+    }
+    .ba .knob{ 
+      position:absolute; 
+      top:50%; 
+      left:50%; 
+      transform:translate(-50%,-50%); 
+      width:48px; 
+      height:48px; 
+      border-radius:50%; 
+      background:var(--gold); 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      color:#fff; 
+      border:3px solid #fff;
+      box-shadow:0 4px 12px rgba(0,0,0,.3);
+      cursor:ew-resize;
+    }
+    .ba .tag{ 
+      position:absolute; 
+      top:1rem; 
+      font-size:.75rem; 
+      font-weight:bold;
+      color:#fff; 
+      background:rgba(0,0,0,.7); 
+      padding:.3rem .7rem; 
+      border-radius:.5rem; 
+    }
+    .ba .tag.left{ left:1rem; }
+    .ba .tag.right{ right:1rem; }
+    
+    /* タブ */
+    .tab-nav{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:2rem;
+    }
+    .tab-btn{
+      padding:.75rem 1.5rem;
+      border-radius:9999px;
+      font-weight:600;
+      cursor:pointer;
+      transition:all .3s ease;
+      border:2px solid var(--gold);
+      color:var(--gold);
+      background:#fff;
+    }
+    .tab-btn:hover{
+      background:var(--cream);
+    }
+    .tab-btn.active{
+      background:var(--gold);
+      color:#fff;
+      transform:scale(1.05);
+    }
+    .tab-panel{
+      display:none;
+      animation:fadeIn .5s ease;
+    }
+    .tab-panel.active{
+      display:block;
+    }
+    @keyframes fadeIn{
+      from{ opacity:0; transform:translateY(10px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+    
+    /* タイムライン */
+    .timeline{
+      position:relative;
+      padding-left:3rem;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left:1rem;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(180deg, var(--gold), rgba(161,146,118,.2));
+      border-radius:3px;
+    }
+    .timeline-item{
+      position:relative;
+      padding-bottom:2rem;
+    }
+    .timeline-item:before{
+      content:"";
+      position:absolute;
+      left:-2.1rem;
+      top:.5rem;
+      width:12px;
+      height:12px;
+      background:var(--gold);
+      border-radius:50%;
+      box-shadow:0 0 0 6px rgba(161,146,118,.15);
+    }
+    .timeline-time{
+      font-weight:bold;
+      color:var(--gold);
+      font-size:1.1rem;
+    }
+    
+    /* 数値強調 */
+    .stat-number{
+      font-size:3rem;
+      font-weight:900;
+      line-height:1;
+      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    /* 理念図解 */
+    .philosophy-center{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-weight:900;
+      font-size:1.25rem;
+      box-shadow:0 20px 40px rgba(161,146,118,.3);
+      position:relative;
+      z-index:10;
+    }
+    
+    .philosophy-item{
+      background:#fff;
+      border:2px solid var(--gold);
+      border-radius:20px;
+      padding:1.5rem;
+      position:relative;
+      transition:all .3s ease;
+    }
+    
+    .philosophy-item:hover{
+      transform:scale(1.05);
+      box-shadow:0 12px 24px rgba(161,146,118,.2);
+    }
+    
+    .philosophy-icon{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:var(--cream);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.5rem;
+      color:var(--gold);
+      margin-bottom:1rem;
+    }
+    
+    /* 進捗バー */
+    .progress-bar{
+      width:100%;
+      height:8px;
+      background:var(--cream);
+      border-radius:9999px;
+      overflow:hidden;
+      position:relative;
+    }
+    .progress-fill{
+      height:100%;
+      background:linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius:9999px;
+      position:relative;
+      overflow:hidden;
+    }
+    .progress-fill:after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+      animation:shimmer 2s infinite;
+    }
+    @keyframes shimmer{
+      0%{ transform:translateX(-100%); }
+      100%{ transform:translateX(100%); }
+    }
+    
+    /* FAQ */
+    .faq-item{
+      background:#fff;
+      border:2px solid var(--cream);
+      border-radius:16px;
+      overflow:hidden;
+      transition:all .3s ease;
+    }
+    .faq-item:hover{
+      border-color:var(--gold);
+    }
+    .faq-question{
+      padding:1.5rem;
+      cursor:pointer;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      transition:all .3s ease;
+    }
+    .faq-question:hover{
+      background:var(--cream);
+    }
+    .faq-answer{
+      padding:0 1.5rem;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .5s ease;
+    }
+    .faq-item.active .faq-answer{
+      max-height:500px;
+      padding:0 1.5rem 1.5rem;
+    }
+    .faq-item.active .faq-icon{
+      transform:rotate(180deg);
+    }
+    .faq-icon{
+      transition:transform .3s ease;
+    }
+    
+    /* バッジ */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.5rem 1rem;
+      border-radius:9999px;
+      font-weight:600;
+      font-size:.875rem;
+    }
+    .badge-gold{
+      background:var(--cream);
+      color:var(--gold);
+      border:2px solid var(--gold);
+    }
+    .badge-success{
+      background:#DCFCE7;
+      color:var(--success);
+      border:2px solid var(--success);
+    }
+    .badge-info{
+      background:#DBEAFE;
+      color:var(--info);
+      border:2px solid var(--info);
+    }
+    
+    /* スクロールアニメーション */
+    .scroll-fade{
+      opacity:0;
+      transform:translateY(30px);
+      transition:all .8s ease;
+    }
+    .scroll-fade.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+    
+    /* モバイル対応 */
+    @media (max-width: 768px){
+      .stat-number{ font-size:2rem; }
+      .philosophy-center{ width:150px; height:150px; font-size:1rem; }
+      .timeline{ padding-left:2rem; }
+      .timeline:before{ left:.5rem; }
+      .timeline-item:before{ left:-1.6rem; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="bg-white shadow-sm border-b-2" style="border-color:var(--gold)">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <!-- ヘッダー -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3">
       <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <img
-            src="③-2%20センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png"
-            alt="センチュリー21 ロゴ"
-            class="h-10 w-auto"
-            onerror="this.src='c21-logo-gold-white.png';"
-          />
-          <span class="bg-white border border-current rounded px-2 py-0.5 text-sm" style="color:var(--gold)">採用サイト</span>
+        <div class="flex items-center gap-3">
+          <img src="③-2%20センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21" class="h-12 w-auto"/>
+          <div class="badge badge-gold">採用特設サイト</div>
         </div>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#voices" class="hover:text-gold">社員の声</a>
-          <a href="#training" class="hover:text-gold">3ヶ月研修</a>
-          <a href="#works" class="hover:text-gold">自社施工</a>
-          <a href="#office" class="hover:text-gold">働く環境</a>
-          <a href="https://form.run/@c21-member" class="inline-flex items-center border rounded-full px-3 py-1.5" style="color:var(--gold); border-color:var(--gold);">
-            <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="#why" class="hover:text-gold font-semibold">なぜホームマート？</a>
+          <a href="#jobs" class="hover:text-gold font-semibold">募集職種</a>
+          <a href="#growth" class="hover:text-gold font-semibold">成長の仕組み</a>
+          <a href="#schedule" class="hover:text-gold font-semibold">1日の流れ</a>
+          <a href="#philosophy" class="hover:text-gold font-semibold">私たちの理念</a>
+          <a href="#voices" class="hover:text-gold font-semibold">社員の声</a>
+          <a href="https://form.run/@c21-member" class="cta px-6 py-2 rounded-full font-bold">
+            <i class="fas fa-paper-plane mr-2"></i>応募する
           </a>
         </nav>
+        <button class="lg:hidden text-2xl" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero-gradient py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-6">
-        <span class="text-gold">“怖い営業”</span>から、<span class="whitespace-nowrap">“楽しい営業”へ。</span>
-      </h1>
-      <p class="text-lg md:text-xl text-black max-w-3xl mx-auto mb-8">
-        ルールは与えられるものではなく、<span class="font-semibold">自分たちで作るもの</span>。<br/>
-        センチュリー21の研修と現場OJT、そして<span class="font-semibold">人を守る組織づくり</span>で、未経験から確実に伸ばします。
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-seedling text-gold mr-2"></i>未経験歓迎</span>
-        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-people-group text-gold mr-2"></i>自分たちで決めるチーム</span>
-        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-hands-helping text-gold mr-2"></i>助け合いの文化</span>
-        <span class="bg-white border rounded-full px-3 py-1" style="border-color:var(--gold)"><i class="fas fa-yen-sign text-gold mr-2"></i>年収1,000万円以上も現実的*</span>
+  <!-- ヒーローセクション -->
+  <section class="hero-gradient py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="mb-8">
+        <h1 class="text-5xl md:text-7xl font-black mb-6">
+          <span class="text-gold">自分たちで作る</span><br/>
+          最強の不動産チーム
+        </h1>
+        <p class="text-xl md:text-2xl text-black max-w-3xl mx-auto">
+          ルールは与えられるものじゃない。<br/>
+          <span class="font-bold">自分たちで決めて、自分たちで作る。</span><br/>
+          だから、仕事が楽しくなる。
+        </p>
       </div>
+      
+      <!-- 3つの約束 -->
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+          <div class="stat-number mb-2">100%</div>
+          <h3 class="font-bold text-lg mb-2">完全週休2日制</h3>
+          <p class="text-sm">シフト制で希望も考慮。<br/>プライベートも大切に。</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+          <div class="stat-number mb-2">3ヶ月</div>
+          <h3 class="font-bold text-lg mb-2">充実の研修期間</h3>
+          <p class="text-sm">センチュリー21研修＋<br/>現場OJTで確実に成長。</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+          <div class="stat-number mb-2">1000万</div>
+          <h3 class="font-bold text-lg mb-2">年収も夢じゃない</h3>
+          <p class="text-sm">成果次第で収入UP。<br/>半年で7000万売上の実例も。</p>
+        </div>
+      </div>
+      
+      <!-- CTA -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
-          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
+        <a href="https://form.run/@c21-member" class="cta px-10 py-5 rounded-full font-bold text-xl shadow-xl">
+          <i class="fas fa-rocket mr-3"></i>まずは話を聞いてみる
         </a>
-        <a href="tel:0120438639" class="bg-white text-gold border-2 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-cream transition-all" style="border-color:var(--gold)">
-          <i class="fas fa-phone mr-2"></i>電話で相談（0120-43-8639）
+        <a href="tel:0120438639" class="bg-white text-gold border-3 border-gold px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-cream transition-all">
+          <i class="fas fa-phone mr-3"></i>0120-43-8639
         </a>
       </div>
-      <p class="text-xs text-gray-500 mt-4">* 成果・役割により変動。詳細は面談時にご説明します。</p>
     </div>
   </section>
 
-  <!-- 社員の声（3名） -->
-  <section id="voices" class="py-16 bg-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-2"><span class="text-gold">社員の声</span> — 現場のリアル</h2>
-        <p class="text-black">写真と“生のひと言”で、雰囲気をそのまま伝えます。</p>
+  <!-- なぜホームマートなのか？ -->
+  <section id="why" class="py-20 bg-white scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">
+          なぜ<span class="text-gold">ホームマート</span>なのか？
+        </h2>
+        <p class="text-xl">他社にはない、3つの圧倒的な強み</p>
       </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 強み1 -->
+        <div class="bg-cream rounded-3xl p-8 text-center card-hover">
+          <div class="philosophy-icon mx-auto">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">センチュリー21<br/>×<br/>自社施工</h3>
+          <p class="mb-4">大手ブランドの信頼性と、自社施工の提案力。この掛け算が最強の武器になる。</p>
+          <div class="bg-white rounded-xl p-4">
+            <p class="text-sm font-bold text-gold">実績</p>
+            <p class="text-2xl font-black">施工実績500件以上</p>
+          </div>
+        </div>
+        
+        <!-- 強み2 -->
+        <div class="bg-cream rounded-3xl p-8 text-center card-hover">
+          <div class="philosophy-icon mx-auto">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">営業×現場<br/>の<br/>ハイブリッド</h3>
+          <p class="mb-4">営業だけ、現場だけじゃない。両方できるから提案に説得力が生まれる。</p>
+          <div class="bg-white rounded-xl p-4">
+            <p class="text-sm font-bold text-gold">スキル</p>
+            <p class="text-2xl font-black">多能工化を推進</p>
+          </div>
+        </div>
+        
+        <!-- 強み3 -->
+        <div class="bg-cream rounded-3xl p-8 text-center card-hover">
+          <div class="philosophy-icon mx-auto">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">自分たちで<br/>決める<br/>組織文化</h3>
+          <p class="mb-4">上から押し付けられるルールはない。自分たちで考え、自分たちで決める。</p>
+          <div class="bg-white rounded-xl p-4">
+            <p class="text-sm font-bold text-gold">文化</p>
+            <p class="text-2xl font-black">全員が経営者視点</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- 募集職種 -->
+  <section id="jobs" class="py-20 bg-cream scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">募集職種</h2>
+        <p class="text-xl">あなたの強みを活かせるポジションがある</p>
+      </div>
+      
+      <!-- 営業職 -->
+      <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+        <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+          <div>
+            <h3 class="text-3xl font-black mb-2">
+              <i class="fas fa-handshake text-gold mr-3"></i>営業職
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge badge-success"><i class="fas fa-seedling"></i>未経験歓迎</span>
+              <span class="badge badge-info"><i class="fas fa-graduation-cap"></i>資格支援あり</span>
+              <span class="badge badge-gold"><i class="fas fa-coins"></i>インセンティブ充実</span>
+            </div>
+          </div>
+          <a href="https://form.run/@c21-member" class="cta px-8 py-3 rounded-full font-bold text-lg">
+            <i class="fas fa-paper-plane mr-2"></i>この職種に応募
+          </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-bold text-xl mb-4 text-gold">仕事内容</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>反響対応（SUUMO/HOME'S等）からの商談</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>物件案内〜契約〜引渡しまでの一貫サポート</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>リフォーム提案（自社施工の強みを活用）</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>現場同行で提案力を磨く</span>
+              </li>
+            </ul>
+            
+            <h4 class="font-bold text-xl mb-4 mt-8 text-gold">応募資格</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span><strong>必須：</strong>普通自動車免許（AT可）</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span><strong>歓迎：</strong>宅建士、FP、建築士など</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span>学歴・経験不問（未経験者大歓迎）</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-xl mb-4 text-gold">待遇・福利厚生</h4>
+            <div class="bg-cream rounded-xl p-6 mb-4">
+              <h5 class="font-bold mb-3">給与</h5>
+              <p class="text-2xl font-black text-gold mb-2">月給25万円〜 + インセンティブ</p>
+              <p class="text-sm">※経験・能力により優遇<br/>※インセンティブで年収1000万円以上も可能</p>
+            </div>
+            
+            <div class="bg-cream rounded-xl p-6 mb-4">
+              <h5 class="font-bold mb-3">勤務時間・休日</h5>
+              <ul class="space-y-2 text-sm">
+                <li><i class="fas fa-clock text-gold mr-2"></i>9:30〜18:30（実働8時間）</li>
+                <li><i class="fas fa-calendar-check text-gold mr-2"></i><strong>完全週休2日制</strong>（シフト制）</li>
+                <li><i class="fas fa-umbrella-beach text-gold mr-2"></i>年間休日120日以上</li>
+                <li><i class="fas fa-baby text-gold mr-2"></i>産休・育休制度あり</li>
+              </ul>
+            </div>
+            
+            <div class="bg-cream rounded-xl p-6">
+              <h5 class="font-bold mb-3">その他福利厚生</h5>
+              <ul class="space-y-2 text-sm">
+                <li><i class="fas fa-car text-gold mr-2"></i>社用車貸与（ガソリン代支給）</li>
+                <li><i class="fas fa-mobile-alt text-gold mr-2"></i>スマホ・PC支給</li>
+                <li><i class="fas fa-award text-gold mr-2"></i>資格手当（宅建士等）</li>
+                <li><i class="fas fa-book text-gold mr-2"></i>資格取得支援制度</li>
+                <li><i class="fas fa-trophy text-gold mr-2"></i>表彰制度（インセンティブ別途）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- キャリアパス図解 -->
+        <div class="mt-8 bg-gradient-to-r from-cream to-white rounded-xl p-6">
+          <h4 class="font-bold text-xl mb-4">キャリアパス</h4>
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="text-center">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-2">
+                <i class="fas fa-user text-2xl text-gold"></i>
+              </div>
+              <p class="font-bold">新人</p>
+              <p class="text-sm">3ヶ月研修</p>
+            </div>
+            <i class="fas fa-arrow-right text-gold text-2xl"></i>
+            <div class="text-center">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-2">
+                <i class="fas fa-user-tie text-2xl text-gold"></i>
+              </div>
+              <p class="font-bold">営業担当</p>
+              <p class="text-sm">1年目〜</p>
+            </div>
+            <i class="fas fa-arrow-right text-gold text-2xl"></i>
+            <div class="text-center">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-2">
+                <i class="fas fa-user-graduate text-2xl text-gold"></i>
+              </div>
+              <p class="font-bold">主任</p>
+              <p class="text-sm">2〜3年目</p>
+            </div>
+            <i class="fas fa-arrow-right text-gold text-2xl"></i>
+            <div class="text-center">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-2">
+                <i class="fas fa-user-crown text-2xl text-gold"></i>
+              </div>
+              <p class="font-bold">店長</p>
+              <p class="text-sm">実績次第</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 現場職 -->
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+        <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+          <div>
+            <h3 class="text-3xl font-black mb-2">
+              <i class="fas fa-hammer text-gold mr-3"></i>現場職（工務）
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge badge-success"><i class="fas fa-hands"></i>多能工育成</span>
+              <span class="badge badge-info"><i class="fas fa-hard-hat"></i>資格取得支援</span>
+              <span class="badge badge-gold"><i class="fas fa-tools"></i>スキルアップ</span>
+            </div>
+          </div>
+          <a href="https://form.run/@c21-member" class="cta px-8 py-3 rounded-full font-bold text-lg">
+            <i class="fas fa-paper-plane mr-2"></i>この職種に応募
+          </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-bold text-xl mb-4 text-gold">仕事内容</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>内装・水回り・電気・ガス等の施工</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>現場の段取り・安全管理</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>営業との連携（現地調査・見積サポート）</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold mt-1"></i>
+                <span>多能工として幅広いスキル習得</span>
+              </li>
+            </ul>
+            
+            <h4 class="font-bold text-xl mb-4 mt-8 text-gold">応募資格</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span><strong>必須：</strong>普通自動車免許（AT可）</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span><strong>歓迎：</strong>電気工事士、管工事、給水装置工事等</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-circle-check text-gold mt-1"></i>
+                <span>未経験者はアシスタントから育成</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-xl mb-4 text-gold">待遇・福利厚生</h4>
+            <div class="bg-cream rounded-xl p-6 mb-4">
+              <h5 class="font-bold mb-3">給与</h5>
+              <p class="text-2xl font-black text-gold mb-2">月給23万円〜 + 各種手当</p>
+              <p class="text-sm">※経験・資格により優遇<br/>※資格手当・役職手当別途支給</p>
+            </div>
+            
+            <div class="bg-cream rounded-xl p-6 mb-4">
+              <h5 class="font-bold mb-3">勤務時間・休日</h5>
+              <ul class="space-y-2 text-sm">
+                <li><i class="fas fa-clock text-gold mr-2"></i>8:30〜17:30（実働8時間）</li>
+                <li><i class="fas fa-calendar-check text-gold mr-2"></i><strong>完全週休2日制</strong>（シフト制）</li>
+                <li><i class="fas fa-route text-gold mr-2"></i>直行直帰OK（現場による）</li>
+              </ul>
+            </div>
+            
+            <div class="bg-cream rounded-xl p-6">
+              <h5 class="font-bold mb-3">資格取得支援（例）</h5>
+              <div class="grid grid-cols-2 gap-2 text-sm">
+                <div><i class="fas fa-certificate text-gold mr-1"></i>第二種電気工事士</div>
+                <div><i class="fas fa-certificate text-gold mr-1"></i>給水装置工事主任技術者</div>
+                <div><i class="fas fa-certificate text-gold mr-1"></i>管工事施工管理技士</div>
+                <div><i class="fas fa-certificate text-gold mr-1"></i>建築施工管理技士</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成長の仕組み -->
+  <section id="growth" class="py-20 bg-white scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">
+          未経験から<span class="text-gold">確実に成長</span>できる仕組み
+        </h2>
+        <p class="text-xl">3ヶ月研修 + 継続的なフォローアップ</p>
+      </div>
+      
+      <!-- 3ヶ月研修の詳細 -->
+      <div class="bg-gradient-to-br from-cream to-white rounded-3xl p-8 mb-12">
+        <h3 class="text-3xl font-bold text-center mb-8">3ヶ月研修プログラム</h3>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- 1ヶ月目 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-3">1</div>
+              <h4 class="text-xl font-bold">基礎習得期</h4>
+            </div>
+            <div class="mb-4">
+              <p class="font-bold text-gold mb-2">座学研修</p>
+              <ul class="space-y-2 text-sm">
+                <li>・不動産基礎知識</li>
+                <li>・法令・契約実務</li>
+                <li>・センチュリー21システム</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold text-gold mb-2">実践研修</p>
+              <ul class="space-y-2 text-sm">
+                <li>・先輩同行（10件以上）</li>
+                <li>・ロールプレイング</li>
+                <li>・電話応対練習</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:33%"></div>
+              </div>
+              <p class="text-xs text-center mt-2">習得度：基礎レベル</p>
+            </div>
+          </div>
+          
+          <!-- 2ヶ月目 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-3">2</div>
+              <h4 class="text-xl font-bold">実践期</h4>
+            </div>
+            <div class="mb-4">
+              <p class="font-bold text-gold mb-2">OJT実践</p>
+              <ul class="space-y-2 text-sm">
+                <li>・簡単な案件から担当</li>
+                <li>・上司サポート付き商談</li>
+                <li>・提案書作成</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold text-gold mb-2">スキルアップ</p>
+              <ul class="space-y-2 text-sm">
+                <li>・現場同行（施工理解）</li>
+                <li>・見積作成練習</li>
+                <li>・顧客対応力向上</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:66%"></div>
+              </div>
+              <p class="text-xs text-center mt-2">習得度：実践レベル</p>
+            </div>
+          </div>
+          
+          <!-- 3ヶ月目 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-3">3</div>
+              <h4 class="text-xl font-bold">独り立ち期</h4>
+            </div>
+            <div class="mb-4">
+              <p class="font-bold text-gold mb-2">独立業務</p>
+              <ul class="space-y-2 text-sm">
+                <li>・主担当として活動</li>
+                <li>・契約〜引渡しまで一貫</li>
+                <li>・目標数値の設定</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold text-gold mb-2">継続サポート</p>
+              <ul class="space-y-2 text-sm">
+                <li>・週次1on1面談</li>
+                <li>・案件レビュー会</li>
+                <li>・困った時の即サポート</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:100%"></div>
+              </div>
+              <p class="text-xs text-center mt-2">習得度：独立レベル</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 研修後のフォロー -->
+      <div class="bg-gold-gradient text-white rounded-3xl p-8">
+        <h3 class="text-3xl font-bold text-center mb-8">研修後も安心のフォロー体制</h3>
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-comments text-3xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">週次1on1</h4>
+            <p class="text-sm">上司との定期面談で<br/>悩みを即解決</p>
+          </div>
+          <div>
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-users text-3xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">チーム勉強会</h4>
+            <p class="text-sm">成功事例の共有<br/>ロープレ実践</p>
+          </div>
+          <div>
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-graduation-cap text-3xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">外部研修</h4>
+            <p class="text-sm">センチュリー21<br/>本部研修への参加</p>
+          </div>
+          <div>
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-medal text-3xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">資格支援</h4>
+            <p class="text-sm">宅建士等の<br/>資格取得を全面支援</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1日の流れ -->
+  <section id="schedule" class="py-20 bg-cream scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">リアルな1日の流れ</h2>
+        <p class="text-xl">営業の日、現場の日、両方の日。それぞれの働き方。</p>
+      </div>
+      
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="sales-day">
+          <i class="fas fa-briefcase mr-2"></i>営業の日
+        </button>
+        <button class="tab-btn" data-tab="site-day">
+          <i class="fas fa-hard-hat mr-2"></i>現場の日
+        </button>
+        <button class="tab-btn" data-tab="hybrid-day">
+          <i class="fas fa-sync-alt mr-2"></i>両方の日
+        </button>
+      </div>
+      
+      <!-- 営業の日 -->
+      <div id="sales-day" class="tab-panel active">
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-briefcase text-gold mr-3"></i>営業メインの1日
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-time">9:30</p>
+                <h4 class="font-bold">朝礼・情報共有</h4>
+                <p class="text-sm">昨日の成果共有、今日の予定確認</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">10:00</p>
+                <h4 class="font-bold">反響対応</h4>
+                <p class="text-sm">SUUMO・HOME'Sからの問い合わせ対応</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">11:00</p>
+                <h4 class="font-bold">物件準備</h4>
+                <p class="text-sm">午後の内覧に向けた資料作成</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">12:00</p>
+                <h4 class="font-bold">ランチタイム</h4>
+                <p class="text-sm">仲間とリフレッシュ</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">13:00</p>
+                <h4 class="font-bold">物件案内</h4>
+                <p class="text-sm">お客様と物件内覧（2〜3件）</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">16:00</p>
+                <h4 class="font-bold">商談・見積作成</h4>
+                <p class="text-sm">オフィスに戻って提案書作成</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">18:00</p>
+                <h4 class="font-bold">振り返り・明日の準備</h4>
+                <p class="text-sm">KPI確認、翌日のアポ確認</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">18:30</p>
+                <h4 class="font-bold">退社</h4>
+                <p class="text-sm">お疲れさまでした！</p>
+              </div>
+            </div>
+            
+            <div>
+              <div class="bg-cream rounded-2xl p-6 mb-6">
+                <h4 class="font-bold text-lg mb-3">
+                  <i class="fas fa-lightbulb text-gold mr-2"></i>この日のポイント
+                </h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-gold mt-1"></i>
+                    <span>反響はスピードが命。即レスで信頼獲得</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-gold mt-1"></i>
+                    <span>内覧は事前準備が8割。周辺情報も完璧に</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-gold mt-1"></i>
+                    <span>商談後は即フォロー。熱が冷めないうちに</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-gradient-to-br from-gold to-gold-light text-white rounded-2xl p-6">
+                <h4 class="font-bold text-lg mb-3">
+                  <i class="fas fa-chart-line mr-2"></i>成果イメージ
+                </h4>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <p class="text-3xl font-bold">5〜10件</p>
+                    <p class="text-sm">1日の反響対応数</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold">2〜3組</p>
+                    <p class="text-sm">1日の内覧組数</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold">20%</p>
+                    <p class="text-sm">内覧→申込率</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold">月5件</p>
+                    <p class="text-sm">平均成約数</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 現場の日 -->
+      <div id="site-day" class="tab-panel">
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-hard-hat text-gold mr-3"></i>現場メインの1日
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-time">8:30</p>
+                <h4 class="font-bold">現場到着・KY活動</h4>
+                <p class="text-sm">危険予知ミーティング、養生準備</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">9:00</p>
+                <h4 class="font-bold">施工開始</h4>
+                <p class="text-sm">水回り工事、内装工事など</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">10:30</p>
+                <h4 class="font-bold">休憩</h4>
+                <p class="text-sm">水分補給、進捗確認</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">12:00</p>
+                <h4 class="font-bold">昼休憩</h4>
+                <p class="text-sm">しっかり休んで午後に備える</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">13:00</p>
+                <h4 class="font-bold">施工再開</h4>
+                <p class="text-sm">仕上げ作業、品質チェック</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">15:00</p>
+                <h4 class="font-bold">休憩・写真撮影</h4>
+                <p class="text-sm">施工記録の撮影</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">16:30</p>
+                <h4 class="font-bold">片付け・清掃</h4>
+                <p class="text-sm">現場を綺麗にして撤収準備</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">17:30</p>
+                <h4 class="font-bold">直帰</h4>
+                <p class="text-sm">現場から直接帰宅OK</p>
+              </div>
+            </div>
+            
+            <div>
+              <div class="bg-cream rounded-2xl p-6 mb-6">
+                <h4 class="font-bold text-lg mb-3">
+                  <i class="fas fa-tools text-gold mr-2"></i>身につくスキル
+                </h4>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="bg-white rounded-xl p-3 text-center">
+                    <i class="fas fa-faucet text-gold text-2xl mb-2"></i>
+                    <p class="font-bold text-sm">水回り施工</p>
+                  </div>
+                  <div class="bg-white rounded-xl p-3 text-center">
+                    <i class="fas fa-plug text-gold text-2xl mb-2"></i>
+                    <p class="font-bold text-sm">電気工事</p>
+                  </div>
+                  <div class="bg-white rounded-xl p-3 text-center">
+                    <i class="fas fa-paint-roller text-gold text-2xl mb-2"></i>
+                    <p class="font-bold text-sm">内装仕上げ</p>
+                  </div>
+                  <div class="bg-white rounded-xl p-3 text-center">
+                    <i class="fas fa-hammer text-gold text-2xl mb-2"></i>
+                    <p class="font-bold text-sm">大工仕事</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-br from-gold to-gold-light text-white rounded-2xl p-6">
+                <h4 class="font-bold text-lg mb-3">
+                  <i class="fas fa-award mr-2"></i>現場のやりがい
+                </h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-star"></i>
+                    <span>お客様の「ありがとう」を直接聞ける</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-star"></i>
+                    <span>自分の技術で空間が生まれ変わる</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-star"></i>
+                    <span>営業提案の説得力が格段に上がる</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 両方の日 -->
+      <div id="hybrid-day" class="tab-panel">
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-sync-alt text-gold mr-3"></i>営業×現場のハイブリッドな1日
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-time">9:30</p>
+                <h4 class="font-bold">朝礼・スケジュール確認</h4>
+                <p class="text-sm">午前現場、午後営業の段取り</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">10:00</p>
+                <h4 class="font-bold">現地調査</h4>
+                <p class="text-sm">リフォーム案件の採寸・見積用写真撮影</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">11:00</p>
+                <h4 class="font-bold">職人と打ち合わせ</h4>
+                <p class="text-sm">施工方法・工期の相談</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">12:00</p>
+                <h4 class="font-bold">移動しながらランチ</h4>
+                <p class="text-sm">午後のアポに向けて移動</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">13:30</p>
+                <h4 class="font-bold">物件案内</h4>
+                <p class="text-sm">売買物件の内覧対応</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">15:00</p>
+                <h4 class="font-bold">リフォーム提案</h4>
+                <p class="text-sm">午前の調査を基に具体的な提案</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">17:00</p>
+                <h4 class="font-bold">見積作成・社内共有</h4>
+                <p class="text-sm">提案書完成、チームに共有</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-time">18:30</p>
+                <h4 class="font-bold">退社</h4>
+                <p class="text-sm">充実の1日でした！</p>
+              </div>
+            </div>
+            
+            <div>
+              <div class="bg-cream rounded-2xl p-6 mb-6">
+                <h4 class="font-bold text-lg mb-3">
+                  <i class="fas fa-rocket text-gold mr-2"></i>ハイブリッドの強み
+                </h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check-double text-gold mt-1"></i>
+                    <span><strong>提案の説得力：</strong>実際に施工できることを理解しているから、お客様も安心</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check-double text-gold mt-1"></i>
+                    <span><strong>スピード感：</strong>現場確認から見積まで最速で対応</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fas fa-check-double text-gold mt-1"></i>
+                    <span><strong>収入UP：</strong>売買もリフォームも両方できる</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="text-center">
+                <p class="text-lg font-bold mb-4">こんな働き方ができるのは</p>
+                <p class="text-3xl font-black text-gold">ホームマートだけ！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 私たちの理念 -->
+  <section id="philosophy" class="py-20 bg-white scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">私たちの理念</h2>
+        <p class="text-xl">「自分たちの会社は、自分たちで作る」</p>
+      </div>
+      
+      <!-- 理念の図解 -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="flex justify-center mb-12">
+          <div class="philosophy-center">
+            自分たちで<br/>決めていく
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">素直さ・誠実さ</h3>
+            <p>正直に、素直に学び続ける。<br/>分からないことは抱え込まず、<br/>仲間に頼れる人。</p>
+          </div>
+          
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">助け合いの文化</h3>
+            <p>困ったらすぐ相談。<br/>早く助ける文化で、<br/>顧客も仲間も守る。</p>
+          </div>
+          
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">創意工夫</h3>
+            <p>"なかったものを作る"発想。<br/>現場×IT×ブランドを<br/>掛け合わせて前進。</p>
+          </div>
+          
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">チーム志向</h3>
+            <p>自己中心ではなく相互扶助。<br/>お客様・仲間・協力会社を<br/>尊重できる人。</p>
+          </div>
+          
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">学習意欲</h3>
+            <p>資格・研修・ロープレを通じて<br/>実力を伸ばし、<br/>次の役割に挑戦。</p>
+          </div>
+          
+          <div class="philosophy-item">
+            <div class="philosophy-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">利他と成果</h3>
+            <p>人と共に生きる。<br/>顧客利益と会社利益の<br/>最適解を探る。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社員の声 -->
+  <section id="voices" class="py-20 bg-cream scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">社員の声</h2>
+        <p class="text-xl">リアルな現場の声をお届けします</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
         <!-- たくま -->
-        <article class="bg-white rounded-2xl p-6 shadow card-hover">
-          <div class="frame portrait mb-4">
-            <img src="takuma.jpeg" alt="職人 たくま" loading="lazy"/>
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover">
+          <div class="frame portrait">
+            <img src="takuma.jpeg" alt="たくま" loading="lazy"/>
           </div>
-          <h3 class="text-xl font-bold">たくま <span class="text-gold text-sm font-semibold">工務</span></h3>
-          <p class="text-black mt-2">
-            「営業がない日は現場を手伝います。道具の名前、段取り、内装・水回り…全部が提案の説得力に変わる。
-            <span class="font-semibold">“口だけじゃない営業”</span>になれるのが当店の良さです。」
-          </p>
-        </article>
-
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">たくま</h3>
+            <p class="text-gold font-semibold mb-3">工務 → 営業も担当</p>
+            <p class="text-sm">「営業がない日は現場を手伝います。道具の名前、段取り、内装・水回り…全部が提案の説得力に変わる。<span class="font-bold">"口だけじゃない営業"</span>になれるのが当店の良さです。」</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-info text-xs"><i class="fas fa-hammer"></i>多能工</span>
+              <span class="badge badge-success text-xs"><i class="fas fa-chart-line"></i>成長中</span>
+            </div>
+          </div>
+        </div>
+        
         <!-- ひな -->
-        <article class="bg-white rounded-2xl p-6 shadow card-hover md:mt-8">
-          <div class="frame portrait mb-4">
-            <img src="hina.jpeg" alt="事務 ひな" loading="lazy"/>
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover">
+          <div class="frame portrait">
+            <img src="hina.jpeg" alt="ひな" loading="lazy"/>
           </div>
-          <h3 class="text-xl font-bold">ひな <span class="text-gold text-sm font-semibold">事務・SNS編集</span></h3>
-          <p class="text-black mt-2">
-            「Instagramは私が編集。リアルな空気感をそのまま発信しています。
-            堅すぎず、でも<span class="font-semibold">お客様にも仲間にも誠実</span>でいたい職場です。」
-          </p>
-        </article>
-
-        <!-- みか（顔が切れない） -->
-        <article class="bg-white rounded-2xl p-6 shadow card-hover md:-mt-4">
-          <div class="frame portrait mb-4">
-            <img src="mika.jpeg" alt="経理 みか" loading="lazy" class="fit-contain"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">ひな</h3>
+            <p class="text-gold font-semibold mb-3">事務・SNS運用</p>
+            <p class="text-sm">「Instagramは私が編集。リアルな空気感をそのまま発信しています。堅すぎず、でも<span class="font-bold">お客様にも仲間にも誠実</span>でいたい職場です。」</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-info text-xs"><i class="fas fa-camera"></i>SNS</span>
+              <span class="badge badge-gold text-xs"><i class="fas fa-heart"></i>誠実</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold">みか <span class="text-gold text-sm font-semibold">経理</span></h3>
-          <p class="text-black mt-2">
-            「<span class="font-semibold">努力が数字で正しく評価</span>される仕組み。
-            困ったら“すぐ助けてもらえる”安心感があるから、挑戦できます。」
+        </div>
+        
+        <!-- みか -->
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover">
+          <div class="frame portrait">
+            <img src="mika.jpeg" alt="みか" loading="lazy" class="fit-contain"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">みか</h3>
+            <p class="text-gold font-semibold mb-3">経理・管理</p>
+            <p class="text-sm">「<span class="font-bold">努力が数字で正しく評価</span>される仕組み。困ったら"すぐ助けてもらえる"安心感があるから、挑戦できます。」</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-success text-xs"><i class="fas fa-calculator"></i>数字</span>
+              <span class="badge badge-gold text-xs"><i class="fas fa-shield-alt"></i>安心</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 代表メッセージ -->
+      <div class="mt-16 bg-gradient-to-br from-gold to-gold-light text-white rounded-3xl p-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="frame square mx-auto mb-6" style="max-width:200px;">
+            <img src="inui.jpeg" alt="代表 乾"/>
+          </div>
+          <h3 class="text-3xl font-bold mb-2">代表 乾 佑企</h3>
+          <p class="text-lg leading-relaxed">
+            「<span class="font-bold text-2xl">成績が上がらないのは教える側の責任。</span><br/>
+            未経験でも"楽しい営業"に変えていく。営業が無い日は現場を覚え、提案力で勝つ。<br/>
+            全国のセンチュリー21には良きライバルがたくさん。<br/>
+            <span class="font-bold">大阪のトップには半年で7,000万円を売上げた営業もいます。</span><br/>
+            夢のある舞台で一緒に挑戦しましょう。」
           </p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 代表（写真大きく独立・同比率） -->
-  <section class="py-16 bg-cream">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <div class="frame portrait mx-auto mb-6" style="max-width:300px;">
-        <img src="inui.jpeg" alt="代表 乾 佑企"/>
+  <!-- 自社施工実績 -->
+  <section id="works" class="py-20 bg-white scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">
+          自社施工の<span class="text-gold">"凄さ"</span>が営業の武器
+        </h2>
+        <p class="text-xl">大工・内装・設備・水道・電気・ガス・防水まで一貫対応</p>
       </div>
-      <h3 class="text-2xl font-bold mb-2">乾 佑企 <span class="text-gold text-base font-semibold">代表</span></h3>
-      <p class="text-black mt-4 leading-relaxed">
-        「<span class="font-semibold">成績が上がらないのは教える側の責任</span>。<br>
-        未経験でも“楽しい営業”に変えていく。営業が無い日は現場を覚え、提案力で勝つ。<br>
-        全国のセンチュリー21には<span class="font-semibold">良きライバル</span>がたくさん。<br>
-        <span class="font-semibold">大阪のトップには半年で7,000万円を売上げた営業</span>もいます。<br>
-        夢のある舞台で一緒に挑戦しましょう。」
-      </p>
-      <div class="mt-8">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
-          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3ヶ月研修 -->
-  <section id="training" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3"><span class="text-gold">3ヶ月研修</span>で安心のスタート</h2>
-        <p class="text-lg text-black">センチュリー21の新人研修＋現場OJT。代表と先輩が伴走します。</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-cream rounded-xl p-6 card-hover">
-          <h3 class="text-xl font-bold text-black mb-2">1ヶ月目：基礎と同行</h3>
-          <p class="text-black">座学とロープレ＋先輩同行。言い回し・段取り・安全な提案を体得。</p>
-        </div>
-        <div class="bg-cream rounded-xl p-6 card-hover">
-          <h3 class="text-xl font-bold text-black mb-2">2ヶ月目：OJTで小さな成功</h3>
-          <p class="text-black">扱いやすい案件から担当。チームで“勝ち筋”を作り成功体験を積む。</p>
-        </div>
-        <div class="bg-cream rounded-xl p-6 card-hover">
-          <h3 class="text-xl font-bold text-black mb-2">3ヶ月目：独り立ち＋伴走</h3>
-          <p class="text-black">主担当へ移行。必要な時はすぐ相談できる体制で、無理なく伸びる。</p>
-        </div>
-      </div>
-      <div class="mt-8 text-center">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg"><i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 自社施工 Before/After（使い方のヒント付き） -->
-  <section id="works" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3">自社施工の<span class="text-gold">“凄さ”</span>が営業の武器</h2>
-        <p class="text-lg text-black">大工・内装・設備・水道・電気・ガス・防水まで一貫。品質・スピード・価格訴求で選ばれます。</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- 洗面（縦×縦） -->
-        <div class="bg-cream rounded-xl p-5 shadow card-hover">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 洗面 -->
+        <div class="bg-cream rounded-2xl p-5 shadow-lg card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">洗面台リフォーム</h3>
           <div class="frame portrait">
             <div class="ba">
@@ -224,14 +1375,15 @@
               <img src="washroom_after.jpg" alt="洗面台 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
-              <span class="tag left">Before</span><span class="tag right">After</span>
+              <span class="tag left">Before</span>
+              <span class="tag right">After</span>
             </div>
           </div>
-          <p class="ba-hint">中央の ◀▶ を左右にドラッグして比較できます</p>
+          <p class="text-xs text-center mt-3 text-gray-600">スライドして比較</p>
         </div>
-
-        <!-- トイレ（縦×横でもcoverで吸収） -->
-        <div class="bg-cream rounded-xl p-5 shadow card-hover">
+        
+        <!-- トイレ -->
+        <div class="bg-cream rounded-2xl p-5 shadow-lg card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">トイレリフォーム</h3>
           <div class="frame portrait">
             <div class="ba">
@@ -239,14 +1391,15 @@
               <img src="toilet_after.jpg" alt="トイレ 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
-              <span class="tag left">Before</span><span class="tag right">After</span>
+              <span class="tag left">Before</span>
+              <span class="tag right">After</span>
             </div>
           </div>
-          <p class="ba-hint">スライドして違いを体感してください</p>
+          <p class="text-xs text-center mt-3 text-gray-600">スライドして比較</p>
         </div>
-
-        <!-- 浴室（横×横） -->
-        <div class="bg-cream rounded-xl p-5 shadow card-hover">
+        
+        <!-- 浴室 -->
+        <div class="bg-cream rounded-2xl p-5 shadow-lg card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">浴室リフォーム</h3>
           <div class="frame landscape">
             <div class="ba">
@@ -254,14 +1407,15 @@
               <img src="bathroom_after.jpg" alt="浴室 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
-              <span class="tag left">Before</span><span class="tag right">After</span>
+              <span class="tag left">Before</span>
+              <span class="tag right">After</span>
             </div>
           </div>
-          <p class="ba-hint">快適さの進化を指先でスライドして確認</p>
+          <p class="text-xs text-center mt-3 text-gray-600">スライドして比較</p>
         </div>
-
-        <!-- キッチン（横×横） -->
-        <div class="bg-cream rounded-xl p-5 shadow card-hover">
+        
+        <!-- キッチン -->
+        <div class="bg-cream rounded-2xl p-5 shadow-lg card-hover">
           <h3 class="text-lg font-bold text-gold mb-3 text-center">キッチンリフォーム</h3>
           <div class="frame landscape">
             <div class="ba">
@@ -269,115 +1423,310 @@
               <img src="kitchen_after.jpg" alt="キッチン 施工後" class="after"/>
               <div class="handle"></div>
               <div class="knob"><i class="fas fa-arrows-left-right"></i></div>
-              <span class="tag left">Before</span><span class="tag right">After</span>
+              <span class="tag left">Before</span>
+              <span class="tag right">After</span>
             </div>
           </div>
-          <p class="ba-hint">BeforeとAfterを自由に重ねて比較</p>
+          <p class="text-xs text-center mt-3 text-gray-600">スライドして比較</p>
         </div>
       </div>
-
-      <div class="mt-10 text-center">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
-          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
-        </a>
+      
+      <div class="text-center mt-10">
+        <p class="text-2xl font-bold mb-4">この技術力があるから</p>
+        <p class="text-3xl font-black text-gold">提案に説得力が生まれる</p>
       </div>
     </div>
   </section>
 
-  <!-- 働く環境（office.jpg） -->
-  <section id="office" class="py-16 bg-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-3"><span class="text-gold">働く環境</span> — 近未来×あたたかさ</h2>
-        <p class="text-lg text-black">明るく開放的、でも温度のあるオフィス。日常の自動化で“面倒”を減らし、仕事に集中できます。</p>
+  <!-- 働く環境 -->
+  <section id="office" class="py-20 bg-cream scroll-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">働く環境</h2>
+        <p class="text-xl">明るく開放的、でも温度のあるオフィス</p>
       </div>
-      <div class="frame landscape mx-auto" style="max-width: 1100px;">
-        <img src="office.jpg" alt="センチュリー21ホームマートのオフィス" loading="lazy"/>
+      
+      <div class="frame landscape mx-auto mb-8" style="max-width:1000px;">
+        <img src="office.jpg" alt="オフィス" loading="lazy"/>
       </div>
-      <div class="mt-10 text-center">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
-          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
-        </a>
+      
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl p-6 text-center">
+          <i class="fas fa-laptop text-gold text-3xl mb-3"></i>
+          <h3 class="font-bold mb-2">最新設備</h3>
+          <p class="text-sm">PC・スマホ完備<br/>業務効率化ツール導入</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center">
+          <i class="fas fa-coffee text-gold text-3xl mb-3"></i>
+          <h3 class="font-bold mb-2">リフレッシュ</h3>
+          <p class="text-sm">休憩スペース充実<br/>コーヒー・お菓子常備</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center">
+          <i class="fas fa-dog text-gold text-3xl mb-3"></i>
+          <h3 class="font-bold mb-2">看板犬</h3>
+          <p class="text-sm">癒しの存在<br/>お客様にも大人気</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Instagram（照明ボイス動画のみ） -->
-  <section id="insta" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between mb-6">
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-white scroll-fade">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">よくある質問</h2>
+        <p class="text-xl">応募前の不安を解消します</p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>未経験でも本当に大丈夫ですか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>はい、大丈夫です。3ヶ月の研修期間で基礎から丁寧に教えます。センチュリー21の研修プログラムと、現場でのOJTを組み合わせて、確実に成長できる環境を用意しています。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>ノルマはありますか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>厳しいノルマはありません。個人の成長段階に合わせた目標設定を行い、チーム全体でサポートします。KPIで進捗を可視化し、改善点を一緒に考えていきます。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>完全週休2日制は本当ですか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p><strong>はい、完全週休2日制です。</strong>シフト制で希望も考慮しながら、無理のない勤務計画を組みます。プライベートも大切にできる環境です。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>残業はどのくらいありますか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>月平均20時間程度です。繁忙期は多少増えることもありますが、効率化を進めて残業削減に取り組んでいます。現場職は直行直帰もOKです。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>資格取得の支援はありますか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>宅建士、電気工事士、管工事施工管理技士など、業務に関連する資格の取得を全面支援します。受験費用補助、合格時の資格手当もあります。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>年収1000万円は本当に可能ですか？</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>成果次第で十分可能です。実際に全国のセンチュリー21では、半年で7000万円を売り上げた営業もいます。インセンティブ制度が充実しているので、頑張りが収入に直結します。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span><i class="fas fa-circle-question text-gold mr-3"></i>選考プロセスを教えてください</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>①エントリー → ②カジュアル面談（オンライン可） → ③面接（1〜2回） → ④内定。最短1週間でのスピード入社も可能です。まずは気軽にお話ししましょう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="gold-gradient py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center text-white">
+      <h2 class="text-4xl md:text-5xl font-black mb-6">
+        一緒に最強のチームを作ろう
+      </h2>
+      <p class="text-xl mb-8">
+        自分たちで決める。自分たちで作る。<br/>
+        だから、仕事が楽しくなる。
+      </p>
+      
+      <div class="bg-white/20 backdrop-blur rounded-3xl p-8 mb-8">
+        <h3 class="text-2xl font-bold mb-6">応募から入社までの流れ</h3>
+        <div class="flex items-center justify-center flex-wrap gap-4">
+          <div class="text-center">
+            <div class="bg-white text-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 font-bold text-xl">1</div>
+            <p>エントリー</p>
+          </div>
+          <i class="fas fa-arrow-right text-2xl"></i>
+          <div class="text-center">
+            <div class="bg-white text-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 font-bold text-xl">2</div>
+            <p>カジュアル面談</p>
+          </div>
+          <i class="fas fa-arrow-right text-2xl"></i>
+          <div class="text-center">
+            <div class="bg-white text-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 font-bold text-xl">3</div>
+            <p>面接</p>
+          </div>
+          <i class="fas fa-arrow-right text-2xl"></i>
+          <div class="text-center">
+            <div class="bg-white text-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 font-bold text-xl">4</div>
+            <p>内定・入社</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://form.run/@c21-member" class="bg-white text-gold px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-transform">
+          <i class="fas fa-rocket mr-3"></i>今すぐ応募する
+        </a>
+        <a href="tel:0120438639" class="bg-white/20 backdrop-blur text-white border-3 border-white px-12 py-5 rounded-full font-bold text-xl hover:bg-white/30 transition-all">
+          <i class="fas fa-phone mr-3"></i>電話で相談
+        </a>
+      </div>
+      
+      <p class="mt-6 text-sm">
+        お電話でのお問い合わせ：<strong>0120-43-8639</strong><br/>
+        受付時間：平日9:30〜18:30
+      </p>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <h2 class="text-3xl font-extrabold text-black mb-1">私たちの“日常”をそのまま</h2>
-          <p class="text-black">Instagram（編集：ひな）で、現場感と温度感を発信しています。</p>
+          <h3 class="text-2xl font-bold text-gold mb-4">センチュリー21ホームマート</h3>
+          <p class="mb-2">不動産売買・仲介／リフォーム・リノベーション</p>
+          <p class="mb-4">〒635-0821 奈良県北葛城郡広陵町笠287-1</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-white hover:text-gold"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-white hover:text-gold"><i class="fab fa-youtube text-2xl"></i></a>
+            <a href="#" class="text-white hover:text-gold"><i class="fab fa-tiktok text-2xl"></i></a>
+          </div>
         </div>
-        <a class="text-sm underline" href="https://www.instagram.com/century21homemart/" target="_blank" rel="noopener">公式Instagramへ</a>
-      </div>
-
-      <div class="grid grid-cols-1">
-        <div class="ig-embed">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMUuOH7zdlj/" data-instgrm-version="14" data-instgrm-captioned style=" background:#FFF; border:0; border-radius:8px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%;"></blockquote>
+        <div>
+          <iframe 
+            class="w-full h-64 rounded-xl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.322459412753!2d135.7463112!3d34.5453901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60012d16fef4735b%3A0xb49d8a4f54fd9786!2z44K744Oz44OB44Ol44Oq44O8MjHjg5vjg7zjg6Djg57jg7zjg4g!5e0!3m2!1sja!2sjp!4v1756394207847!5m2!1sja!2sjp" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
         </div>
       </div>
-
-      <div class="mt-10 text-center">
-        <a href="https://form.run/@c21-member" class="cta px-8 py-4 rounded-lg font-bold text-lg shadow-lg">
-          <i class="fas fa-file-signature mr-2"></i>3ヶ月研修に応募する
-        </a>
+      <div class="text-center mt-8 pt-8 border-t border-gray-800">
+        <p>&copy; 2025 Century21 HomeMart. All rights reserved.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Footer（住所＋Google Map） -->
-  <footer class="bg-black text-white py-10">
-    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-      <div>
-        <h3 class="text-xl font-bold text-gold mb-2">センチュリー21ホームマート</h3>
-        <p class="text-sm">不動産売買・仲介／リフォーム・リノベーション／住宅設備工事</p>
-        <p class="text-sm mt-2">〒635-0821　奈良県北葛城郡広陵町笠287-1</p>
-        <p class="text-sm mt-1"><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:0120438639">0120-43-8639</a></p>
-      </div>
-      <div>
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.322459412753!2d135.7463112!3d34.5453901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60012d16fef4735b%3A0xb49d8a4f54fd9786!2z44K744Oz44OB44Ol44Oq44O8MjHjg5vjg7zjg6Djg57jg7zjg4g!5e0!3m2!1sja!2sjp!4v1756394207847!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-    <div class="text-center text-xs text-gray-400 mt-6">&copy; 2025 センチュリー21ホームマート. All rights reserved.</div>
   </footer>
 
   <!-- Scripts -->
-  <script async src="https://www.instagram.com/embed.js"></script>
   <script>
-    // Before/After: ドラッグ＆タッチでスライド
-    function initBA(ba){
+    // タブ切り替え
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        
+        // ボタンのアクティブ状態切り替え
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // パネルの表示切り替え
+        document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+    
+    // FAQ開閉
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+    
+    // Before/Afterスライダー
+    function initBA(ba) {
       const after = ba.querySelector('.after');
       const handle = ba.querySelector('.handle');
       const knob = ba.querySelector('.knob');
-      let down = false;
-
-      const setFromX = (clientX) => {
+      let isDown = false;
+      
+      const setPosition = (clientX) => {
         const rect = ba.getBoundingClientRect();
         const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
-        const pct = (x / rect.width) * 100;
-        after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-        handle.style.left = pct + '%';
-        knob.style.left = pct + '%';
+        const percent = (x / rect.width) * 100;
+        
+        after.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+        handle.style.left = `${percent}%`;
+        knob.style.left = `${percent}%`;
       };
-
-      const start = e => { down = true; setFromX(e.touches ? e.touches[0].clientX : e.clientX); };
-      const move  = e => { if (!down) return; setFromX(e.touches ? e.touches[0].clientX : e.clientX); };
-      const end   = () => { down = false; };
-
-      ba.addEventListener('mousedown', start);
-      ba.addEventListener('mousemove', move);
-      window.addEventListener('mouseup', end);
-      ba.addEventListener('touchstart', start, {passive:true});
-      ba.addEventListener('touchmove', move, {passive:true});
-      window.addEventListener('touchend', end);
-
-      // 初期位置：中央
+      
+      const handleStart = (e) => {
+        isDown = true;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setPosition(clientX);
+      };
+      
+      const handleMove = (e) => {
+        if (!isDown) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setPosition(clientX);
+      };
+      
+      const handleEnd = () => {
+        isDown = false;
+      };
+      
+      ba.addEventListener('mousedown', handleStart);
+      ba.addEventListener('mousemove', handleMove);
+      ba.addEventListener('mouseup', handleEnd);
+      ba.addEventListener('touchstart', handleStart, { passive: true });
+      ba.addEventListener('touchmove', handleMove, { passive: true });
+      ba.addEventListener('touchend', handleEnd);
+      
+      // 初期位置を中央に
       const rect = ba.getBoundingClientRect();
-      setFromX(rect.left + rect.width/2);
+      setPosition(rect.left + rect.width / 2);
     }
+    
     document.querySelectorAll('.ba').forEach(initBA);
+    
+    // スクロールアニメーション
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.scroll-fade').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // モバイルメニュー
+    function toggleMobileMenu() {
+      // モバイルメニューの実装（必要に応じて）
+      alert('モバイルメニューは実装準備中です');
+    }
   </script>
 </body>
 </html>
