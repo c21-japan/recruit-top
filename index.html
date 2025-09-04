@@ -99,6 +99,7 @@
     .logo {
       height: 40px;
       width: auto;
+      object-fit: contain;
     }
 
     .header-badge {
@@ -129,7 +130,6 @@
       width: 100%;
       max-width: 800px;
       margin: 0 auto 40px;
-      aspect-ratio: 16/9;
       position: relative;
       overflow: hidden;
       border-radius: 12px;
@@ -148,7 +148,13 @@
     .hero-slider-track {
       display: flex;
       animation: heroSlide 9s infinite;
-      height: 100%;
+      height: 450px;
+    }
+
+    @media(max-width: 768px) {
+      .hero-slider-track {
+        height: 250px;
+      }
     }
 
     .hero-slider-slide {
@@ -785,7 +791,7 @@
       font-weight: 700;
     }
 
-    /* Schedule Tab - Improved for mobile */
+    /* Schedule Tab - Fixed */
     .schedule-wrapper {
       background: var(--white);
       border-radius: 20px;
@@ -796,6 +802,7 @@
     .schedule-tabs {
       display: flex;
       background: var(--cream);
+      position: relative;
     }
 
     .schedule-tab {
@@ -829,6 +836,7 @@
 
     .schedule-contents {
       padding: 32px;
+      position: relative;
     }
 
     @media(max-width: 768px) {
@@ -841,8 +849,11 @@
       display: none;
     }
 
-    #tab-sales:checked ~ .schedule-contents #schedule-sales,
-    #tab-site:checked ~ .schedule-contents #schedule-site {
+    #tab-sales:checked ~ .schedule-tabs ~ .schedule-contents #schedule-sales {
+      display: block;
+    }
+
+    #tab-site:checked ~ .schedule-tabs ~ .schedule-contents #schedule-site {
       display: block;
     }
 
@@ -1006,7 +1017,7 @@
       margin-top: 12px;
     }
 
-    /* Before/After - Original style */
+    /* Before/After - Fixed with toggle */
     .ba-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1041,11 +1052,14 @@
       border-radius: 12px;
       overflow: hidden;
       background: #000;
-      cursor: ew-resize;
     }
 
     .ba-container.landscape {
       aspect-ratio: 16/9;
+    }
+
+    .ba-toggle {
+      display: none;
     }
 
     .ba-image {
@@ -1054,41 +1068,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: opacity 0.5s ease;
     }
 
-    .ba-image.after {
-      clip-path: inset(0 50% 0 0);
-    }
-
-    .ba-handle {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 3px;
-      background: var(--white);
-      transform: translateX(-50%);
-      cursor: ew-resize;
+    .ba-image.before {
       z-index: 2;
     }
 
-    .ba-knob {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      border: 3px solid var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      cursor: ew-resize;
-      z-index: 3;
-      font-size: 14px;
+    .ba-image.after {
+      z-index: 1;
+    }
+
+    .ba-toggle:checked ~ .ba-container .ba-image.before {
+      opacity: 0;
     }
 
     .ba-label {
@@ -1100,7 +1092,7 @@
       border-radius: 4px;
       font-size: 12px;
       font-weight: 700;
-      z-index: 1;
+      z-index: 3;
     }
 
     .ba-label.before {
@@ -1109,6 +1101,24 @@
 
     .ba-label.after {
       right: 12px;
+    }
+
+    .ba-toggle-btn {
+      display: block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: .3s;
+    }
+
+    .ba-toggle-btn:hover {
+      background: var(--gold-light);
     }
 
     /* Office */
@@ -1337,7 +1347,7 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" width="180" height="40" loading="eager">
+        <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" loading="eager">
         <span class="header-badge">採用特設サイト</span>
       </div>
     </div>
@@ -1883,10 +1893,11 @@
       </div>
 
       <div class="schedule-wrapper">
+        <input type="radio" id="tab-sales" name="schedule-tab" class="schedule-tab" checked>
+        <input type="radio" id="tab-site" name="schedule-tab" class="schedule-tab">
+        
         <div class="schedule-tabs">
-          <input type="radio" id="tab-sales" name="schedule-tab" class="schedule-tab" checked>
           <label for="tab-sales" class="schedule-label">📼 営業の日</label>
-          <input type="radio" id="tab-site" name="schedule-tab" class="schedule-tab">
           <label for="tab-site" class="schedule-label">⛑️ 現場の日</label>
         </div>
 
@@ -2108,50 +2119,50 @@
       <div class="ba-grid">
         <div class="ba-item">
           <h3 class="ba-title">洗面台リフォーム</h3>
+          <input type="checkbox" id="ba-toggle-1" class="ba-toggle">
           <div class="ba-container">
-            <img src="washroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
-            <img src="washroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
-            <div class="ba-handle"></div>
-            <div class="ba-knob">↔</div>
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
+            <img src="washroom_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="400" height="500">
+            <img src="washroom_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="400" height="500">
+            <span class="ba-label before">After</span>
+            <span class="ba-label after">Before</span>
           </div>
+          <label for="ba-toggle-1" class="ba-toggle-btn">Before/After 切替</label>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">トイレリフォーム</h3>
+          <input type="checkbox" id="ba-toggle-2" class="ba-toggle">
           <div class="ba-container">
-            <img src="toilet_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
-            <img src="toilet_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
-            <div class="ba-handle"></div>
-            <div class="ba-knob">↔</div>
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
+            <img src="toilet_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="400" height="500">
+            <img src="toilet_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="400" height="500">
+            <span class="ba-label before">After</span>
+            <span class="ba-label after">Before</span>
           </div>
+          <label for="ba-toggle-2" class="ba-toggle-btn">Before/After 切替</label>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">浴室リフォーム</h3>
+          <input type="checkbox" id="ba-toggle-3" class="ba-toggle">
           <div class="ba-container landscape">
-            <img src="bathroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
-            <img src="bathroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
-            <div class="ba-handle"></div>
-            <div class="ba-knob">↔</div>
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
+            <img src="bathroom_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="800" height="450">
+            <img src="bathroom_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="800" height="450">
+            <span class="ba-label before">After</span>
+            <span class="ba-label after">Before</span>
           </div>
+          <label for="ba-toggle-3" class="ba-toggle-btn">Before/After 切替</label>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">キッチンリフォーム</h3>
+          <input type="checkbox" id="ba-toggle-4" class="ba-toggle">
           <div class="ba-container landscape">
-            <img src="kitchen_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
-            <img src="kitchen_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
-            <div class="ba-handle"></div>
-            <div class="ba-knob">↔</div>
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
+            <img src="kitchen_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="800" height="450">
+            <img src="kitchen_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="800" height="450">
+            <span class="ba-label before">After</span>
+            <span class="ba-label after">Before</span>
           </div>
+          <label for="ba-toggle-4" class="ba-toggle-btn">Before/After 切替</label>
         </div>
       </div>
     </div>
