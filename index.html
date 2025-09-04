@@ -29,6 +29,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -37,6 +38,7 @@
       line-height: 1.7;
       background: var(--white);
       padding-bottom: 80px;
+      overflow-x: hidden;
     }
 
     img {
@@ -53,30 +55,31 @@
 
     section {
       padding: 60px 0;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: clamp(32px, 8vw, 56px);
+      font-size: clamp(28px, 7vw, 56px);
       font-weight: 900;
       line-height: 1.2;
       margin-bottom: 20px;
     }
 
     h2 {
-      font-size: clamp(28px, 6vw, 40px);
+      font-size: clamp(24px, 5vw, 40px);
       font-weight: 900;
       line-height: 1.3;
       margin-bottom: 16px;
     }
 
     h3 {
-      font-size: clamp(20px, 4vw, 28px);
+      font-size: clamp(18px, 4vw, 28px);
       font-weight: 700;
       line-height: 1.4;
       margin-bottom: 12px;
     }
 
-    /* Header with Slider */
+    /* Header */
     header {
       background: var(--white);
       border-bottom: 2px solid var(--gold);
@@ -93,36 +96,9 @@
       align-items: center;
     }
 
-    .header-slider {
-      width: 180px;
+    .logo {
       height: 40px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 4px;
-    }
-
-    @keyframes headerSlide {
-      0% { transform: translateX(0); }
-      33.33% { transform: translateX(0); }
-      33.34% { transform: translateX(-100%); }
-      66.66% { transform: translateX(-100%); }
-      66.67% { transform: translateX(-200%); }
-      100% { transform: translateX(-200%); }
-    }
-
-    .header-slider-track {
-      display: flex;
-      animation: headerSlide 9s infinite;
-    }
-
-    .header-slide {
-      flex: 0 0 100%;
-    }
-
-    .header-slide img {
-      width: 100%;
-      height: 40px;
-      object-fit: contain;
+      width: auto;
     }
 
     .header-badge {
@@ -143,9 +119,47 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(16px, 3vw, 20px);
+      font-size: clamp(14px, 3vw, 20px);
       margin-bottom: 32px;
       line-height: 1.8;
+    }
+
+    /* Hero Slider */
+    .hero-slider {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      aspect-ratio: 16/9;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+
+    @keyframes heroSlide {
+      0% { transform: translateX(0); }
+      33.33% { transform: translateX(0); }
+      33.34% { transform: translateX(-100%); }
+      66.66% { transform: translateX(-100%); }
+      66.67% { transform: translateX(-200%); }
+      100% { transform: translateX(-200%); }
+    }
+
+    .hero-slider-track {
+      display: flex;
+      animation: heroSlide 9s infinite;
+      height: 100%;
+    }
+
+    .hero-slider-slide {
+      flex: 0 0 100%;
+      height: 100%;
+    }
+
+    .hero-slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Video Section */
@@ -179,9 +193,15 @@
 
     .stat-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin: 40px 0;
+    }
+
+    @media(max-width: 768px) {
+      .stat-cards {
+        grid-template-columns: 1fr;
+      }
     }
 
     .stat-card {
@@ -198,7 +218,7 @@
     }
 
     .stat-number {
-      font-size: 48px;
+      font-size: clamp(36px, 8vw, 48px);
       font-weight: 900;
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
       -webkit-background-clip: text;
@@ -255,6 +275,13 @@
       background: var(--cream);
     }
 
+    @media(max-width: 480px) {
+      .cta-primary, .cta-secondary {
+        font-size: 14px;
+        padding: 12px 24px;
+      }
+    }
+
     /* Section title */
     .section-title {
       text-align: center;
@@ -268,9 +295,15 @@
     /* Strengths */
     .strength-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
       margin-top: 40px;
+    }
+
+    @media(max-width: 768px) {
+      .strength-cards {
+        grid-template-columns: 1fr;
+      }
     }
 
     .strength-card {
@@ -320,7 +353,7 @@
     }
 
     .strength-stat-value {
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
       font-weight: 900;
       color: var(--black);
     }
@@ -337,7 +370,7 @@
     }
 
     .story-title {
-      font-size: clamp(24px, 5vw, 36px);
+      font-size: clamp(20px, 5vw, 36px);
       font-weight: 900;
       text-align: center;
       margin-bottom: 40px;
@@ -353,11 +386,17 @@
 
     .manga-panels {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 16px;
+    }
+
+    @media(max-width: 768px) {
+      .manga-panels {
+        grid-template-columns: 1fr;
+      }
     }
 
     .manga-panel {
@@ -478,6 +517,12 @@
       box-shadow: 0 4px 16px rgba(0,0,0,.08);
     }
 
+    @media(max-width: 768px) {
+      .job-card {
+        padding: 20px;
+      }
+    }
+
     .job-header {
       display: flex;
       justify-content: space-between;
@@ -491,7 +536,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 28px;
+      font-size: clamp(20px, 5vw, 28px);
       font-weight: 900;
     }
 
@@ -566,6 +611,7 @@
       color: var(--gold);
       font-weight: 700;
       margin-top: 2px;
+      flex-shrink: 0;
     }
 
     .job-highlight {
@@ -582,7 +628,7 @@
     }
 
     .job-highlight-value {
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
       font-weight: 900;
       color: var(--gold);
       margin-bottom: 4px;
@@ -614,12 +660,18 @@
       position: relative;
     }
 
+    @media(max-width: 768px) {
+      .diagram-card {
+        padding: 20px;
+      }
+    }
+
     .diagram-header {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 24px;
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
       font-weight: 900;
     }
 
@@ -645,7 +697,7 @@
       padding: 16px;
       border-radius: 8px;
       text-align: center;
-      font-size: 20px;
+      font-size: clamp(14px, 3vw, 20px);
       font-weight: 900;
       margin: 8px 0;
     }
@@ -656,6 +708,7 @@
       gap: 8px;
       overflow-x: auto;
       padding: 16px 0;
+      scrollbar-width: thin;
     }
 
     .career-step {
@@ -666,11 +719,13 @@
       font-size: 14px;
       font-weight: 600;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .career-arrow {
       color: var(--gold);
       font-size: 20px;
+      flex-shrink: 0;
     }
 
     /* Training */
@@ -730,12 +785,17 @@
       font-weight: 700;
     }
 
-    /* Schedule Tab (CSS only) */
+    /* Schedule Tab - Improved for mobile */
+    .schedule-wrapper {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
+
     .schedule-tabs {
       display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-bottom: 32px;
+      background: var(--cream);
     }
 
     .schedule-tab {
@@ -743,27 +803,42 @@
     }
 
     .schedule-label {
-      padding: 12px 24px;
-      background: var(--white);
-      border: 2px solid var(--gold);
+      flex: 1;
+      padding: 16px;
+      background: var(--cream);
       color: var(--gold);
-      border-radius: 50px;
       font-weight: 700;
       cursor: pointer;
       transition: .3s;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+    }
+
+    @media(max-width: 480px) {
+      .schedule-label {
+        font-size: 14px;
+        padding: 12px 8px;
+      }
     }
 
     .schedule-tab:checked + .schedule-label {
-      background: var(--gold);
-      color: var(--white);
+      background: var(--white);
+      color: var(--black);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .schedule-contents {
+      padding: 32px;
+    }
+
+    @media(max-width: 768px) {
+      .schedule-contents {
+        padding: 20px;
+      }
     }
 
     .schedule-content {
       display: none;
-      background: var(--white);
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
     }
 
     #tab-sales:checked ~ .schedule-contents #schedule-sales,
@@ -812,9 +887,16 @@
     /* Philosophy */
     .philosophy-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       margin-top: 40px;
+    }
+
+    @media(max-width: 480px) {
+      .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
     }
 
     .philosophy-item {
@@ -824,6 +906,12 @@
       padding: 24px;
       text-align: center;
       transition: .3s;
+    }
+
+    @media(max-width: 480px) {
+      .philosophy-item {
+        padding: 16px;
+      }
     }
 
     .philosophy-item:hover {
@@ -918,12 +1006,18 @@
       margin-top: 12px;
     }
 
-    /* Before/After (CSS only) */
+    /* Before/After - Original style */
     .ba-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
       margin-top: 40px;
+    }
+
+    @media(max-width: 768px) {
+      .ba-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .ba-item {
@@ -940,21 +1034,17 @@
       margin-bottom: 16px;
     }
 
-    .ba-toggle {
-      display: none;
-    }
-
-    .ba-toggle-label {
-      display: block;
+    .ba-container {
       position: relative;
       width: 100%;
       aspect-ratio: 4/5;
       border-radius: 12px;
       overflow: hidden;
-      cursor: pointer;
+      background: #000;
+      cursor: ew-resize;
     }
 
-    .ba-container.landscape .ba-toggle-label {
+    .ba-container.landscape {
       aspect-ratio: 16/9;
     }
 
@@ -964,15 +1054,41 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity .5s;
     }
 
     .ba-image.after {
-      opacity: 0;
+      clip-path: inset(0 50% 0 0);
     }
 
-    .ba-toggle:checked ~ .ba-toggle-label .ba-image.after {
-      opacity: 1;
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--white);
+      transform: translateX(-50%);
+      cursor: ew-resize;
+      z-index: 2;
+    }
+
+    .ba-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      cursor: ew-resize;
+      z-index: 3;
+      font-size: 14px;
     }
 
     .ba-label {
@@ -993,55 +1109,6 @@
 
     .ba-label.after {
       right: 12px;
-    }
-
-    .ba-switch {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--gold);
-      color: var(--white);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      z-index: 2;
-    }
-
-    /* Fun gallery */
-    .brand-fun {
-      background: var(--white);
-    }
-
-    .fun-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    @media(max-width: 768px) {
-      .fun-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .fun-tile {
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      aspect-ratio: 1/1;
-      overflow: hidden;
-    }
-
-    .fun-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     /* Office */
@@ -1262,30 +1329,15 @@
       section {
         padding: 40px 0;
       }
-      .job-content {
-        grid-template-columns: 1fr;
-      }
-      .philosophy-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      }
-      .ba-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Slider -->
+  <!-- Header -->
   <header>
     <div class="container">
       <div class="header-content">
-        <div class="header-slider">
-          <div class="header-slider-track">
-            <div class="header-slide"><img src="1.png" alt="センチュリー21ホームマート" loading="eager"></div>
-            <div class="header-slide"><img src="2.png" alt="センチュリー21ホームマート" loading="eager"></div>
-            <div class="header-slide"><img src="3.png" alt="センチュリー21ホームマート" loading="eager"></div>
-          </div>
-        </div>
+        <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" width="180" height="40" loading="eager">
         <span class="header-badge">採用特設サイト</span>
       </div>
     </div>
@@ -1296,6 +1348,15 @@
     <div class="container">
       <h1><span style="color:var(--gold)">自分たちで作る</span><br>自分たちの会社</h1>
       <p class="hero-subtitle">ルールは与えられるものじゃない。<br><strong>自分たちで決めて、自分たちで作る。</strong><br>だから、仕事が楽しくなる。</p>
+
+      <!-- Hero Slider -->
+      <div class="hero-slider">
+        <div class="hero-slider-track">
+          <div class="hero-slider-slide"><img src="1.png" alt="センチュリー21ホームマート" loading="eager"></div>
+          <div class="hero-slider-slide"><img src="2.png" alt="センチュリー21ホームマート" loading="eager"></div>
+          <div class="hero-slider-slide"><img src="3.png" alt="センチュリー21ホームマート" loading="eager"></div>
+        </div>
+      </div>
 
       <div class="stat-cards">
         <div class="stat-card">
@@ -1821,11 +1882,13 @@
         <p>営業の日、現場の日、それぞれの働き方</p>
       </div>
 
-      <div class="schedule-tabs">
-        <input type="radio" id="tab-sales" name="schedule-tab" class="schedule-tab" checked>
-        <label for="tab-sales" class="schedule-label">📼 営業の日</label>
-        <input type="radio" id="tab-site" name="schedule-tab" class="schedule-tab">
-        <label for="tab-site" class="schedule-label">⛑️ 現場の日</label>
+      <div class="schedule-wrapper">
+        <div class="schedule-tabs">
+          <input type="radio" id="tab-sales" name="schedule-tab" class="schedule-tab" checked>
+          <label for="tab-sales" class="schedule-label">📼 営業の日</label>
+          <input type="radio" id="tab-site" name="schedule-tab" class="schedule-tab">
+          <label for="tab-site" class="schedule-label">⛑️ 現場の日</label>
+        </div>
 
         <div class="schedule-contents">
           <div class="schedule-content" id="schedule-sales">
@@ -2034,22 +2097,6 @@
     </div>
   </section>
 
-  <!-- Brand Fun Gallery -->
-  <section class="brand-fun">
-    <div class="container">
-      <div class="section-title">
-        <h2>ブランド×カルチャー</h2>
-        <p>"楽しく、誠実に、強く" を写真でチラ見せ</p>
-      </div>
-      <div class="fun-grid">
-        <div class="fun-tile"><img src="04_shinchanpng (1).jpg" alt="しんちゃんイメージ" loading="lazy" width="600" height="600"></div>
-        <div class="fun-tile"><img src="16_shiro.jpg" alt="シロイメージ" loading="lazy" width="600" height="600"></div>
-        <div class="fun-tile"><img src="19_family改.jpg" alt="家族イメージ" loading="lazy" width="600" height="600"></div>
-        <div class="fun-tile"><img src="10_century21_kane_1399.png" alt="ケイン・コスギ イメージ" loading="lazy" width="600" height="600"></div>
-      </div>
-    </div>
-  </section>
-
   <!-- Works -->
   <section id="works">
     <div class="container">
@@ -2062,56 +2109,48 @@
         <div class="ba-item">
           <h3 class="ba-title">洗面台リフォーム</h3>
           <div class="ba-container">
-            <input type="checkbox" id="ba-toggle-1" class="ba-toggle">
-            <label for="ba-toggle-1" class="ba-toggle-label">
-              <img src="washroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
-              <img src="washroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
-              <span class="ba-label before">Before</span>
-              <span class="ba-label after">After</span>
-              <span class="ba-switch">切替</span>
-            </label>
+            <img src="washroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
+            <img src="washroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
+            <div class="ba-handle"></div>
+            <div class="ba-knob">↔</div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
           </div>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">トイレリフォーム</h3>
           <div class="ba-container">
-            <input type="checkbox" id="ba-toggle-2" class="ba-toggle">
-            <label for="ba-toggle-2" class="ba-toggle-label">
-              <img src="toilet_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
-              <img src="toilet_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
-              <span class="ba-label before">Before</span>
-              <span class="ba-label after">After</span>
-              <span class="ba-switch">切替</span>
-            </label>
+            <img src="toilet_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="400" height="500">
+            <img src="toilet_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="400" height="500">
+            <div class="ba-handle"></div>
+            <div class="ba-knob">↔</div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
           </div>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">浴室リフォーム</h3>
           <div class="ba-container landscape">
-            <input type="checkbox" id="ba-toggle-3" class="ba-toggle">
-            <label for="ba-toggle-3" class="ba-toggle-label">
-              <img src="bathroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
-              <img src="bathroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
-              <span class="ba-label before">Before</span>
-              <span class="ba-label after">After</span>
-              <span class="ba-switch">切替</span>
-            </label>
+            <img src="bathroom_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
+            <img src="bathroom_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
+            <div class="ba-handle"></div>
+            <div class="ba-knob">↔</div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
           </div>
         </div>
 
         <div class="ba-item">
           <h3 class="ba-title">キッチンリフォーム</h3>
           <div class="ba-container landscape">
-            <input type="checkbox" id="ba-toggle-4" class="ba-toggle">
-            <label for="ba-toggle-4" class="ba-toggle-label">
-              <img src="kitchen_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
-              <img src="kitchen_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
-              <span class="ba-label before">Before</span>
-              <span class="ba-label after">After</span>
-              <span class="ba-switch">切替</span>
-            </label>
+            <img src="kitchen_before.jpg" alt="施工前" class="ba-image" loading="lazy" width="800" height="450">
+            <img src="kitchen_after.jpg" alt="施工後" class="ba-image after" loading="lazy" width="800" height="450">
+            <div class="ba-handle"></div>
+            <div class="ba-knob">↔</div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
           </div>
         </div>
       </div>
@@ -2248,7 +2287,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-info">
-          <img src="18_shiro.jpg" alt="フッター装飾画像" style="width:100%;height:auto;margin-bottom:12px;border-radius:8px" loading="lazy">
+          <img src="office.jpg" alt="オフィス" style="width:100%;height:auto;margin-bottom:12px;border-radius:8px" loading="lazy">
           <h3>センチュリー21ホームマート</h3>
           <p>不動産売買・仲介／リフォーム・リノベーション</p>
           <p>〒635-0821 奈良県北葛城郡広陵町笠287-1</p>
