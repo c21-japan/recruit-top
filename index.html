@@ -1,2357 +1,1744 @@
+了解しました！提供いただいた修正内容を完全に反映した、更新版のHTMLを出力します。
+
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow,max-image-preview:none">
-  <meta name="googlebot" content="noindex,nofollow">
-  <title>採用情報 | センチュリー21ホームマート - 自分たちで作る、自分たちの会社</title>
-  <meta name="description" content="完全週休2日制・センチュリー21×自社施工の強みで、未経験から確実に成長。インセンティブで月収100万円プレイヤーも実現！">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --gold: #A19276;
-      --gold-light: #B8A082;
-      --black: #383635;
-      --cream: #F8F6F3;
-      --white: #fff;
-      --success: #22C55E;
-      --info: #3B82F6;
-      --gray: #f5f5f5;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: var(--black);
-      line-height: 1.7;
-      background: var(--white);
-      padding-bottom: 80px;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    section {
-      padding: 60px 0;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      font-size: clamp(28px, 7vw, 56px);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: clamp(24px, 5vw, 40px);
-      font-weight: 900;
-      line-height: 1.3;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: clamp(18px, 4vw, 28px);
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-
-    /* Header */
-    header {
-      background: var(--white);
-      border-bottom: 2px solid var(--gold);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .header-badge {
-      background: var(--cream);
-      color: var(--gold);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid var(--gold);
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--cream) 0%, var(--white) 50%, var(--cream) 100%);
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(14px, 3vw, 20px);
-      margin-bottom: 32px;
-      line-height: 1.8;
-    }
-
-    /* Hero Slider */
-    .hero-slider {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.15);
-    }
-
-    @keyframes heroSlide {
-      0% { transform: translateX(0); }
-      33.33% { transform: translateX(0); }
-      33.34% { transform: translateX(-100%); }
-      66.66% { transform: translateX(-100%); }
-      66.67% { transform: translateX(-200%); }
-      100% { transform: translateX(-200%); }
-    }
-
-    .hero-slider-track {
-      display: flex;
-      animation: heroSlide 9s infinite;
-      height: 450px;
-    }
-
-    @media(max-width: 768px) {
-      .hero-slider-track {
-        height: 250px;
-      }
-    }
-
-    .hero-slider-slide {
-      flex: 0 0 100%;
-      height: 100%;
-    }
-
-    .hero-slider-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Video Section */
-    .video-showcase {
-      background: var(--black);
-      padding: 40px 0;
-      margin: 40px 0;
-    }
-
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #000;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .stat-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    @media(max-width: 768px) {
-      .stat-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stat-card {
-      background: var(--white);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-      transition: transform .3s;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    }
-
-    .stat-number {
-      font-size: clamp(36px, 8vw, 48px);
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-    }
-
-    /* CTA */
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 32px;
-    }
-
-    .cta-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--white);
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: .3s;
-      box-shadow: 0 4px 16px rgba(161,146,118,.3);
-    }
-
-    .cta-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(161,146,118,.4);
-    }
-
-    .cta-secondary {
-      background: var(--white);
-      color: var(--gold);
-      border: 2px solid var(--gold);
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: .3s;
-    }
-
-    .cta-secondary:hover {
-      background: var(--cream);
-    }
-
-    @media(max-width: 480px) {
-      .cta-primary, .cta-secondary {
-        font-size: 14px;
-        padding: 12px 24px;
-      }
-    }
-
-    /* Section title */
-    .section-title {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-title .gold {
-      color: var(--gold);
-    }
-
-    /* Strengths */
-    .strength-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    @media(max-width: 768px) {
-      .strength-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .strength-card {
-      background: var(--cream);
-      padding: 32px;
-      border-radius: 20px;
-      text-align: center;
-      transition: transform .3s;
-    }
-
-    .strength-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,.08);
-    }
-
-    .strength-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      background: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .strength-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .strength-stat {
-      background: var(--white);
-      padding: 16px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    .strength-stat-label {
-      font-size: 12px;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .strength-stat-value {
-      font-size: clamp(18px, 4vw, 24px);
-      font-weight: 900;
-      color: var(--black);
-    }
-
-    /* Manga Stories */
-    .stories-section {
-      background: linear-gradient(to bottom, #FFF8E7, #FFF0D4);
-      padding: 80px 0;
-      position: relative;
-    }
-
-    .story-episode {
-      margin-bottom: 80px;
-    }
-
-    .story-title {
-      font-size: clamp(20px, 5vw, 36px);
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--black);
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-
-    .story-title .gold {
-      color: var(--gold);
-    }
-
-    .manga-panels {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    @media(max-width: 768px) {
-      .manga-panels {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .manga-panel {
-      background: var(--white);
-      border: 3px solid var(--black);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 8px 8px 0 rgba(0,0,0,.1);
-      position: relative;
-      transition: transform .3s;
-    }
-
-    .manga-panel:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 12px 12px 0 rgba(0,0,0,.15);
-    }
-
-    .panel-number {
-      position: absolute;
-      top: -15px;
-      left: 20px;
-      background: var(--gold);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-weight: 900;
-      font-size: 14px;
-      border: 2px solid var(--black);
-    }
-
-    .character-icon {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid var(--gold);
-    }
-
-    .character-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .speech-bubble {
-      background: var(--cream);
-      padding: 16px;
-      border-radius: 16px;
-      position: relative;
-      margin-bottom: 16px;
-      border: 2px solid var(--black);
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .speech-bubble::after {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      left: 30px;
-      width: 0;
-      height: 0;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-top: 12px solid var(--black);
-    }
-
-    .speech-bubble::before {
-      content: "";
-      position: absolute;
-      bottom: -9px;
-      left: 31px;
-      width: 0;
-      height: 0;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-top: 11px solid var(--cream);
-      z-index: 1;
-    }
-
-    .speech-bubble.right::after {
-      left: auto;
-      right: 30px;
-    }
-
-    .speech-bubble.right::before {
-      left: auto;
-      right: 31px;
-    }
-
-    .panel-narration {
-      font-size: 13px;
-      color: #666;
-      margin-top: 12px;
-      padding: 12px;
-      background: #FFFEF5;
-      border-radius: 8px;
-      border-left: 4px solid var(--gold);
-    }
-
-    .effect-text {
-      font-size: 20px;
-      font-weight: 900;
-      color: var(--gold);
-      text-align: center;
-      margin: 16px 0;
-      text-shadow: 2px 2px 0 rgba(0,0,0,.1);
-    }
-
-    /* Jobs */
-    .job-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    }
-
-    @media(max-width: 768px) {
-      .job-card {
-        padding: 20px;
-      }
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .job-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: clamp(20px, 5vw, 28px);
-      font-weight: 900;
-    }
-
-    .job-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .badge {
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .badge-success {
-      background: #DCFCE7;
-      color: var(--success);
-      border: 1px solid var(--success);
-    }
-
-    .badge-info {
-      background: #DBEAFE;
-      color: var(--info);
-      border: 1px solid var(--info);
-    }
-
-    .badge-gold {
-      background: var(--cream);
-      color: var(--gold);
-      border: 1px solid var(--gold);
-    }
-
-    .job-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    @media(min-width: 768px) {
-      .job-content {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .job-section h4 {
-      color: var(--gold);
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .job-list {
-      list-style: none;
-    }
-
-    .job-list li {
-      display: flex;
-      align-items: start;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .job-list li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: 700;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .job-highlight {
-      background: var(--cream);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 16px;
-    }
-
-    .job-highlight h5 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .job-highlight-value {
-      font-size: clamp(18px, 4vw, 24px);
-      font-weight: 900;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    /* Jobs Diagram */
-    .jobs-diagram {
-      background: var(--white);
-      padding: 60px 0;
-    }
-
-    .diagram-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-top: 40px;
-    }
-
-    @media(min-width: 768px) {
-      .diagram-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .diagram-card {
-      background: var(--cream);
-      border-radius: 20px;
-      padding: 32px;
-      position: relative;
-    }
-
-    @media(max-width: 768px) {
-      .diagram-card {
-        padding: 20px;
-      }
-    }
-
-    .diagram-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      font-size: clamp(18px, 4vw, 24px);
-      font-weight: 900;
-    }
-
-    .diagram-section {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-
-    .diagram-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .salary-bar {
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      color: var(--white);
-      padding: 16px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: clamp(14px, 3vw, 20px);
-      font-weight: 900;
-      margin: 8px 0;
-    }
-
-    .career-flow {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 16px 0;
-      scrollbar-width: thin;
-    }
-
-    .career-step {
-      background: var(--gold);
-      color: var(--white);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .career-arrow {
-      color: var(--gold);
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-
-    /* Training */
-    .training-slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      background: var(--cream);
-      padding: 20px 0;
-    }
-
-    .training-track {
-      display: flex;
-      gap: 16px;
-      padding: 0 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-    }
-
-    .training-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .training-slide {
-      flex: 0 0 calc(100% - 32px);
-      scroll-snap-align: center;
-      background: var(--white);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
-
-    @media(min-width: 768px) {
-      .training-slide {
-        flex: 0 0 calc(33.333% - 16px);
-      }
-    }
-
-    .training-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .training-number {
-      width: 48px;
-      height: 48px;
-      background: var(--gold);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    /* Schedule Tab - Fixed */
-    .schedule-wrapper {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    }
-
-    .schedule-tabs {
-      display: flex;
-      background: var(--cream);
-      position: relative;
-    }
-
-    .schedule-tab {
-      display: none;
-    }
-
-    .schedule-label {
-      flex: 1;
-      padding: 16px;
-      background: var(--cream);
-      color: var(--gold);
-      font-weight: 700;
-      cursor: pointer;
-      transition: .3s;
-      text-align: center;
-      border-bottom: 3px solid transparent;
-    }
-
-    @media(max-width: 480px) {
-      .schedule-label {
-        font-size: 14px;
-        padding: 12px 8px;
-      }
-    }
-
-    .schedule-tab:checked + .schedule-label {
-      background: var(--white);
-      color: var(--black);
-      border-bottom: 3px solid var(--gold);
-    }
-
-    .schedule-contents {
-      padding: 32px;
-      position: relative;
-    }
-
-    @media(max-width: 768px) {
-      .schedule-contents {
-        padding: 20px;
-      }
-    }
-
-    .schedule-content {
-      display: none;
-    }
-
-    #tab-sales:checked ~ .schedule-tabs ~ .schedule-contents #schedule-sales {
-      display: block;
-    }
-
-    #tab-site:checked ~ .schedule-tabs ~ .schedule-contents #schedule-site {
-      display: block;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 40px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 12px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--gold), rgba(161,146,118,.2));
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 24px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -28px;
-      top: 4px;
-      width: 10px;
-      height: 10px;
-      background: var(--gold);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(161,146,118,.2);
-    }
-
-    .timeline-time {
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    /* Philosophy */
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    @media(max-width: 480px) {
-      .philosophy-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-    }
-
-    .philosophy-item {
-      background: var(--white);
-      border: 2px solid var(--gold);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      transition: .3s;
-    }
-
-    @media(max-width: 480px) {
-      .philosophy-item {
-        padding: 16px;
-      }
-    }
-
-    .philosophy-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0,0,0,.1);
-    }
-
-    .philosophy-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--cream);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      overflow: hidden;
-    }
-
-    .philosophy-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Voices */
-    .voices-slider {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .voices-track {
-      display: flex;
-      gap: 20px;
-      padding: 0 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-    }
-
-    .voices-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .voice-card {
-      flex: 0 0 calc(100% - 32px);
-      scroll-snap-align: center;
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    }
-
-    @media(min-width: 768px) {
-      .voice-card {
-        flex: 0 0 calc(33.333% - 20px);
-      }
-    }
-
-    .voice-image {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      background: #f0f0f0;
-    }
-
-    .voice-content {
-      padding: 24px;
-    }
-
-    .voice-name {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .voice-role {
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .voice-message {
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .voice-badges {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    /* Before/After - Fixed with toggle */
-    .ba-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    @media(max-width: 768px) {
-      .ba-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .ba-item {
-      background: var(--cream);
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
-
-    .ba-title {
-      text-align: center;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .ba-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .ba-container.landscape {
-      aspect-ratio: 16/9;
-    }
-
-    .ba-toggle {
-      display: none;
-    }
-
-    .ba-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.5s ease;
-    }
-
-    .ba-image.before {
-      z-index: 2;
-    }
-
-    .ba-image.after {
-      z-index: 1;
-    }
-
-    .ba-toggle:checked ~ .ba-container .ba-image.before {
-      opacity: 0;
-    }
-
-    .ba-label {
-      position: absolute;
-      top: 12px;
-      background: rgba(0,0,0,.7);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 700;
-      z-index: 3;
-    }
-
-    .ba-label.before {
-      left: 12px;
-    }
-
-    .ba-label.after {
-      right: 12px;
-    }
-
-    .ba-toggle-btn {
-      display: block;
-      background: var(--gold);
-      color: var(--white);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
-      margin-top: 12px;
-      transition: .3s;
-    }
-
-    .ba-toggle-btn:hover {
-      background: var(--gold-light);
-    }
-
-    /* Office */
-    .office-slider {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      position: relative;
-      background: #000;
-    }
-
-    .office-track {
-      display: flex;
-      height: 100%;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-    }
-
-    .office-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .office-slide {
-      flex: 0 0 100%;
-      height: 100%;
-      scroll-snap-align: start;
-    }
-
-    .office-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* FAQ (details/summary) */
-    #faq {
-      background: var(--gray);
-    }
-
-    .faq-card {
-      background: #fff;
-      color: #000;
-      border-radius: 12px;
-      margin: 12px auto;
-      max-width: 800px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.06);
-      overflow: hidden;
-    }
-
-    .faq-card summary {
-      padding: 18px 20px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-    }
-
-    .faq-card summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-card summary::after {
-      content: "▼";
-      transition: transform .3s;
-    }
-
-    .faq-card[open] summary::after {
-      transform: rotate(180deg);
-    }
-
-    .faq-content {
-      padding: 0 20px 16px;
-    }
-
-    /* Entry */
-    .entry-wrap {
-      background: rgba(255,255,255,.2);
-      padding: 20px;
-      border-radius: 16px;
-      margin: 0 auto 32px;
-      max-width: 500px;
-    }
-
-    .entry-flow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .entry-step {
-      background: #fff;
-      color: #333;
-      border-radius: 12px;
-      padding: 16px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.1);
-    }
-
-    .entry-number {
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin: 0 auto 8px;
-    }
-
-    .entry-arrow {
-      font-size: 20px;
-      color: var(--gold);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--black);
-      color: var(--white);
-      padding: 48px 0 100px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    @media(min-width: 768px) {
-      .footer-content {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .footer-info h3 {
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .map-wrap {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border: 0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .map-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .instagram-link {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 16px;
-    }
-
-    /* Bottom nav with :target */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      border-top: 1px solid #e0e0e0;
-      display: flex;
-      justify-content: space-around;
-      padding: 8px 0;
-      z-index: 1000;
-      box-shadow: 0 -2px 10px rgba(0,0,0,.1);
-    }
-
-    .bottom-nav-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px;
-      color: #666;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 600;
-      transition: .3s;
-    }
-
-    .bottom-nav-icon {
-      font-size: 20px;
-    }
-
-    #why:target ~ .bottom-nav a[href="#why"],
-    #stories:target ~ .bottom-nav a[href="#stories"],
-    #jobs:target ~ .bottom-nav a[href="#jobs"],
-    #training:target ~ .bottom-nav a[href="#training"],
-    #schedule:target ~ .bottom-nav a[href="#schedule"],
-    #voices:target ~ .bottom-nav a[href="#voices"],
-    #entry:target ~ .bottom-nav a[href="#entry"] {
-      color: var(--gold);
-    }
-
-    @media(max-width: 768px) {
-      section {
-        padding: 40px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>稼ぎたい20代募集｜センチュリー21ホームマート採用</title>
+    <meta name="description" content="2026年内に月収100万円未達なら社長が100万円払う。週休2日・固定35万＋歩合10〜15％。未経験から成り上がるなら今。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #A19276;
+            --gold-light: #B8A082;
+            --black: #383635;
+            --cream: #F8F6F3;
+            --white: #fff;
+            --success: #22C55E;
+            --info: #3B82F6;
+            --gray: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--black);
+            line-height: 1.8;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ヘッダー */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .recruit-badge {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(161, 146, 118, 0.3);
+        }
+
+        /* ヒーロー */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slideShow 9s infinite;
+        }
+
+        .hero-slide:nth-child(1) { animation-delay: 0s; }
+        .hero-slide:nth-child(2) { animation-delay: 3s; }
+        .hero-slide:nth-child(3) { animation-delay: 6s; }
+
+        @keyframes slideShow {
+            0% { opacity: 0; }
+            11% { opacity: 1; }
+            33% { opacity: 1; }
+            44% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-sub {
+            font-size: clamp(16px, 3vw, 20px);
+            color: var(--white);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(161, 146, 118, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 社長ストーリー */
+        .story {
+            background: var(--cream);
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .story-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .story-text {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .story-profile {
+            text-align: center;
+        }
+
+        .story-profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .story-profile .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .story-profile .title {
+            font-size: 14px;
+            color: var(--black);
+        }
+
+        /* 振込明細 */
+        .salary-proof {
+            background: var(--white);
+        }
+
+        .salary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .salary-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .salary-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .salary-card-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .salary-card-content {
+            padding: 20px;
+        }
+
+        .salary-card-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .salary-card-amount {
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        /* シミュレーター */
+        .simulator {
+            background: var(--cream);
+        }
+
+        .simulator-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .simulator-controls {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .control-group label {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: var(--gray);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--gold);
+            background: var(--white);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        select {
+            padding: 10px;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            font-size: 16px;
+            background: var(--white);
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .result-amount {
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        /* チャレンジ制度 */
+        .challenge {
+            background: var(--white);
+        }
+
+        .challenge-box {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(161, 146, 118, 0.3);
+        }
+
+        .challenge h3 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .challenge-conditions {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .challenge-conditions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .challenge-conditions li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .challenge-conditions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* 会社の強み */
+        .strengths {
+            background: var(--cream);
+        }
+
+        .strength-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .strength-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .strength-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .strength-card-content {
+            padding: 20px;
+        }
+
+        .strength-card h3 {
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* 募集職種 */
+        .jobs {
+            background: var(--white);
+        }
+
+        .job-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .job-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .job-card h3 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .job-details {
+            margin-bottom: 30px;
+        }
+
+        .job-details dt {
+            font-weight: 700;
+            color: var(--gold);
+            margin-top: 15px;
+        }
+
+        .job-details dd {
+            margin-left: 0;
+            margin-top: 5px;
+        }
+
+        /* タイムライン */
+        .schedule {
+            background: var(--cream);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 3px solid var(--white);
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* 社員の声 */
+        .voices {
+            background: var(--white);
+        }
+
+        .voice-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .voice-card {
+            min-width: 300px;
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .voice-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .voice-profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .voice-info h4 {
+            font-size: 18px;
+            color: var(--gold);
+        }
+
+        .voice-info .position {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .voice-comment {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Before/After */
+        .renovation {
+            background: var(--cream);
+        }
+
+        .ba-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .ba-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .ba-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .ba-toggle button {
+            padding: 10px 20px;
+            border: none;
+            background: var(--gray);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .ba-toggle button.active {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .ba-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .ba-image img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .ba-image img.after {
+            opacity: 0;
+        }
+
+        .ba-image.show-after img.before {
+            opacity: 0;
+        }
+
+        .ba-image.show-after img.after {
+            opacity: 1;
+        }
+
+        .ba-label {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* オフィス */
+        .office {
+            background: var(--white);
+        }
+
+        .office-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .office-slide {
+            min-width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .office-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instagram-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* 応募セクション */
+        .apply {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .apply h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .apply-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .apply .btn {
+            background: var(--white);
+            color: var(--gold);
+            font-size: 20px;
+            padding: 20px 50px;
+        }
+
+        .apply .btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .apply-info {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        /* 法定表示 */
+        .legal {
+            background: var(--gray);
+            padding: 40px 20px;
+        }
+
+        .legal-table {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .legal-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .legal-table th,
+        .legal-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .legal-table th {
+            background: var(--cream);
+            font-weight: 700;
+            color: var(--gold);
+            width: 30%;
+        }
+
+        /* フッター */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .company-info {
+            margin-bottom: 30px;
+        }
+
+        .company-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+
+        .social-links {
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: var(--gold);
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #555;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* 下部固定ナビ（スマホ） */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .bottom-nav {
+                display: block;
+            }
+        }
+
+        .bottom-nav-inner {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .bottom-nav a span {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 15px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .challenge-box {
+                padding: 30px 20px;
+            }
+
+            .legal-table {
+                overflow-x: auto;
+            }
+
+            .bottom-nav {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" loading="eager">
-        <span class="header-badge">採用特設サイト</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="container">
-      <h1><span style="color:var(--gold)">自分たちで作る</span><br>自分たちの会社</h1>
-      <p class="hero-subtitle">ルールは与えられるものじゃない。<br><strong>自分たちで決めて、自分たちで作る。</strong><br>だから、仕事が楽しくなる。</p>
-
-      <!-- Hero Slider -->
-      <div class="hero-slider">
-        <div class="hero-slider-track">
-          <div class="hero-slider-slide"><img src="1.png" alt="センチュリー21ホームマート" loading="eager"></div>
-          <div class="hero-slider-slide"><img src="2.png" alt="センチュリー21ホームマート" loading="eager"></div>
-          <div class="hero-slider-slide"><img src="3.png" alt="センチュリー21ホームマート" loading="eager"></div>
-        </div>
-      </div>
-
-      <div class="stat-cards">
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <h3>完全週休2日制</h3>
-          <p>シフト制で希望も考慮。<br>プライベートも大切に。</p>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3ヶ月</div>
-          <h3>充実の研修期間</h3>
-          <p>センチュリー21研修＋<br>現場研修で確実に成長。</p>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100万</div>
-          <h3>月収プレイヤーも実現</h3>
-          <p>インセンティブで<br>月収100万円プレイヤーも実現！</p>
-        </div>
-      </div>
-
-      <div class="cta-group">
-        <a href="https://form.run/@c21-member" class="cta-primary" aria-label="応募フォームへ"><span>📝</span> 応募する</a>
-        <a href="tel:0120438639" class="cta-secondary" aria-label="電話で問い合わせ"><span>📞</span> 0120-43-8639</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Section 1 -->
-  <section class="video-showcase">
-    <div class="video-container">
-      <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-          <source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why -->
-  <section id="why">
-    <div class="container">
-      <div class="section-title">
-        <h2>なぜ<span class="gold">ホームマート</span>なのか？</h2>
-        <p>他社にはない、4つの<strong>強み</strong></p>
-      </div>
-
-      <div class="strength-cards">
-        <div class="strength-card">
-          <div class="strength-icon"><img src="reform_c21.JPG" alt="センチュリー21 × 自社施工" loading="lazy"></div>
-          <h3>センチュリー21 × 自社施工</h3>
-          <p>大手ブランドの信頼性と、自社施工の提案力。この掛け算が最強の武器に。</p>
-          <div class="strength-stat">
-            <div class="strength-stat-label">実績</div>
-            <div class="strength-stat-value">施工実績豊富</div>
-          </div>
-        </div>
-        <div class="strength-card">
-          <div class="strength-icon"><img src="top_shain.JPG" alt="社員が社長より稼げる文化" loading="lazy"></div>
-          <h3>社員が社長より稼げる文化</h3>
-          <p>"社長が決めるより社員の声を大事に"。32歳社長（20歳で創業）の下、フェアな評価で高収入を実現。</p>
-          <div class="strength-stat">
-            <div class="strength-stat-label">実績</div>
-            <div class="strength-stat-value">年収1,000万円超え多数</div>
-          </div>
-        </div>
-        <div class="strength-card">
-          <div class="strength-icon"><img src="incentive.jpeg" alt="現場でもインセンティブ" loading="lazy"></div>
-          <h3>現場でもインセンティブ</h3>
-          <p>センチュリー21グループ×施工店だから実現。現場職も高収入を狙える独自制度。</p>
-          <div class="strength-stat">
-            <div class="strength-stat-label">実績</div>
-            <div class="strength-stat-value">年収700万円以上輩出</div>
-          </div>
-        </div>
-        <div class="strength-card">
-          <div class="strength-icon"><img src="kigyo.JPG" alt="社内独立制度" loading="lazy"></div>
-          <h3>社内独立制度</h3>
-          <p>C21ブランドを活かした社内独立制度あり。自社で不動産を積極的に買って売る実践型。</p>
-          <div class="strength-stat">
-            <div class="strength-stat-label">将来性</div>
-            <div class="strength-stat-value">安定した起業の道</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stories (Manga Style) -->
-  <section class="stories-section" id="stories">
-    <div class="container">
-      <div class="section-title">
-        <h2>採用ストーリー</h2>
-        <p>しんちゃんと一緒に見る、リアルな成長物語</p>
-      </div>
-
-      <!-- Episode 1 -->
-      <div class="story-episode">
-        <h3 class="story-title">第1話：<span class="gold">お金の話</span></h3>
-        <div class="manga-panels">
-          <div class="manga-panel">
-            <span class="panel-number">コマ1</span>
-            <div class="character-icon"><img src="01_shinchan.jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble">未経験でも稼げるの？<br>──それが一番の不安だったゾ。</div>
-            <p class="panel-narration">不動産業界、未経験。でも生活もある。家族もいる。本当に稼げるようになるのか...</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ2</span>
-            <div class="character-icon"><img src="02_shinchan.jpg" alt="社長" loading="lazy"></div>
-            <div class="speech-bubble right">成績が上がらないのは教える側の責任。未経験でも"楽しい営業"に変えていくのが私の役割です！</div>
-            <div class="effect-text">ドーン！！</div>
-            <p class="panel-narration">社長（32歳・20歳で創業）の言葉だった。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ3</span>
-            <div class="character-icon"><img src="03_shinchan.jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble">月給25万円＋インセンティブ！<br>年収1,000万円プレイヤーも！？</div>
-            <p class="panel-narration">実際の給与明細を見せてもらった。本当だった。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ4</span>
-            <div class="character-icon"><img src="13_shiro.jpg" alt="シロ" loading="lazy"></div>
-            <div class="speech-bubble">ワンワン！<br>（試す価値があるなら、やる価値がある！）</div>
-            <div class="effect-text">決意！</div>
-            <p class="panel-narration">応募ボタンを、押した。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Episode 2 -->
-      <div class="story-episode">
-        <h3 class="story-title">第2話：<span class="gold">成長の話</span></h3>
-        <div class="manga-panels">
-          <div class="manga-panel">
-            <span class="panel-number">コマ1</span>
-            <div class="character-icon"><img src="05_shinchan.jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble">座学＋先輩同行＋ロープレ！<br>現場の提案力も身につくゾ！</div>
-            <p class="panel-narration">3ヶ月の研修期間。センチュリー21の研修と現場研修の組み合わせ。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ2</span>
-            <div class="character-icon"><img src="06_shinchan (1).jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble right">はじめての"ご成約"！<br>震える手で上司にメッセージしたゾ！</div>
-            <div class="effect-text">感動〜！！</div>
-            <p class="panel-narration">入社4ヶ月目。ついに初契約。涙が出そうだった。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ3</span>
-            <div class="character-icon"><img src="19_family改.jpg" alt="家族" loading="lazy"></div>
-            <div class="speech-bubble">困ったらすぐ相談！<br>みんなで支え合うのが<br>ホームマート流だゾ！</div>
-            <p class="panel-narration">チームの温かさと、評価の公正さ。両方がここにはあった。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ4</span>
-            <div class="character-icon"><img src="14_shiro.jpg" alt="シロ" loading="lazy"></div>
-            <div class="speech-bubble">ワンワン！<br>（1年後、月収が倍になっていた！）</div>
-            <div class="effect-text">成長！！</div>
-            <p class="panel-narration">努力は、必ず報われる会社だった。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video Section 2 -->
-      <div style="margin: 60px 0;">
-        <div class="video-container">
-          <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-              <source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <!-- Episode 3 -->
-      <div class="story-episode">
-        <h3 class="story-title">第3話：<span class="gold">表彰の話</span></h3>
-        <div class="manga-panels">
-          <div class="manga-panel">
-            <span class="panel-number">コマ1</span>
-            <div class="character-icon"><img src="08_shinchan.jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble">ライトが眩しい！<br>名前が呼ばれたゾ！</div>
-            <div class="effect-text">キラキラ〜！</div>
-            <p class="panel-narration">センチュリー21全国大会。5,000人の前で表彰された。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ2</span>
-            <div class="character-icon"><img src="09_shinchan (1).jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble right">入社2年目での快挙！<br>でも、特別じゃないゾ！</div>
-            <p class="panel-narration">ホームマートでは、誰もがチャンスを掴める。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ3</span>
-            <div class="character-icon"><img src="10_shinchan.jpg" alt="しんちゃん" loading="lazy"></div>
-            <div class="speech-bubble">"ここで働いてよかった"<br>と胸を張れたゾ！</div>
-            <p class="panel-narration">家族も喜んでくれた。子供が自慢してくれた。</p>
-          </div>
-          <div class="manga-panel">
-            <span class="panel-number">コマ4</span>
-            <div class="character-icon"><img src="15_shiro.jpg" alt="シロ" loading="lazy"></div>
-            <div class="speech-bubble">ワンワン！<br>（次は、あなたの番だ！）</div>
-            <div class="effect-text">一緒に頑張ろう！</div>
-            <p class="panel-narration">一緒に、最強のチームを作ろう。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jobs -->
-  <section id="jobs" style="background:var(--cream)">
-    <div class="container">
-      <div class="section-title">
-        <h2>募集職種</h2>
-        <p>あなたの強みを活かせるポジションがある</p>
-      </div>
-
-      <!-- Sales -->
-      <div class="job-card">
-        <div class="job-header">
-          <div>
-            <h3 class="job-title">🤝 営業職</h3>
-            <div class="job-badges">
-              <span class="badge badge-success">🌱 未経験歓迎</span>
-              <span class="badge badge-info">🎓 資格支援あり</span>
-              <span class="badge badge-gold">💰 インセンティブ充実</span>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" width="150" height="40" loading="eager">
             </div>
-          </div>
-          <a href="https://form.run/@c21-member" class="cta-primary">この職種に応募</a>
+            <div class="recruit-badge">採用特設サイト</div>
         </div>
+    </header>
 
-        <div class="job-content">
-          <div>
-            <div class="job-section">
-              <h4>仕事内容</h4>
-              <ul class="job-list">
-                <li>反響対応（SUUMO/HOME'S等）からの商談</li>
-                <li>物件案内〜契約〜引渡しまでの一貫サポート</li>
-                <li>リフォーム提案（自社施工の強みを活用）</li>
-                <li>現場同行で提案力を磨く</li>
-              </ul>
+    <!-- ヒーロー -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide">
+                <img src="1.png" alt="オフィス風景1" width="1920" height="1080" loading="eager">
             </div>
-            <div class="job-section">
-              <h4>応募資格</h4>
-              <ul class="job-list">
-                <li><strong>必須：</strong>普通自動車免許（AT可）</li>
-                <li><strong>歓迎：</strong>宅建士、FP、建築士など</li>
-                <li>学歴・経験不問（未経験者大歓迎）</li>
-              </ul>
+            <div class="hero-slide">
+                <img src="2.png" alt="オフィス風景2" width="1920" height="1080" loading="eager">
             </div>
-          </div>
-
-          <div>
-            <div class="job-highlight">
-              <h5>給与</h5>
-              <div class="job-highlight-value">月給25万円〜 + インセンティブ</div>
-              <p style="font-size:12px">インセンティブが充実しており、年収1,000万円以上の稼げる営業マンを輩出！</p>
+            <div class="hero-slide">
+                <img src="3.png" alt="オフィス風景3" width="1920" height="1080" loading="eager">
             </div>
-            <div class="job-highlight">
-              <h5>勤務時間・休日</h5>
-              <ul class="job-list">
-                <li>9:00〜18:00（実働8時間）</li>
-                <li><strong>完全週休2日制</strong>（シフト制）</li>
-                <li>年間休日120日以上</li>
-              </ul>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>2026年、月収100万円を超えなければ、社長が100万円払う。</h1>
+            <p class="hero-sub">本気で稼ぐ20代募集。昭和営業の魂で、令和のフィールドを勝ち抜く。</p>
+            <div class="hero-buttons">
+                <a href="https://form.run/@c21-member" class="btn btn-primary" aria-label="応募フォームへ">今すぐ応募する</a>
+                <a href="tel:0120438639" class="btn btn-secondary" aria-label="電話で相談">電話で相談</a>
             </div>
-            <div class="job-highlight">
-              <h5>その他</h5>
-              <ul class="job-list">
-                <li>ガソリン代支給</li>
-                <li>スマホ・PC支給</li>
-                <li>資格手当／資格取得支援</li>
-                <li>表彰制度（インセンティブ別途）</li>
-              </ul>
+        </div>
+    </section>
+
+    <!-- 社長ストーリー -->
+    <section class="story" id="story">
+        <div class="container">
+            <h2 class="section-title">素人から、13年。『稼げる仕組み』を作り続けてきた。</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>20歳、知識ゼロ・経験ゼロ・人脈ゼロで起業。最初の半年は売上ゼロ。それでも動き続け、7ヶ月目に初契約。8ヶ月目には売上100万円を突破。それ以来、13年間ずっと稼ぎ続けています。</p>
+                    <p>「素人でも稼げる仕組みはある」。自分の人生で証明してきました。今はセンチュリー21のブランドも加わり、営業のやりやすさは段違いです。毎週のように不動産を買い続ける攻めの会社で、あなたも"成り上がる"側に来ませんか？</p>
+                </div>
+                <div class="story-profile">
+                    <img src="inui.jpeg" alt="代表 乾佑企" width="200" height="200" loading="lazy">
+                    <div class="name">代表 乾 佑企</div>
+                    <div class="title">20歳で創業／現在13年目</div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Site (Genba) -->
-      <div class="job-card">
-        <div class="job-header">
-          <div>
-            <h3 class="job-title">🔨 現場職（工務）</h3>
-            <div class="job-badges">
-              <span class="badge badge-success">🙌 多能工育成</span>
-              <span class="badge badge-info">⛑️ 資格取得支援</span>
-              <span class="badge badge-gold">🛠️ スキルアップ</span>
+    <!-- センチュリー21ランキング -->
+    <section class="salary-proof" id="c21-ranking">
+        <div class="container">
+            <h2 class="section-title">センチュリー21 ランキング（実績の証拠）</h2>
+            <div class="salary-cards">
+                <div class="salary-card">
+                    <img src="ranking_screenshot.jpg" alt="センチュリー21ランキング実績" style="width:100%;height:auto" loading="lazy">
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">実際のランキング画面（スクリーンショット）</div>
+                        <p style="font-size:14px;color:#666">※モザイクで個人情報を隠した画像を配置してください</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <a href="https://form.run/@c21-member" class="cta-primary">この職種に応募</a>
         </div>
+    </section>
 
-        <div class="job-content">
-          <div>
-            <div class="job-section">
-              <h4>仕事内容</h4>
-              <ul class="job-list">
-                <li>内装・水回り・電気・ガス等の施工</li>
-                <li>現場の段取り・安全管理</li>
-                <li>営業との連携（現地調査・見積サポート）</li>
-                <li>多能工として幅広いスキル習得</li>
-              </ul>
+    <!-- 振込明細 -->
+    <section class="salary-proof">
+        <div class="container">
+            <h2 class="section-title">口だけじゃない、数字で見せる。</h2>
+            <div class="salary-cards">
+                <div class="salary-card">
+                    <div class="salary-card-image">
+                        モザイク加工の明細を順次掲載
+                    </div>
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">入社2年・営業未経験</div>
+                        <div class="salary-card-amount">月収95万円</div>
+                    </div>
+                </div>
+                <div class="salary-card">
+                    <div class="salary-card-image">
+                        モザイク加工の明細を順次掲載
+                    </div>
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">入社3年・課長</div>
+                        <div class="salary-card-amount">月収127万円</div>
+                    </div>
+                </div>
+                <div class="salary-card">
+                    <div class="salary-card-image">
+                        モザイク加工の明細を順次掲載
+                    </div>
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">入社5年・部長</div>
+                        <div class="salary-card-amount">月収181万円</div>
+                    </div>
+                </div>
             </div>
-            <div class="job-section">
-              <h4>応募資格</h4>
-              <ul class="job-list">
-                <li><strong>必須：</strong>普通自動車免許（AT可）</li>
-                <li><strong>歓迎：</strong>電気工事士、管工事、給水装置工事等</li>
-                <li>未経験者はアシスタントから育成</li>
-              </ul>
+            <p class="disclaimer">実在の明細をモザイク加工で掲載しています。個人情報保護の観点から一部加工済みです。</p>
+        </div>
+    </section>
+
+    <!-- 給与シミュレーション -->
+    <section class="simulator" id="simulator">
+        <div class="container">
+            <h2 class="section-title">あなたの月収をシミュレーション</h2>
+            <div class="simulator-box">
+                <div class="simulator-controls">
+                    <div class="control-group">
+                        <label>物件価格（万円）: <span id="price-val">1500</span>万円</label>
+                        <input type="range" class="slider" id="price" min="800" max="2000" step="100" value="1500" />
+                    </div>
+
+                    <div class="control-group">
+                        <label>仲介形態</label>
+                        <div class="toggle-group" id="hand-type">
+                            <button class="toggle-btn active" data-hand="片手">片手</button>
+                            <button class="toggle-btn" data-hand="両手">両手</button>
+                        </div>
+                        <small style="color:#666">仲介手数料（税抜）：片手＝(価格×3%＋6万円) ／ 両手はその2倍</small>
+                    </div>
+
+                    <div class="control-group">
+                        <label>当月の成約件数</label>
+                        <div class="toggle-group" id="deal-count">
+                            <button class="toggle-btn active" data-cnt="1">1件</button>
+                            <button class="toggle-btn" data-cnt="2">2件</button>
+                            <button class="toggle-btn" data-cnt="3">3件</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>リフォーム粗利益（万円）: <span id="gross-val">200</span>万円</label>
+                        <input type="range" class="slider" id="gross" min="0" max="300" step="50" value="200" />
+                        <small style="color:#666">粗利の<span style="font-weight:700">10%</span>を追加還元</small>
+                    </div>
+
+                    <div class="control-group">
+                        <label>固定給（みなし残業なし）</label>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" id="base35" disabled>35万円</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">今月の「営業売上」内訳（税抜ベース）</div>
+                    <div id="breakdown" style="margin:10px 0 20px;font-size:16px"></div>
+                    <div class="result-label">あなたの予想月収</div>
+                    <div class="result-amount" id="result">—万円</div>
+                    <div id="tier-note" style="margin-top:10px;font-weight:700"></div>
+                </div>
             </div>
-          </div>
 
-          <div>
-            <div class="job-highlight">
-              <h5>給与</h5>
-              <div class="job-highlight-value">月給25万円〜 + 独自のインセンティブ</div>
-              <p style="font-size:12px">インセンティブで年収700万円以上の稼げる職人を輩出！</p>
+            <div style="margin-top:20px;font-size:14px;color:#666">
+                ※営業売上＝仲介手数料（税抜）＋工事粗利益（税抜）。返金や解約は翌月控除。粗利率が一定未満の案件は歩合対象外。
             </div>
-            <div class="job-highlight">
-              <h5>勤務時間・休日</h5>
-              <ul class="job-list">
-                <li>8:30〜17:30（実働8時間）</li>
-                <li><strong>完全週休2日制</strong>（シフト制）</li>
-                <li>直行直帰OK（現場による）</li>
-              </ul>
+        </div>
+    </section>
+
+    <!-- 片手/両手モデル例 -->
+    <section class="salary-proof" id="model-examples">
+        <div class="container">
+            <h2 class="section-title">片手/両手と工事で、こう積み上がる</h2>
+            <div class="salary-cards">
+                <div class="salary-card">
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">モデルA：1,500万円 片手 ×2件 ＋ 工事粗利200万</div>
+                        <div class="salary-card-amount">営業売上＝102万＋200万＝<b>302万円</b></div>
+                        <p style="margin-top:8px;font-size:14px;color:#666">仲介手数料（片手）51万×2＝102万／工事粗利200万→社員還元+20万</p>
+                    </div>
+                </div>
+                <div class="salary-card">
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">モデルB：2,000万円 両手 ×1件 ＋ 工事粗利200万</div>
+                        <div class="salary-card-amount">営業売上＝132万＋200万＝<b>332万円</b></div>
+                        <p style="margin-top:8px;font-size:14px;color:#666">仲介手数料（両手）66万×2＝132万／工事粗利200万→社員還元+20万</p>
+                    </div>
+                </div>
+                <div class="salary-card">
+                    <div class="salary-card-content">
+                        <div class="salary-card-title">モデルC：1,500万円 両手 ×1件 ＋ 1,500万円 片手 ×1件 ＋ 工事粗利200万</div>
+                        <div class="salary-card-amount">営業売上＝102万＋51万＋200万＝<b>353万円</b></div>
+                        <p style="margin-top:8px;font-size:14px;color:#666">この組み合わせだけで<strong>300万円ゾーンが見えてくる</strong></p>
+                    </div>
+                </div>
             </div>
-            <div class="job-highlight">
-              <h5>資格取得支援（例）</h5>
-              <ul class="job-list">
-                <li>第二種電気工事士</li>
-                <li>給水装置工事主任技術者</li>
-                <li>管工事施工管理技士</li>
-                <li>建築施工管理技士</li>
-              </ul>
+            <p class="disclaimer">※計算は税抜ベース。返金・解約は翌月控除。粗利率が一定未満の案件は歩合対象外。</p>
+        </div>
+    </section>
+
+    <!-- チャレンジ制度 -->
+    <section class="challenge">
+        <div class="container">
+            <div class="challenge-box">
+                <h3>2026年内に月収100万円を超えられなければ、社長が100万円払います。</h3>
+                <div class="challenge-conditions">
+                    <ul>
+                        <li>対象：正社員（営業職）として在籍し、2026年12月31日までに月収100万円（固定給＋歩合）を1回以上達成できなかった場合。</li>
+                        <li>除外：やる気が感じられない／指示を実行しない／自ら意欲的に活動しないなど、稼ぐことへの本気さが認められない場合。</li>
+                    </ul>
+                </div>
+                <p style="text-align: center; font-size: 20px; font-weight: 700;">努力を裏切らない給与体系。やった分が、そのまま返ってくる。</p>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Video Section 3 -->
-  <section class="video-showcase">
-    <div class="video-container">
-      <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-          <source src="06_3世代のお付き合い_15秒_2025秋フェア告知あり.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jobs Diagram -->
-  <section class="jobs-diagram">
-    <div class="container">
-      <div class="section-title">
-        <h2>職種比較<span class="gold">（図解版）</span></h2>
-        <p>営業職と現場職、それぞれの魅力を一目で</p>
-      </div>
-
-      <div class="diagram-grid">
-        <!-- Sales Diagram -->
-        <div class="diagram-card">
-          <div class="diagram-header">🤝 営業職</div>
-          
-          <div class="diagram-section">
-            <div class="diagram-label">📑 仕事内容</div>
-            <ul style="list-style:none;font-size:14px;">
-              <li>✓ 反響対応・商談</li>
-              <li>✓ 物件案内〜引渡しまで</li>
-              <li>✓ リフォーム提案</li>
-              <li>✓ 現場同行で提案力UP</li>
-            </ul>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">💰 給与モデル</div>
-            <div class="salary-bar">月給25万円〜 + インセンティブ</div>
-            <p style="font-size:12px;text-align:center;margin-top:8px;">年収1,000万円以上の営業マン輩出！</p>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">🛣️ キャリアパス</div>
-            <div class="career-flow">
-              <div class="career-step">新人</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">営業担当</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">主任</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">店長</div>
+    <!-- 会社の強み -->
+    <section class="strengths">
+        <div class="container">
+            <h2 class="section-title">選ばれる4つの理由</h2>
+            <div class="strength-cards">
+                <div class="strength-card">
+                    <img src="reform_c21.JPG" alt="センチュリー21×自社施工" width="300" height="200" loading="lazy">
+                    <div class="strength-card-content">
+                        <h3>センチュリー21 × 自社施工</h3>
+                        <p>ブランド力と技術力の融合で、他社にない強みを持つ</p>
+                    </div>
+                </div>
+                <div class="strength-card">
+                    <img src="top_shain.JPG" alt="社員が社長より稼げる" width="300" height="200" loading="lazy">
+                    <div class="strength-card-content">
+                        <h3>社員が社長より稼げる文化</h3>
+                        <p>実力次第で上限なし。社長を超える月収も可能</p>
+                    </div>
+                </div>
+                <div class="strength-card">
+                    <img src="incentive.jpeg" alt="現場でもインセンティブ" width="300" height="200" loading="lazy">
+                    <div class="strength-card-content">
+                        <h3>現場でもインセンティブ</h3>
+                        <p>営業だけじゃない。全職種で稼げる仕組み</p>
+                    </div>
+                </div>
+                <div class="strength-card">
+                    <img src="kigyo.JPG" alt="社内独立制度" width="300" height="200" loading="lazy">
+                    <div class="strength-card-content">
+                        <h3>社内独立制度</h3>
+                        <p>将来は独立も可能。全面バックアップ</p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">📅 勤務時間・休日</div>
-            <ul style="list-style:none;font-size:14px;">
-              <li>⏰ 9:00〜18:00（実働8時間）</li>
-              <li>📆 完全週休2日制（シフト制）</li>
-              <li>🎌 年間休日120日以上</li>
-            </ul>
-          </div>
         </div>
+    </section>
 
-        <!-- Site Diagram -->
-        <div class="diagram-card">
-          <div class="diagram-header">🔨 現場職（工務）</div>
-          
-          <div class="diagram-section">
-            <div class="diagram-label">📑 仕事内容</div>
-            <ul style="list-style:none;font-size:14px;">
-              <li>✓ 内装・水回り・電気・ガス施工</li>
-              <li>✓ 現場の段取り・安全管理</li>
-              <li>✓ 営業との連携</li>
-              <li>✓ 多能工としてスキル習得</li>
-            </ul>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">💰 給与モデル</div>
-            <div class="salary-bar">月給25万円〜 + 独自インセンティブ</div>
-            <p style="font-size:12px;text-align:center;margin-top:8px;">年収700万円以上の職人輩出！</p>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">🛣️ キャリアパス</div>
-            <div class="career-flow">
-              <div class="career-step">アシスタント</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">多能工</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">現場リーダー</div>
-              <div class="career-arrow">→</div>
-              <div class="career-step">施工管理</div>
+    <!-- 募集職種 -->
+    <section class="jobs" id="jobs">
+        <div class="container">
+            <h2 class="section-title">募集職種</h2>
+            <div class="job-cards">
+                <div class="job-card">
+                    <h3>営業職（正社員）</h3>
+                    <dl class="job-details">
+                        <dt>仕事内容</dt>
+                        <dd>反響対応／案内〜契約〜引渡し／自社施工の提案</dd>
+                        <dt>応募資格</dt>
+                        <dd><strong>未経験大歓迎</strong>（普通自動車免許AT可）</dd>
+                        <dt>給与</dt>
+                        <dd><strong>固定35万円</strong>＋歩合：<br>
+                            ・営業売上＜200万円：歩合0%（月収=35万）<br>
+                            ・200〜299万円：歩合10%<br>
+                            ・300万円以上：歩合15%<br>
+                            ・工事粗利益の<strong>10%</strong>を追加還元（例：粗利200万→+20万）
+                        </dd>
+                        <dt>勤務</dt>
+                        <dd>9:00-18:00・<strong>週休2日</strong>（シフト）・年休120日目安</dd>
+                    </dl>
+                    <a href="https://form.run/@c21-member" class="btn btn-primary" style="width: 100%; text-align: center;">この職種に応募</a>
+                </div>
+                <div class="job-card">
+                    <h3>現場職（正社員）</h3>
+                    <dl class="job-details">
+                        <dt>仕事内容</dt>
+                        <dd>リフォーム施工／現場管理／品質管理</dd>
+                        <dt>応募資格</dt>
+                        <dd><strong>未経験大歓迎</strong>（普通自動車免許AT可）</dd>
+                        <dt>給与</dt>
+                        <dd>固定25〜30万円＋インセンティブ</dd>
+                        <dt>勤務</dt>
+                        <dd><strong>8:30-17:30</strong>・<strong>土日祝休み</strong></dd>
+                    </dl>
+                    <a href="https://form.run/@c21-member" class="btn btn-primary" style="width: 100%; text-align: center;">この職種に応募</a>
+                </div>
             </div>
-          </div>
-
-          <div class="diagram-section">
-            <div class="diagram-label">📅 勤務時間・休日</div>
-            <ul style="list-style:none;font-size:14px;">
-              <li>⏰ 8:30〜17:30（実働8時間）</li>
-              <li>📆 完全週休2日制（シフト制）</li>
-              <li>🚗 直行直帰OK（現場による）</li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Training -->
-  <section id="training">
-    <div class="container">
-      <div class="section-title">
-        <h2>3ヶ月研修で<span class="gold">確実に成長</span></h2>
-        <p>未経験から一人前へ、段階的にサポート</p>
-      </div>
-      <div class="training-slider">
-        <div class="training-track">
-          <div class="training-slide">
-            <div class="training-header">
-              <div class="training-number">1</div>
-              <h3>基礎習得期</h3>
+    <!-- 1日の流れ -->
+    <section class="schedule">
+        <div class="container">
+            <h2 class="section-title">1日の流れ</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="sales">営業職</button>
+                <button class="tab-btn" data-tab="field">現場職</button>
             </div>
-            <h4 style="color:var(--gold);font-size:16px;margin-bottom:8px">座学研修</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>不動産基礎知識</li>
-              <li>法令・契約実務</li>
-              <li>センチュリー21システム</li>
-            </ul>
-            <h4 style="color:var(--gold);font-size:16px;margin:14px 0 8px">実践研修</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>先輩同行（10件以上）</li>
-              <li>ロールプレイング</li>
-              <li>電話応対練習</li>
-            </ul>
-          </div>
-          <div class="training-slide">
-            <div class="training-header">
-              <div class="training-number">2</div>
-              <h3>実践期</h3>
+            <div class="tab-content active" id="sales">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">9:00</div>
+                        <div>出社・朝礼・当日のスケジュール確認</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:00</div>
+                        <div>物件案内・お客様対応</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div>ランチ休憩</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00</div>
+                        <div>契約書作成・事務作業</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div>新規反響対応・物件調査</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:00</div>
+                        <div>報告書作成・翌日準備</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div>退社</div>
+                    </div>
+                </div>
             </div>
-            <h4 style="color:var(--gold);font-size:16px;margin-bottom:8px">研修実践</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>簡単な案件から担当</li>
-              <li>上司サポート付き商談</li>
-              <li>提案書作成</li>
-            </ul>
-            <h4 style="color:var(--gold);font-size:16px;margin:14px 0 8px">スキルアップ</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>現場同行（施工理解）</li>
-              <li>見積作成練習</li>
-              <li>顧客対応力向上</li>
-            </ul>
-          </div>
-          <div class="training-slide">
-            <div class="training-header">
-              <div class="training-number">3</div>
-              <h3>独り立ち期</h3>
+            <div class="tab-content" id="field">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">8:30</div>
+                        <div>出社・朝礼・現場確認</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">9:00</div>
+                        <div>現場作業開始</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div>ランチ休憩</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00</div>
+                        <div>午後の作業</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div>進捗確認・品質チェック</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:00</div>
+                        <div>片付け・翌日準備</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:30</div>
+                        <div>退社</div>
+                    </div>
+                </div>
             </div>
-            <h4 style="color:var(--gold);font-size:16px;margin-bottom:8px">独立業務</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>主担当として活動</li>
-              <li>契約〜引渡しまで一貫</li>
-              <li>目標数値の設定</li>
-            </ul>
-            <h4 style="color:var(--gold);font-size:16px;margin:14px 0 8px">継続サポート</h4>
-            <ul style="list-style:disc;padding-left:1.2em">
-              <li>週次1on1面談</li>
-              <li>案件レビュー会</li>
-              <li>困った時の即サポート</li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Schedule -->
-  <section id="schedule" style="background:var(--cream)">
-    <div class="container">
-      <div class="section-title">
-        <h2>リアルな1日の流れ</h2>
-        <p>営業の日、現場の日、それぞれの働き方</p>
-      </div>
-
-      <div class="schedule-wrapper">
-        <input type="radio" id="tab-sales" name="schedule-tab" class="schedule-tab" checked>
-        <input type="radio" id="tab-site" name="schedule-tab" class="schedule-tab">
-        
-        <div class="schedule-tabs">
-          <label for="tab-sales" class="schedule-label">📼 営業の日</label>
-          <label for="tab-site" class="schedule-label">⛑️ 現場の日</label>
-        </div>
-
-        <div class="schedule-contents">
-          <div class="schedule-content" id="schedule-sales">
-            <h3 style="margin-bottom:24px">📼 営業メインの1日</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-time">9:00</div>
-                <strong>朝礼・情報共有</strong>
-                <p style="font-size:14px">昨日の成果共有、今日の予定確認</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">10:00</div>
-                <strong>反響対応</strong>
-                <p style="font-size:14px">SUUMO・HOME'Sからの問い合わせ対応</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">12:00</div>
-                <strong>ランチタイム</strong>
-                <p style="font-size:14px">仲間とリフレッシュ</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">13:00</div>
-                <strong>物件案内</strong>
-                <p style="font-size:14px">お客様と物件内覧（2〜3件）</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">16:00</div>
-                <strong>商談・見積作成</strong>
-                <p style="font-size:14px">オフィスに戻って提案書作成</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">18:00</div>
-                <strong>退社</strong>
-                <p style="font-size:14px">お疲れさまでした！</p>
-              </div>
+    <!-- 社員の声 -->
+    <section class="voices">
+        <div class="container">
+            <h2 class="section-title">社員の声</h2>
+            <div class="voice-slider">
+                <div class="voice-card">
+                    <div class="voice-profile">
+                        <img src="takuma.jpeg" alt="豊田拓真" width="80" height="80" loading="lazy">
+                        <div class="voice-info">
+                            <h4>豊田 拓真</h4>
+                            <div class="position">リフォーム現場</div>
+                        </div>
+                    </div>
+                    <div class="voice-comment">
+                        未経験から始めましたが、しっかりとした研修と先輩のサポートで成長できています。インセンティブもあるので、やりがいを感じながら働けます。
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-profile">
+                        <img src="hina.jpeg" alt="ひなちゃん" width="80" height="80" loading="lazy">
+                        <div class="voice-info">
+                            <h4>ひなちゃん</h4>
+                            <div class="position">事務・サポート</div>
+                        </div>
+                    </div>
+                    <div class="voice-comment">
+                        チーム全体で目標に向かって頑張る雰囲気が好きです。営業だけでなく、事務職でも評価してもらえる環境があります。
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-profile">
+                        <img src="mika.jpeg" alt="安田実加" width="80" height="80" loading="lazy">
+                        <div class="voice-info">
+                            <h4>安田 実加</h4>
+                            <div class="position">管理・経理</div>
+                        </div>
+                    </div>
+                    <div class="voice-comment">
+                        家族経営の温かさと、実力主義の厳しさが両立している会社です。成長したい人には最高の環境だと思います。
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <div class="schedule-content" id="schedule-site">
-            <h3 style="margin-bottom:24px">⛑️ 現場メインの1日</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-time">8:30</div>
-                <strong>現場到着・KY活動</strong>
-                <p style="font-size:14px">危険予知ミーティング、養生準備</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">9:00</div>
-                <strong>施工開始</strong>
-                <p style="font-size:14px">水回り工事、内装工事など</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">12:00</div>
-                <strong>昼休憩</strong>
-                <p style="font-size:14px">しっかり休んで午後に備える</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">13:00</div>
-                <strong>施工再開</strong>
-                <p style="font-size:14px">仕上げ作業、品質チェック</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">17:00</div>
-                <strong>片付け・清掃</strong>
-                <p style="font-size:14px">現場を綺麗にして撤収準備</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-time">17:30</div>
-                <strong>直帰</strong>
-                <p style="font-size:14px">現場から直接帰宅OK</p>
-              </div>
+    <!-- Before/After -->
+    <section class="renovation">
+        <div class="container">
+            <h2 class="section-title">自社施工の実績</h2>
+            <p style="text-align: center; margin-bottom: 40px;">営業の"提案の説得力"になる武器</p>
+            <div class="ba-container">
+                <div class="ba-item">
+                    <div class="ba-toggle">
+                        <button class="active" onclick="toggleBA(this, 'washroom')">Before</button>
+                        <button onclick="toggleBA(this, 'washroom')">After</button>
+                    </div>
+                    <div class="ba-image" id="washroom">
+                        <img src="washroom_before.jpg" alt="洗面台Before" class="before" width="300" height="250" loading="lazy">
+                        <img src="washroom_after.jpg" alt="洗面台After" class="after" width="300" height="250" loading="lazy">
+                    </div>
+                    <div class="ba-label">洗面台リフォーム</div>
+                </div>
+                <div class="ba-item">
+                    <div class="ba-toggle">
+                        <button class="active" onclick="toggleBA(this, 'toilet')">Before</button>
+                        <button onclick="toggleBA(this, 'toilet')">After</button>
+                    </div>
+                    <div class="ba-image" id="toilet">
+                        <img src="toilet_before.jpg" alt="トイレBefore" class="before" width="300" height="250" loading="lazy">
+                        <img src="toilet_after.jpg" alt="トイレAfter" class="after" width="300" height="250" loading="lazy">
+                    </div>
+                    <div class="ba-label">トイレリフォーム</div>
+                </div>
+                <div class="ba-item">
+                    <div class="ba-toggle">
+                        <button class="active" onclick="toggleBA(this, 'bathroom')">Before</button>
+                        <button onclick="toggleBA(this, 'bathroom')">After</button>
+                    </div>
+                    <div class="ba-image" id="bathroom">
+                        <img src="bathroom_before.jpg" alt="浴室Before" class="before" width="300" height="250" loading="lazy">
+                        <img src="bathroom_after.jpg" alt="浴室After" class="after" width="300" height="250" loading="lazy">
+                    </div>
+                    <div class="ba-label">浴室リフォーム</div>
+                </div>
+                <div class="ba-item">
+                    <div class="ba-toggle">
+                        <button class="active" onclick="toggleBA(this, 'kitchen')">Before</button>
+                        <button onclick="toggleBA(this, 'kitchen')">After</button>
+                    </div>
+                    <div class="ba-image" id="kitchen">
+                        <img src="kitchen_before.jpg" alt="キッチンBefore" class="before" width="300" height="250" loading="lazy">
+                        <img src="kitchen_after.jpg" alt="キッチンAfter" class="after" width="300" height="250" loading="lazy">
+                    </div>
+                    <div class="ba-label">キッチンリフォーム</div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Philosophy -->
-  <section id="philosophy">
-    <div class="container">
-      <div class="section-title">
-        <h2>私たちの理念</h2>
-        <p>「自分たちの会社は、自分たちで作る」</p>
-      </div>
-      <div class="philosophy-grid">
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="01_shinchan.jpg" alt="素直さ・誠実さ" loading="lazy">
-          </div>
-          <h4>素直さ・誠実さ</h4>
-          <p style="font-size:14px">正直に学び続ける</p>
-        </div>
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="07_shinchan.jpg" alt="助け合いの文化" loading="lazy">
-          </div>
-          <h4>助け合いの文化</h4>
-          <p style="font-size:14px">困ったらすぐ相談</p>
-        </div>
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="11_shinchan.jpg" alt="創意工夫" loading="lazy">
-          </div>
-          <h4>創意工夫</h4>
-          <p style="font-size:14px">なかったものを作る</p>
-        </div>
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="19_family改.jpg" alt="チーム志向" loading="lazy">
-          </div>
-          <h4>チーム志向</h4>
-          <p style="font-size:14px">相互扶助の精神</p>
-        </div>
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="04_shinchanpng (1).jpg" alt="学習意欲" loading="lazy">
-          </div>
-          <h4>学習意欲</h4>
-          <p style="font-size:14px">実力を伸ばし挑戦</p>
-        </div>
-        <div class="philosophy-item">
-          <div class="philosophy-icon">
-            <img src="16_shiro.jpg" alt="利他と成果" loading="lazy">
-          </div>
-          <h4>利他と成果</h4>
-          <p style="font-size:14px">人と共に生きる</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Section 4 -->
-  <section class="video-showcase">
-    <div class="video-container">
-      <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-          <source src="02_憧れの先輩_15秒_2025秋フェア告知あり.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Voices -->
-  <section id="voices" style="background:var(--cream)">
-    <div class="container">
-      <div class="section-title">
-        <h2>社員の声</h2>
-        <p>リアルな現場の声をお届けします</p>
-      </div>
-      <div class="voices-slider">
-        <div class="voices-track">
-          <div class="voice-card">
-            <img src="takuma.jpeg" alt="たくま" class="voice-image" loading="lazy" width="400" height="500">
-            <div class="voice-content">
-              <h3 class="voice-name">たくま</h3>
-              <p class="voice-role">工務担当</p>
-              <p class="voice-message">現場の仕事は本当にやりがいがあります。自分の手で空間が生まれ変わる瞬間、お客様の笑顔を見られる瞬間が最高です。ここは現場でもインセンティブがあるから、頑張りが収入に直結。施工の知識が営業提案にも活きるので、将来の選択肢も広がります。道具の名前から段取りまで、全部が自分の武器になっていく感覚が楽しいです。</p>
-              <div class="voice-badges">
-                <span class="badge badge-info">📷 SNS</span>
-                <span class="badge badge-success">📈 成長中</span>
-              </div>
+    <!-- オフィス紹介 -->
+    <section class="office">
+        <div class="container">
+            <h2 class="section-title">オフィス紹介</h2>
+            <div class="office-slider">
+                <div class="office-slide">
+                    <img src="office.jpg" alt="オフィス" width="300" height="200" loading="lazy">
+                </div>
+                <div class="office-slide">
+                    <img src="tempo1.JPG" alt="店舗1" width="300" height="200" loading="lazy">
+                </div>
+                <div class="office-slide">
+                    <img src="tempo2.jpeg" alt="店舗2" width="300" height="200" loading="lazy">
+                </div>
+                <div class="office-slide">
+                    <img src="tempo3.jpeg" alt="店舗3" width="300" height="200" loading="lazy">
+                </div>
             </div>
-          </div>
-
-          <div class="voice-card">
-            <img src="hina.jpeg" alt="ひな" class="voice-image" loading="lazy" width="400" height="500">
-            <div class="voice-content">
-              <h3 class="voice-name">ひな</h3>
-              <p class="voice-role">事務・SNS運用</p>
-              <p class="voice-message">Instagramの投稿は私が担当。リアルな職場の空気をそのまま発信することを心がけています。堅苦しくなく、でもお客様にも仲間にも誠実でいたい。若い世代の感覚を大切にしてくれるから、自分の意見も言いやすい。みんなで作り上げる手触りが心地よくて、日々の成長がそのまま会社の成長につながる実感があります。</p>
-              <div class="voice-badges">
-                <span class="badge badge-info">📷 SNS</span>
-                <span class="badge badge-gold">❤️ 誠実</span>
-              </div>
+            <div class="instagram-cta">
+                <a href="https://www.instagram.com/century21homemart/" class="btn btn-primary" target="_blank">Instagramで最新情報をチェック</a>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <div class="voice-card">
-            <img src="mika.jpeg" alt="みか" class="voice-image" loading="lazy" width="400" height="500">
-            <div class="voice-content">
-              <h3 class="voice-name">みか</h3>
-              <p class="voice-role">経理・管理</p>
-              <p class="voice-message">数字で正しく評価される仕組みがあるから、みんなのモチベーションが高い。困ったときは"すぐ助けてもらえる"安心感があるので、新しい挑戦も怖くない。社長が若くフラットだから、納得感のある議論ができる。自分たちで会社を作っている実感が持てるのが、ホームマートの魅力です。</p>
-              <div class="voice-badges">
-                <span class="badge badge-success">🧮 数字</span>
-                <span class="badge badge-gold">🛡️ 安心</span>
-              </div>
+    <!-- 応募セクション -->
+    <section class="apply" id="apply">
+        <div class="container">
+            <h2>稼ぐ覚悟があるか。それだけだ。</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">ここで月100万に慣れたら、<strong>もう安月給には戻れない。</strong></p>
+            <div class="apply-buttons">
+                <a href="https://form.run/@c21-member" class="btn" aria-label="応募フォームへ">挑戦する</a>
+                <a href="tel:0120438639" class="btn" aria-label="電話で相談">電話で相談</a>
             </div>
-          </div>
-
-          <div class="voice-card">
-            <img src="inui.jpeg" alt="代表 乾佑企" class="voice-image" loading="lazy" width="400" height="500">
-            <div class="voice-content">
-              <h3 class="voice-name">乾 佑企</h3>
-              <p class="voice-role">代表</p>
-              <p class="voice-message">成績が上がらないのは教える側の責任。未経験でも"楽しい営業"に変えていくのが私の役割です。20歳で創業して12年、社員が社長より稼げる会社を目指してきました。センチュリー21の看板と自社施工の強みを最大限に活かして、最強のチームを一緒に作りましょう。</p>
-              <div class="voice-badges">
-                <span class="badge badge-gold">👑 代表</span>
-                <span class="badge badge-success">🚀 挑戦</span>
-              </div>
+            <div class="apply-info">
+                <p>📞 0120-43-8639</p>
+                <p>受付時間：平日9:00〜18:00</p>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Works -->
-  <section id="works">
-    <div class="container">
-      <div class="section-title">
-        <h2>自社施工の<span class="gold">"凄さ"</span>が営業の武器</h2>
-        <p>大工・内装・設備・水道・電気・ガス・防水まで一貫対応</p>
-      </div>
-
-      <div class="ba-grid">
-        <div class="ba-item">
-          <h3 class="ba-title">洗面台リフォーム</h3>
-          <input type="checkbox" id="ba-toggle-1" class="ba-toggle">
-          <div class="ba-container">
-            <img src="washroom_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="400" height="500">
-            <img src="washroom_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="400" height="500">
-            <span class="ba-label before">After</span>
-            <span class="ba-label after">Before</span>
-          </div>
-          <label for="ba-toggle-1" class="ba-toggle-btn">Before/After 切替</label>
+    <!-- 法定表示 -->
+    <section class="legal">
+        <div class="container">
+            <h2 class="section-title">募集要項</h2>
+            <div class="legal-table">
+                <table>
+                    <tr>
+                        <th>募集企業</th>
+                        <td>株式会社ホームマート（センチュリー21 ホームマート）</td>
+                    </tr>
+                    <tr>
+                        <th>募集職種</th>
+                        <td>不動産売買仲介 営業（正社員）</td>
+                    </tr>
+                    <tr>
+                        <th>勤務地</th>
+                        <td>奈良県北葛城郡広陵町笠287-1</td>
+                    </tr>
+                    <tr>
+                        <th>給与</th>
+                        <!-- 数値修正箇所 -->
+                        <td>月給35万円＋歩合（10〜15%）※固定残業代なし</td>
+                    </tr>
+                    <tr>
+                        <th>試用期間</th>
+                        <!-- 要確認 -->
+                        <td>3ヶ月（同条件）</td>
+                    </tr>
+                    <tr>
+                        <th>勤務時間</th>
+                        <td>9:00〜18:00（休憩60分）</td>
+                    </tr>
+                    <tr>
+                        <th>休日</th>
+                        <td>週休2日制（シフト）／年間休日120日目安</td>
+                    </tr>
+                    <tr>
+                        <th>時間外労働</th>
+                        <!-- 要確認 -->
+                        <td>あり（平均月20h目安／超過分割増支給）</td>
+                    </tr>
+                    <tr>
+                        <th>加入保険</th>
+                        <td>雇用・労災・健康・厚生年金</td>
+                    </tr>
+                    <tr>
+                        <th>手当</th>
+                        <td>交通費／資格手当（宅建など）／表彰制度 ほか</td>
+                    </tr>
+                    <tr>
+                        <th>受動喫煙対策</th>
+                        <!-- 要確認 -->
+                        <td>屋内禁煙</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+    </section>
 
-        <div class="ba-item">
-          <h3 class="ba-title">トイレリフォーム</h3>
-          <input type="checkbox" id="ba-toggle-2" class="ba-toggle">
-          <div class="ba-container">
-            <img src="toilet_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="400" height="500">
-            <img src="toilet_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="400" height="500">
-            <span class="ba-label before">After</span>
-            <span class="ba-label after">Before</span>
-          </div>
-          <label for="ba-toggle-2" class="ba-toggle-btn">Before/After 切替</label>
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>株式会社ホームマート</h3>
+                <p>〒635-0821 奈良県北葛城郡広陵町笠287-1</p>
+                <p>TEL: 0120-43-8639</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.123456789!2d135.123456!3d34.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s奈良県北葛城郡広陵町笠287-1!5e0!3m2!1sja!2sjp!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/century21homemart/" target="_blank">Instagram</a>
+            </div>
+            <div class="copyright">
+                © 2025 Century21 HomeMart. All Rights Reserved.
+            </div>
         </div>
+    </footer>
 
-        <div class="ba-item">
-          <h3 class="ba-title">浴室リフォーム</h3>
-          <input type="checkbox" id="ba-toggle-3" class="ba-toggle">
-          <div class="ba-container landscape">
-            <img src="bathroom_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="800" height="450">
-            <img src="bathroom_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="800" height="450">
-            <span class="ba-label before">After</span>
-            <span class="ba-label after">Before</span>
-          </div>
-          <label for="ba-toggle-3" class="ba-toggle-btn">Before/After 切替</label>
+    <!-- 下部固定ナビ -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-inner">
+            <a href="#story">
+                <span>💪</span>
+                なぜ
+            </a>
+            <a href="#jobs">
+                <span>📋</span>
+                募集
+            </a>
+            <a href="#simulator">
+                <span>💰</span>
+                給与試算
+            </a>
+            <a href="#apply">
+                <span>🚀</span>
+                応募
+            </a>
         </div>
+    </nav>
 
-        <div class="ba-item">
-          <h3 class="ba-title">キッチンリフォーム</h3>
-          <input type="checkbox" id="ba-toggle-4" class="ba-toggle">
-          <div class="ba-container landscape">
-            <img src="kitchen_after.jpg" alt="施工後" class="ba-image before" loading="lazy" width="800" height="450">
-            <img src="kitchen_before.jpg" alt="施工前" class="ba-image after" loading="lazy" width="800" height="450">
-            <span class="ba-label before">After</span>
-            <span class="ba-label after">Before</span>
-          </div>
-          <label for="ba-toggle-4" class="ba-toggle-btn">Before/After 切替</label>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "不動産売買仲介営業",
+        "description": "2026年内に月収100万円未達なら社長が100万円払う。本気で稼ぐ20代募集。センチュリー21ホームマートで昭和営業の魂を持って令和のフィールドを勝ち抜く。",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "株式会社ホームマート（センチュリー21）",
+            "sameAs": "https://www.instagram.com/century21homemart/"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "笠287-1",
+                "addressLocality": "広陵町",
+                "addressRegion": "奈良県",
+                "postalCode": "635-0821",
+                "addressCountry": "JP"
+            }
+        },
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "JPY",
+            "value": {
+                "@type": "QuantitativeValue",
+                "value": 350000,
+                "unitText": "MONTH"
+            }
+        },
+        "employmentType": "FULL_TIME",
+        "validThrough": "2026-03-07"
+    }
+    </script>
 
-  <!-- Office -->
-  <section id="office" style="background:var(--cream)">
-    <div class="container">
-      <div class="section-title">
-        <h2>働く環境</h2>
-        <p>明るく開放的、でも温度のあるオフィス</p>
-      </div>
+    <!-- JavaScript -->
+    <script>
+        // ====== シミュレーター ======
+        const price = document.getElementById('price');
+        const gross = document.getElementById('gross');
+        const priceVal = document.getElementById('price-val');
+        const grossVal = document.getElementById('gross-val');
+        const breakdown = document.getElementById('breakdown');
+        const resultAmount = document.getElementById('result');
+        const tierNote = document.getElementById('tier-note');
 
-      <div class="office-slider">
-        <div class="office-track">
-          <div class="office-slide"><img src="office.jpg" alt="オフィス 1" width="1200" height="675" loading="lazy"></div>
-          <div class="office-slide"><img src="tempo1.JPG" alt="オフィス 2" width="1200" height="675" loading="lazy"></div>
-          <div class="office-slide"><img src="tempo2.jpeg" alt="オフィス 3" width="1200" height="675" loading="lazy"></div>
-          <div class="office-slide"><img src="tempo3.jpeg" alt="オフィス 4" width="1200" height="675" loading="lazy"></div>
-        </div>
-      </div>
+        let hand = '片手';
+        let deals = 1;
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center">
-        <div style="background:var(--white);padding:24px;border-radius:12px">
-          <div style="font-size:32px;margin-bottom:12px">💻</div>
-          <h4>最新設備</h4>
-          <p style="font-size:14px">PC・スマホ完備</p>
-        </div>
-        <div style="background:var(--white);padding:24px;border-radius:12px">
-          <div style="font-size:32px;margin-bottom:12px">☕</div>
-          <h4>リフレッシュ</h4>
-          <p style="font-size:14px">休憩スペース充実</p>
-        </div>
-        <div style="background:var(--white);padding:24px;border-radius:12px">
-          <img src="17_shiro.jpg" alt="看板犬" loading="lazy" width="50" height="50" style="width:50px;height:50px;border-radius:50%;margin:0 auto 12px">
-          <h4>看板犬</h4>
-          <p style="font-size:14px">癒しの存在</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        function feePerDealYen(p){ // 税抜：3%+6万
+            return Math.floor(p * 10000 * 0.03 + 60000);
+        }
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <h2>よくある質問</h2>
-        <p>応募前の不安を解消します</p>
-      </div>
+        function fmtMan(yen){
+            return Math.round(yen / 10000); // 万円丸め
+        }
 
-      <details class="faq-card">
-        <summary>未経験でも本当に大丈夫ですか？</summary>
-        <div class="faq-content">
-          <p>はい、大丈夫です。3ヶ月の研修期間で基礎から丁寧に教えます。センチュリー21の研修プログラムと、現場での研修を組み合わせて、確実に成長できる環境を用意しています。</p>
-        </div>
-      </details>
+        function calc(){
+            const p = parseInt(price.value,10);           // 物件価格（万円）
+            const g = parseInt(gross.value,10);           // 工事粗利（万円）
+            priceVal.textContent = p;
+            grossVal.textContent = g;
 
-      <details class="faq-card">
-        <summary>ノルマはありますか？</summary>
-        <div class="faq-content">
-          <p>厳しいノルマはありません。個人の成長段階に合わせた目標設定を行い、チーム全体でサポートします。KPIで進捗を可視化し、改善点を一緒に考えます。</p>
-        </div>
-      </details>
+            // 仲介手数料（税抜）
+            const per = feePerDealYen(p);                 // 円
+            const perMan = fmtMan(per);                   // 万円
+            const brokMan = (hand === '片手' ? perMan : perMan*2) * deals;
 
-      <details class="faq-card">
-        <summary>完全週休2日制は本当ですか？</summary>
-        <div class="faq-content">
-          <p><strong>はい、完全週休2日制です。</strong> シフト制で希望も考慮しながら、無理のない勤務計画を組みます。プライベートも大切にできる環境です。</p>
-        </div>
-      </details>
+            // 営業売上（税抜）＝仲介手数料 + 工事粗利
+            const salesMan = brokMan + g;
 
-      <details class="faq-card">
-        <summary>残業はどのくらいありますか？</summary>
-        <div class="faq-content">
-          <p>月平均20時間程度です。繁忙期は多少増えることもありますが、効率化を進めて残業削減に取り組んでいます。現場職は直行直帰もOKです。</p>
-        </div>
-      </details>
+            // 歩合（段階制）
+            let commissionMan = 0;
+            let tier = '';
+            if (salesMan < 200){
+                commissionMan = 0;
+                tier = '＜200万円：歩合0％（固定給のみ）';
+            } else if (salesMan < 300){
+                commissionMan = Math.floor(salesMan * 0.10);
+                tier = '200〜299万円：歩合10％';
+            } else {
+                commissionMan = Math.floor(salesMan * 0.15);
+                tier = '300万円以上：歩合15％';
+            }
 
-      <details class="faq-card">
-        <summary>資格取得の支援はありますか？</summary>
-        <div class="faq-content">
-          <p>宅建士、電気工事士、管工事施工管理技士など、業務に関連する資格の取得を全面支援します。受験費用補助、合格時の資格手当もあります。</p>
-        </div>
-      </details>
+            // 工事粗利の特別加算（粗利の10%を追加）
+            const reformBonusMan = Math.floor(g * 0.10);
 
-      <details class="faq-card">
-        <summary>選考プロセスを教えてください</summary>
-        <div class="faq-content">
-          <p>①エントリー → ②面接（1回） → ③内定・入社。最短1週間でのスピード入社も可能です。まずは気軽にお話ししましょう。</p>
-        </div>
-      </details>
-    </div>
-  </section>
+            // 固定給35万
+            const baseMan = 35;
 
-  <!-- Entry -->
-  <section id="entry" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);padding:80px 0">
-    <div class="container">
-      <div class="section-title">
-        <h2 style="color:var(--white)">一緒に最強のチームを作ろう</h2>
-        <p style="color:var(--white)">自分たちで決める。自分たちで作る。だから、仕事が楽しくなる。</p>
-      </div>
-      <div class="entry-wrap">
-        <h3 style="text-align:center;margin-bottom:16px">応募から入社までの流れ</h3>
-        <div class="entry-flow">
-          <div class="entry-step">
-            <div class="entry-number">1</div>
-            <p>エントリー</p>
-          </div>
-          <div class="entry-arrow">↓</div>
-          <div class="entry-step">
-            <div class="entry-number">2</div>
-            <p>面接（1回）</p>
-          </div>
-          <div class="entry-arrow">↓</div>
-          <div class="entry-step">
-            <div class="entry-number">3</div>
-            <p>内定・入社</p>
-          </div>
-        </div>
-      </div>
+            const totalMan = baseMan + commissionMan + reformBonusMan;
 
-      <div class="cta-group">
-        <a href="https://form.run/@c21-member" class="cta-primary" style="background:var(--white);color:var(--gold)"><span>🚀</span> 今すぐ応募する</a>
-        <a href="tel:0120438639" class="cta-secondary" style="background:transparent;color:var(--white);border-color:var(--white)"><span>📞</span> 電話で相談</a>
-      </div>
+            breakdown.innerHTML = `
+                仲介手数料：<b>${brokMan}</b> 万円（${hand} × ${deals}件 / 価格${p}万）<br>
+                工事粗利益：<b>${g}</b> 万円（追加還元 <b>+${reformBonusMan}</b> 万円）
+                <hr style="border:none;border-top:1px solid rgba(0,0,0,.1);margin:10px 0">
+                営業売上 合計：<b>${salesMan}</b> 万円
+            `;
+            resultAmount.textContent = totalMan + '万円';
+            tierNote.textContent = `適用：${tier}`;
+        }
 
-      <p style="text-align:center;margin-top:24px;font-size:14px">お電話でのお問い合わせ：<strong>0120-43-8639</strong><br>受付時間：平日9:00〜18:00</p>
-    </div>
-  </section>
+        document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(b=>{
+            b.addEventListener('click',()=>{
+                document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(x=>x.classList.remove('active'));
+                b.classList.add('active');
+                hand = b.dataset.hand;
+                calc();
+            });
+        });
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <img src="office.jpg" alt="オフィス" style="width:100%;height:auto;margin-bottom:12px;border-radius:8px" loading="lazy">
-          <h3>センチュリー21ホームマート</h3>
-          <p>不動産売買・仲介／リフォーム・リノベーション</p>
-          <p>〒635-0821 奈良県北葛城郡広陵町笠287-1</p>
+        document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(b=>{
+            b.addEventListener('click',()=>{
+                document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(x=>x.classList.remove('active'));
+                b.classList.add('active');
+                deals = parseInt(b.dataset.cnt,10);
+                calc();
+            });
+        });
 
-          <div class="map-wrap" style="margin-top:16px">
-            <iframe
-              title="センチュリー21ホームマート Googleマップ"
-              src="https://www.google.com/maps?q=奈良県北葛城郡広陵町笠287-1&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
-            </iframe>
-          </div>
-        </div>
+        price.addEventListener('input', calc);
+        gross.addEventListener('input', calc);
 
-        <div>
-          <a href="https://www.instagram.com/century21homemart/" class="instagram-link" aria-label="Instagram">
-            📷 Instagram @century21homemart
-          </a>
-          <p style="margin-top:16px;font-size:14px">最新の職場の様子はInstagramでチェック！</p>
-        </div>
-      </div>
+        calc();
+        // ====== /シミュレーター ======
 
-      <div style="text-align:center;margin-top:32px;padding-top:32px;border-top:1px solid #444">
-        <p style="font-size:12px">&copy; 2025 Century21 HomeMart. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+        // タブ切り替え
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-  <!-- Bottom Nav -->
-  <nav class="bottom-nav">
-    <a href="#why" class="bottom-nav-item" aria-label="なぜホームマート">
-      <span class="bottom-nav-icon">🤔</span>
-      <span>なぜ？</span>
-    </a>
-    <a href="#jobs" class="bottom-nav-item" aria-label="募集職種">
-      <span class="bottom-nav-icon">💼</span>
-      <span>募集職種</span>
-    </a>
-    <a href="#training" class="bottom-nav-item" aria-label="研修">
-      <span class="bottom-nav-icon">📚</span>
-      <span>研修</span>
-    </a>
-    <a href="#schedule" class="bottom-nav-item" aria-label="1日の流れ">
-      <span class="bottom-nav-icon">⏰</span>
-      <span>1日の流れ</span>
-    </a>
-    <a href="#voices" class="bottom-nav-item" aria-label="社員の声">
-      <span class="bottom-nav-icon">💬</span>
-      <span>社員の声</span>
-    </a>
-    <a href="#entry" class="bottom-nav-item" aria-label="応募">
-      <span class="bottom-nav-icon">✉️</span>
-      <span>応募</span>
-    </a>
-  </nav>
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Before/After切り替え
+        function toggleBA(btn, id) {
+            const container = btn.parentElement;
+            const image = document.getElementById(id);
+            
+            container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            if (btn.textContent === 'After') {
+                image.classList.add('show-after');
+            } else {
+                image.classList.remove('show-after');
+            }
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+```
