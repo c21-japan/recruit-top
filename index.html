@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -44,7 +45,7 @@
       max-width:1200px;margin:0 auto;padding:15px 20px;
       display:flex;justify-content:space-between;align-items:center;
     }
-    .logo img{height:45px;width:auto}
+    .logo{height:45px;width:auto;object-fit:contain}
     .cta-header{
       background:linear-gradient(135deg,var(--gold),var(--gold-light));
       color:#fff;padding:12px 24px;border-radius:50px;
@@ -58,14 +59,30 @@
       75%{transform:translateX(2px)}
     }
 
-    /* HERO */
+    /* HERO with Video Background */
     .hero{
       position:relative;min-height:100vh;
       display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
-                url('1.png') center/cover;
+      overflow:hidden;
+    }
+    .hero-video{
+      position:absolute;
+      top:50%;left:50%;
+      min-width:100%;min-height:100%;
+      width:auto;height:auto;
+      transform:translate(-50%,-50%);
+      z-index:1;
+      object-fit:cover;
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9));
+      z-index:2;
     }
     .hero-content{
+      position:relative;
+      z-index:3;
       text-align:center;padding:20px;max-width:1000px;
       animation:fadeInUp 1s ease;
     }
@@ -146,6 +163,39 @@
     .btn-white{
       background:#fff;color:#ff0000;
       border:3px solid #ff0000;
+    }
+
+    /* Video Showcase */
+    .video-showcase{
+      background:var(--black);
+      padding:60px 0;
+      margin:60px 0;
+    }
+    .video-container{
+      max-width:900px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    .video-wrapper{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    }
+    .video-wrapper video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .video-caption{
+      text-align:center;
+      color:#fff;
+      margin-top:20px;
+      font-size:18px;
+      font-weight:700;
     }
 
     /* SECTIONS */
@@ -345,6 +395,7 @@
     .genius{
       background:var(--black);
       color:#fff;
+      position:relative;
     }
     .genius-header{
       text-align:center;
@@ -372,14 +423,25 @@
       padding:20px;
       text-align:center;
       transition:all 0.3s;
+      position:relative;
+      overflow:hidden;
     }
     .genius-item:hover{
       transform:scale(1.05);
       box-shadow:0 10px 40px rgba(255,215,0,0.3);
     }
     .genius-icon{
-      font-size:48px;
-      margin-bottom:15px;
+      width:80px;
+      height:80px;
+      margin:0 auto 15px;
+      border-radius:50%;
+      overflow:hidden;
+      border:3px solid var(--gold);
+    }
+    .genius-icon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
     .genius-text{
       font-size:16px;
@@ -515,6 +577,21 @@
       border:3px solid #fff;
     }
 
+    /* MAP */
+    .map-container{
+      width:100%;
+      height:400px;
+      border-radius:20px;
+      overflow:hidden;
+      margin:30px 0;
+      box-shadow:0 10px 40px rgba(0,0,0,0.2);
+    }
+    .map-container iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
     /* FOOTER */
     footer{
       background:var(--black);
@@ -551,6 +628,7 @@
       .urgent-text{font-size:14px}
       .hero h1{font-size:28px}
       .result-amount{font-size:48px}
+      .genius-grid{grid-template-columns:repeat(2,1fr)}
     }
   </style>
 </head>
@@ -566,15 +644,18 @@
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <div class="logo">
-        <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート">
-      </div>
+      <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" loading="eager">
       <a href="https://form.run/@c21-member" class="cta-header">今すぐ応募</a>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO with Video Background -->
   <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="copy_EAF60BEB-9DBE-4FC6-83EE-BFCEEAD56E37.MOV" type="video/quicktime">
+      <source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">社長が30万円を賭けた約束</div>
       <h1>
@@ -604,6 +685,18 @@
       </div>
     </div>
   </section>
+
+  <!-- VIDEO SHOWCASE 1 -->
+  <div class="video-showcase">
+    <div class="video-container">
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-caption">センチュリー21の信頼と実績</p>
+    </div>
+  </div>
 
   <!-- STORY -->
   <section class="story">
@@ -782,6 +875,18 @@
     </div>
   </section>
 
+  <!-- VIDEO SHOWCASE 2 -->
+  <div class="video-showcase">
+    <div class="video-container">
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-caption">3世代のお付き合い - 信頼される理由</p>
+    </div>
+  </div>
+
   <!-- SIMULATOR -->
   <section class="simulator" id="simulator">
     <div class="container">
@@ -858,35 +963,51 @@
       </div>
       <div class="genius-grid">
         <div class="genius-item">
-          <div class="genius-icon">01_shinchan.jpg</div>
+          <div class="genius-icon">
+            <img src="01_shinchan.jpg" alt="週1不動産買取" loading="lazy">
+          </div>
           <div class="genius-text">週1ペースで<br>不動産買取</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">02_shinchan.jpg</div>
+          <div class="genius-icon">
+            <img src="02_shinchan.jpg" alt="自社施工" loading="lazy">
+          </div>
           <div class="genius-text">自社施工で<br>粗利200万円</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">03_shinchan.jpg</div>
+          <div class="genius-icon">
+            <img src="03_shinchan.jpg" alt="SNS映え" loading="lazy">
+          </div>
           <div class="genius-text">SNS映えする<br>デザイン力</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">05_shinchan.jpg</div>
+          <div class="genius-icon">
+            <img src="06_shinchan (1).jpg" alt="工事粗利還元" loading="lazy">
+          </div>
           <div class="genius-text">工事粗利の<br>10%還元</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">13_shiro.jpg</div>
+          <div class="genius-icon">
+            <img src="13_shiro.jpg" alt="営業×施工" loading="lazy">
+          </div>
           <div class="genius-text">営業×施工の<br>最強タッグ</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">14_shiro.jpg</div>
+          <div class="genius-icon">
+            <img src="14_shiro.jpg" alt="センチュリー21" loading="lazy">
+          </div>
           <div class="genius-text">センチュリー21<br>ブランド力</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">15_shiro.jpg</div>
+          <div class="genius-icon">
+            <img src="15_shiro.jpg" alt="20代主役" loading="lazy">
+          </div>
           <div class="genius-text">20代が<br>主役の会社</div>
         </div>
         <div class="genius-item">
-          <div class="genius-icon">16_shiro.jpg</div>
+          <div class="genius-icon">
+            <img src="17_shiro.jpg" alt="数字で評価" loading="lazy">
+          </div>
           <div class="genius-text">数字で正当<br>評価</div>
         </div>
       </div>
@@ -1002,6 +1123,25 @@
     </div>
   </section>
 
+  <!-- MAP -->
+  <section style="background:var(--cream);padding:80px 20px">
+    <div class="container">
+      <h2 class="section-title">アクセス</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7!2d135.7!3d34.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s奈良県北葛城郡広陵町笠287-1!5e0!3m2!1sja!2sjp"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <p style="text-align:center;font-size:18px;margin-top:20px">
+        〒635-0821 奈良県北葛城郡広陵町笠287-1<br>
+        センチュリー21ホームマート
+      </p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -1100,20 +1240,28 @@
       result.textContent = total + '万円';
       
       resultDetail.innerHTML = `
-        <div style="font-weight:700;margin-bottom:10px">【計算の内訳】</div>
-        <div>物件価格 ${p}万円 × ${hand} × ${deals}件</div>
-        <div>→ 仲介手数料: <strong>${brokerFee}万円</strong></div>
-        <div>リフォーム粗利益: <strong>${g}万円</strong></div>
-        <div style="border-top:1px solid #ddd;margin:10px 0;padding-top:10px">
-          営業売上合計: <strong>${sales}万円</strong>
+        <div style="font-weight:700;margin-bottom:10px">【小学生でもわかる計算】</div>
+        <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
+          <strong>①物件を売る</strong><br>
+          ${p}万円の物件 × ${hand} × ${deals}件<br>
+          = 仲介手数料 <strong>${brokerFee}万円</strong>
         </div>
-        <div style="margin-top:10px">
-          固定給: <strong>30万円</strong><br>
+        <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
+          <strong>②リフォームも提案</strong><br>
+          工事の利益 = <strong>${g}万円</strong>
+        </div>
+        <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
+          <strong>③売上を合計</strong><br>
+          ${brokerFee}万円 + ${g}万円 = <strong>${sales}万円</strong>
+        </div>
+        <div style="margin-bottom:15px;padding:10px;background:#fffacd;border-radius:10px">
+          <strong>④あなたの取り分</strong><br>
+          基本給: <strong>30万円</strong><br>
           歩合${rate}: <strong>${commission}万円</strong><br>
           工事ボーナス(10%): <strong>${bonus}万円</strong>
         </div>
-        <div style="border-top:2px solid var(--gold);margin-top:10px;padding-top:10px;font-size:20px">
-          あなたの月収: <strong>${total}万円</strong>
+        <div style="padding:15px;background:var(--gold);color:#fff;border-radius:10px;font-size:24px;text-align:center">
+          合計: <strong>${total}万円</strong>があなたの月収！
         </div>
       `;
     }
@@ -1157,3 +1305,4 @@
 
 </body>
 </html>
+```
