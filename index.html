@@ -16,6 +16,7 @@
     }
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Noto Sans JP',sans-serif;color:var(--black);background:var(--white);line-height:1.8;overflow-x:hidden}
+    a{text-decoration:none}
 
     /* URGENT BAR */
     .urgent-bar{
@@ -24,973 +25,224 @@
       color:#fff;padding:12px;text-align:center;font-weight:900;
       animation:pulse 1.5s infinite;
     }
-    @keyframes pulse{
-      0%,100%{opacity:1}
-      50%{opacity:0.85}
-    }
-    .urgent-text{
-      font-size:18px;letter-spacing:1px;
-      text-shadow:0 2px 10px rgba(0,0,0,0.3);
-    }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.85}}
+    .urgent-text{font-size:18px;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
 
     /* HEADER */
-    header{
-      margin-top:50px;
-      background:var(--white);
-      border-bottom:5px solid var(--gold);
-      box-shadow:0 4px 20px rgba(0,0,0,0.1);
-    }
-    .header-inner{
-      max-width:1200px;margin:0 auto;padding:15px 20px;
-      display:flex;justify-content:space-between;align-items:center;
-    }
+    header{margin-top:50px;background:var(--white);border-bottom:5px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    .header-inner{max-width:1200px;margin:0 auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
     .logo{height:45px;width:auto;object-fit:contain}
-    .cta-header{
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      color:#fff;padding:12px 24px;border-radius:50px;
-      font-weight:900;font-size:16px;text-decoration:none;
-      box-shadow:0 6px 20px rgba(161,146,118,0.4);
-      animation:shake 2s infinite;
-    }
-    @keyframes shake{
-      0%,100%{transform:translateX(0)}
-      25%{transform:translateX(-2px)}
-      75%{transform:translateX(2px)}
-    }
+    .cta-header{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;padding:12px 24px;border-radius:50px;font-weight:900;font-size:16px;box-shadow:0 6px 20px rgba(161,146,118,0.4);animation:shake 2s infinite}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+
+    /* ICON BELT (Shinchan & Shiro) */
+    .icon-belt{background:var(--cream);border-top:1px solid #eee;border-bottom:1px solid #eee}
+    .icon-row{max-width:1200px;margin:0 auto;display:flex;gap:12px;overflow:auto;padding:10px 12px;scrollbar-width:none}
+    .icon-row::-webkit-scrollbar{display:none}
+    .icon{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);flex:0 0 auto;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .icon img, .icon video{width:100%;height:100%;object-fit:cover;display:block}
 
     /* HERO with Video Background */
-    .hero{
-      position:relative;min-height:100vh;
-      display:flex;align-items:center;justify-content:center;
-      overflow:hidden;
-    }
-    .hero-video{
-      position:absolute;
-      top:50%;left:50%;
-      min-width:100%;min-height:100%;
-      width:auto;height:auto;
-      transform:translate(-50%,-50%);
-      z-index:1;
-      object-fit:cover;
-    }
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9));
-      z-index:2;
-    }
-    .hero-content{
-      position:relative;
-      z-index:3;
-      text-align:center;padding:20px;max-width:1000px;
-      animation:fadeInUp 1s ease;
-    }
-    @keyframes fadeInUp{
-      from{opacity:0;transform:translateY(30px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    .hero-badge{
-      display:inline-block;
-      background:#ff0000;color:#fff;
-      padding:8px 20px;border-radius:50px;
-      font-weight:900;margin-bottom:20px;
-      animation:blink 1s infinite;
-    }
-    @keyframes blink{
-      0%,100%{opacity:1}
-      50%{opacity:0.7}
-    }
-    .hero h1{
-      font-size:clamp(32px,6vw,56px);
-      font-weight:900;color:#fff;
-      line-height:1.3;margin-bottom:20px;
-      text-shadow:0 4px 20px rgba(0,0,0,0.5);
-    }
-    .hero h1 .gold{
-      background:linear-gradient(135deg,#FFD700,#FFA500);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .hero-sub{
-      font-size:20px;color:#fff;
-      margin-bottom:30px;font-weight:700;
-      text-shadow:0 2px 10px rgba(0,0,0,0.5);
-    }
-    .hero-proof{
-      background:rgba(255,255,255,0.1);
-      border:2px solid #fff;
-      border-radius:20px;
-      padding:20px;margin:30px auto;
-      max-width:600px;
-    }
-    .proof-title{
-      color:#FFD700;font-size:24px;
-      font-weight:900;margin-bottom:15px;
-    }
-    .proof-list{
-      text-align:left;color:#fff;
-      font-size:18px;line-height:2;
-    }
-    .proof-list li{
-      list-style:none;padding-left:30px;
-      position:relative;margin:10px 0;
-    }
-    .proof-list li:before{
-      content:"💰";position:absolute;
-      left:0;font-size:20px;
-    }
-    .hero-buttons{
-      display:flex;gap:20px;
-      justify-content:center;flex-wrap:wrap;
-      margin-top:30px;
-    }
-    .btn-hero{
-      padding:20px 40px;border-radius:50px;
-      font-weight:900;font-size:20px;
-      text-decoration:none;transition:all 0.3s;
-      box-shadow:0 8px 30px rgba(0,0,0,0.3);
-    }
-    .btn-fire{
-      background:linear-gradient(135deg,#ff6600,#ff0000);
-      color:#fff;animation:glow 2s infinite;
-    }
-    @keyframes glow{
-      0%,100%{box-shadow:0 8px 30px rgba(255,0,0,0.5)}
-      50%{box-shadow:0 8px 40px rgba(255,0,0,0.8)}
-    }
-    .btn-white{
-      background:#fff;color:#ff0000;
-      border:3px solid #ff0000;
-    }
-
-    /* Video Showcase */
-    .video-showcase{
-      background:var(--black);
-      padding:60px 0;
-      margin:60px 0;
-    }
-    .video-container{
-      max-width:900px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-    .video-wrapper{
-      position:relative;
-      width:100%;
-      aspect-ratio:16/9;
-      background:#000;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,0.5);
-    }
-    .video-wrapper video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .video-caption{
-      text-align:center;
-      color:#fff;
-      margin-top:20px;
-      font-size:18px;
-      font-weight:700;
-    }
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);z-index:1;object-fit:cover}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9));z-index:2}
+    .hero-content{position:relative;z-index:3;text-align:center;padding:20px;max-width:1000px;animation:fadeInUp 1s ease}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-badge{display:inline-block;background:#ff0000;color:#fff;padding:8px 20px;border-radius:50px;font-weight:900;margin-bottom:20px;animation:blink 1s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.7}}
+    .hero h1{font-size:clamp(32px,6vw,56px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:20px;text-shadow:0 4px 20px rgba(0,0,0,0.5)}
+    .hero h1 .gold{background:linear-gradient(135deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:20px;color:#fff;margin-bottom:30px;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,0.5)}
+    .hero-proof{background:rgba(255,255,255,0.1);border:2px solid #fff;border-radius:20px;padding:20px;margin:30px auto;max-width:600px}
+    .proof-title{color:#FFD700;font-size:24px;font-weight:900;margin-bottom:15px}
+    .proof-list{text-align:left;color:#fff;font-size:18px;line-height:2}
+    .proof-list li{list-style:none;padding-left:30px;position:relative;margin:10px 0}
+    .proof-list li:before{content:"💰";position:absolute;left:0;font-size:20px}
+    .hero-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+    .btn-hero{padding:20px 40px;border-radius:50px;font-weight:900;font-size:20px;transition:all 0.3s;box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+    .btn-fire{background:linear-gradient(135deg,#ff6600,#ff0000);color:#fff;animation:glow 2s infinite}
+    @keyframes glow{0%,100%{box-shadow:0 8px 30px rgba(255,0,0,0.5)}50%{box-shadow:0 8px 40px rgba(255,0,0,0.8)}}
+    .btn-white{background:#fff;color:#ff0000;border:3px solid #ff0000}
 
     /* SECTIONS */
     section{padding:80px 20px}
     .container{max-width:1200px;margin:0 auto}
-    .section-title{
-      font-size:clamp(32px,5vw,48px);
-      font-weight:900;text-align:center;
-      margin-bottom:50px;position:relative;
-    }
-    .section-title:after{
-      content:'';position:absolute;
-      bottom:-10px;left:50%;
-      transform:translateX(-50%);
-      width:100px;height:5px;
-      background:linear-gradient(90deg,var(--gold),var(--gold-light));
-    }
+    .section-title{font-size:clamp(32px,5vw,48px);font-weight:900;text-align:center;margin-bottom:50px;position:relative}
+    .section-title:after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:100px;height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
 
     /* STORY */
     .story{background:var(--black);color:#fff}
-    .story-box{
-      background:linear-gradient(135deg,rgba(161,146,118,0.2),rgba(184,160,130,0.2));
-      border:3px solid var(--gold);
-      border-radius:30px;padding:40px;
-      position:relative;overflow:hidden;
-    }
-    .story-box:before{
-      content:'社長の本音';
-      position:absolute;top:20px;right:20px;
-      background:var(--gold);color:#fff;
-      padding:8px 20px;border-radius:50px;
-      font-weight:900;
-    }
-    .story-text{
-      font-size:20px;line-height:2;
-      margin-bottom:30px;
-    }
-    .story-text strong{
-      color:#FFD700;font-size:24px;
-      text-shadow:0 2px 10px rgba(255,215,0,0.5);
-    }
-    .story-cta{
-      text-align:center;margin-top:30px;
-    }
+    .story-box{background:linear-gradient(135deg,rgba(161,146,118,0.2),rgba(184,160,130,0.2));border:3px solid var(--gold);border-radius:30px;padding:40px;position:relative;overflow:hidden}
+    .story-box:before{content:'社長の本音';position:absolute;top:20px;right:20px;background:var(--gold);color:#fff;padding:8px 20px;border-radius:50px;font-weight:900}
+    .story-text{font-size:20px;line-height:2;margin-bottom:30px}
+    .story-text strong{color:#FFD700;font-size:24px;text-shadow:0 2px 10px rgba(255,215,0,0.5)}
+    .story-cta{text-align:center;margin-top:30px}
+
+    /* ICON CLOUD (shinchan & shiro grid) */
+    .icon-cloud{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px;margin-top:20px}
+    .icon-cell{width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:3px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.12)}
+    .icon-cell img,.icon-cell video{width:100%;height:100%;object-fit:cover;display:block}
 
     /* PROOF CARDS */
     .proof-section{background:var(--cream)}
-    .proof-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-    .proof-card{
-      background:#fff;border-radius:20px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.1);
-      overflow:hidden;position:relative;
-      transition:transform 0.3s;
-    }
+    .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+    .proof-card{background:#fff;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.1);overflow:hidden;position:relative;transition:transform 0.3s}
     .proof-card:hover{transform:translateY(-10px)}
-    .proof-card-header{
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      color:#fff;padding:20px;
-      text-align:center;
-    }
-    .proof-card-title{
-      font-size:18px;font-weight:700;
-    }
-    .proof-card-amount{
-      font-size:48px;font-weight:900;
-      margin:10px 0;
-    }
-    .proof-card-body{
-      padding:20px;
-    }
-    .calculation{
-      background:var(--cream);
-      border-radius:15px;padding:15px;
-      margin:15px 0;
-    }
-    .calc-line{
-      display:flex;justify-content:space-between;
-      padding:8px 0;border-bottom:1px solid #ddd;
-    }
-    .calc-line:last-child{
-      border:none;font-weight:900;
-      font-size:20px;color:var(--gold);
-      padding-top:15px;
-    }
+    .proof-card-header{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;padding:20px;text-align:center}
+    .proof-card-title{font-size:18px;font-weight:700}
+    .proof-card-amount{font-size:48px;font-weight:900;margin:10px 0}
+    .proof-card-body{padding:20px}
+    .calculation{background:var(--cream);border-radius:15px;padding:15px;margin:15px 0}
+    .calc-line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
+    .calc-line:last-child{border:none;font-weight:900;font-size:20px;color:var(--gold);padding-top:15px}
+
+    /* MINI VIDEO STRIP */
+    .video-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+    .mini-vid{border-radius:14px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+    .mini-vid video{width:100%;height:200px;object-fit:cover;display:block}
 
     /* SIMULATOR */
-    .simulator{
-      background:linear-gradient(135deg,var(--black),#1a1a1a);
-      color:#fff;
-    }
-    .sim-box{
-      background:rgba(255,255,255,0.05);
-      border:2px solid var(--gold);
-      border-radius:30px;padding:40px;
-    }
-    .control-group{
-      margin:25px 0;
-    }
-    .control-group label{
-      font-size:18px;font-weight:900;
-      color:#FFD700;display:block;
-      margin-bottom:10px;
-    }
-    .slider{
-      width:100%;height:10px;
-      background:var(--gold);
-      border-radius:10px;
-      -webkit-appearance:none;
-    }
-    .slider::-webkit-slider-thumb{
-      -webkit-appearance:none;
-      width:30px;height:30px;
-      background:#FFD700;
-      border-radius:50%;
-      cursor:pointer;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    }
-    .toggle-group{
-      display:flex;gap:10px;
-      flex-wrap:wrap;
-    }
-    .toggle-btn{
-      padding:12px 20px;
-      border:2px solid var(--gold);
-      background:transparent;
-      color:#fff;
-      border-radius:50px;
-      font-weight:700;
-      cursor:pointer;
-      transition:all 0.3s;
-    }
-    .toggle-btn.active{
-      background:var(--gold);
-      color:var(--black);
-    }
-    .result-box{
-      background:linear-gradient(135deg,#FFD700,#FFA500);
-      color:var(--black);
-      border-radius:20px;
-      padding:30px;
-      margin-top:30px;
-      text-align:center;
-    }
-    .result-amount{
-      font-size:64px;
-      font-weight:900;
-      text-shadow:0 4px 20px rgba(0,0,0,0.2);
-    }
-    .result-detail{
-      margin-top:20px;
-      text-align:left;
-      background:rgba(255,255,255,0.9);
-      border-radius:15px;
-      padding:20px;
-    }
+    .simulator{background:linear-gradient(135deg,var(--black),#1a1a1a);color:#fff}
+    .sim-box{background:rgba(255,255,255,0.05);border:2px solid var(--gold);border-radius:30px;padding:40px}
+    .control-group{margin:25px 0}
+    .control-group label{font-size:18px;font-weight:900;color:#FFD700;display:block;margin-bottom:10px}
+    .slider{width:100%;height:10px;background:var(--gold);border-radius:10px;-webkit-appearance:none}
+    .slider::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;background:#FFD700;border-radius:50%;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+    .toggle-group{display:flex;gap:10px;flex-wrap:wrap}
+    .toggle-btn{padding:12px 20px;border:2px solid var(--gold);background:transparent;color:#fff;border-radius:50px;font-weight:700;cursor:pointer;transition:all 0.3s}
+    .toggle-btn.active{background:var(--gold);color:var(--black)}
+    .result-box{background:linear-gradient(135deg,#FFD700,#FFA500);color:var(--black);border-radius:20px;padding:30px;margin-top:30px;text-align:center}
+    .result-amount{font-size:64px;font-weight:900;text-shadow:0 4px 20px rgba(0,0,0,0.2)}
+    .result-detail{margin-top:20px;text-align:left;background:rgba(255,255,255,0.9);border-radius:15px;padding:20px}
 
     /* MONEY FLOW */
-    .money-flow{
-      background:linear-gradient(135deg,#ff6600,#ff0000);
-      color:#fff;
-      padding:100px 20px;
-    }
-    .flow-container{
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .flow-title{
-      text-align:center;
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      margin-bottom:60px;
-      text-shadow:0 4px 20px rgba(0,0,0,0.3);
-    }
-    .flow-steps{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:30px;
-    }
-    .flow-step{
-      background:rgba(255,255,255,0.1);
-      border:2px solid #fff;
-      border-radius:20px;
-      padding:30px;
-      text-align:center;
-      transition:transform 0.3s;
-    }
-    .flow-step:hover{
-      transform:translateY(-10px);
-      background:rgba(255,255,255,0.2);
-    }
-    .flow-number{
-      display:inline-block;
-      width:60px;
-      height:60px;
-      background:#fff;
-      color:#ff0000;
-      border-radius:50%;
-      line-height:60px;
-      font-size:32px;
-      font-weight:900;
-      margin-bottom:20px;
-    }
-    .flow-step h3{
-      font-size:20px;
-      margin-bottom:15px;
-    }
-    .flow-step p{
-      font-size:16px;
-      line-height:1.6;
-    }
-    .flow-step strong{
-      color:#FFD700;
-      font-size:24px;
-    }
+    .money-flow{background:linear-gradient(135deg,#ff6600,#ff0000);color:#fff;padding:100px 20px}
+    .flow-container{max-width:1200px;margin:0 auto}
+    .flow-title{text-align:center;font-size:clamp(36px,6vw,56px);font-weight:900;margin-bottom:60px;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .flow-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
+    .flow-step{background:rgba(255,255,255,0.1);border:2px solid #fff;border-radius:20px;padding:30px;text-align:center;transition:transform 0.3s}
+    .flow-step:hover{transform:translateY(-10px);background:rgba(255,255,255,0.2)}
+    .flow-number{display:inline-block;width:60px;height:60px;background:#fff;color:#ff0000;border-radius:50%;line-height:60px;font-size:32px;font-weight:900;margin-bottom:20px}
+    .flow-step h3{font-size:20px;margin-bottom:15px}
+    .flow-step p{font-size:16px;line-height:1.6}
+    .flow-step strong{color:#FFD700;font-size:24px}
 
-    /* SUCCESS STORIES */
-    .success{
-      background:var(--cream);
-      padding:100px 20px;
-    }
-    .success-title{
-      text-align:center;
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      margin-bottom:60px;
-    }
-    .success-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-      gap:40px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .success-card{
-      background:#fff;
-      border-radius:20px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.1);
-      overflow:hidden;
-      position:relative;
-      transition:transform 0.3s;
-    }
-    .success-card:hover{
-      transform:translateY(-10px);
-    }
-    .success-badge{
-      position:absolute;
-      top:20px;
-      right:20px;
-      background:#ff0000;
-      color:#fff;
-      padding:5px 15px;
-      border-radius:20px;
-      font-weight:900;
-      font-size:14px;
-    }
-    .success-header{
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      padding:30px;
-      text-align:center;
-    }
-    .success-name{
-      font-size:24px;
-      font-weight:900;
-      color:#fff;
-      margin-bottom:10px;
-    }
-    .success-prev{
-      font-size:16px;
-      color:rgba(255,255,255,0.8);
-    }
-    .success-body{
-      padding:30px;
-    }
-    .income-change{
-      display:flex;
-      justify-content:space-around;
-      align-items:center;
-      margin-bottom:30px;
-    }
-    .income-before,
-    .income-after{
-      text-align:center;
-    }
-    .income-label{
-      font-size:14px;
-      color:#999;
-      margin-bottom:5px;
-    }
-    .income-amount{
-      font-size:32px;
-      font-weight:900;
-    }
-    .income-before .income-amount{
-      color:#999;
-      text-decoration:line-through;
-    }
-    .income-after .income-amount{
-      color:var(--gold);
-    }
-    .income-arrow{
-      font-size:32px;
-      color:var(--gold);
-    }
-    .success-message{
-      background:var(--cream);
-      border-radius:15px;
-      padding:20px;
-      font-size:16px;
-      line-height:1.8;
-    }
+    /* SUCCESS */
+    .success{background:var(--cream);padding:100px 20px}
+    .success-title{text-align:center;font-size:clamp(36px,6vw,56px);font-weight:900;margin-bottom:60px}
+    .success-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;max-width:1200px;margin:0 auto}
+    .success-card{background:#fff;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.1);overflow:hidden;position:relative;transition:transform 0.3s}
+    .success-card:hover{transform:translateY(-10px)}
+    .success-badge{position:absolute;top:20px;right:20px;background:#ff0000;color:#fff;padding:5px 15px;border-radius:20px;font-weight:900;font-size:14px}
+    .success-header{background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:30px;text-align:center}
+    .success-name{font-size:24px;font-weight:900;color:#fff;margin-bottom:10px}
+    .success-prev{font-size:16px;color:rgba(255,255,255,0.85)}
+    .success-body{padding:30px}
+    .income-change{display:flex;justify-content:space-around;align-items:center;margin-bottom:30px}
+    .income-before,.income-after{text-align:center}
+    .income-label{font-size:14px;color:#999;margin-bottom:5px}
+    .income-amount{font-size:32px;font-weight:900}
+    .income-before .income-amount{color:#999;text-decoration:line-through}
+    .income-after .income-amount{color:var(--gold)}
+    .income-arrow{font-size:32px;color:var(--gold)}
+    .success-message{background:var(--cream);border-radius:15px;padding:20px;font-size:16px;line-height:1.8}
 
     /* CHALLENGE */
-    .challenge{
-      background:linear-gradient(135deg,#ff0000,#ff6600);
-      color:#fff;
-      text-align:center;
-    }
-    .challenge-box{
-      background:rgba(255,255,255,0.1);
-      border:3px solid #fff;
-      border-radius:30px;
-      padding:40px;
-      max-width:800px;
-      margin:0 auto;
-    }
-    .challenge h2{
-      font-size:clamp(28px,5vw,48px);
-      margin-bottom:30px;
-    }
-    .challenge-list{
-      text-align:left;
-      font-size:18px;
-      line-height:2;
-    }
-    .challenge-list li{
-      list-style:none;
-      padding-left:35px;
-      position:relative;
-      margin:15px 0;
-    }
-    .challenge-list li:before{
-      content:"✅";
-      position:absolute;
-      left:0;
-      font-size:24px;
-    }
+    .challenge{background:linear-gradient(135deg,#ff0000,#ff6600);color:#fff;text-align:center}
+    .challenge-box{background:rgba(255,255,255,0.1);border:3px solid #fff;border-radius:30px;padding:40px;max-width:800px;margin:0 auto}
+    .challenge h2{font-size:clamp(28px,5vw,48px);margin-bottom:30px}
+    .challenge-list{text-align:left;font-size:18px;line-height:2}
+    .challenge-list li{list-style:none;padding-left:35px;position:relative;margin:15px 0}
+    .challenge-list li:before{content:"✅";position:absolute;left:0;font-size:24px}
 
     /* GENIUS */
-    .genius{
-      background:var(--black);
-      color:#fff;
-      position:relative;
-    }
-    .genius-header{
-      text-align:center;
-      margin-bottom:50px;
-    }
-    .genius-title{
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      background:linear-gradient(90deg,#FFD700,#ff6600,#FFD700);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      margin-bottom:20px;
-    }
-    .genius-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-      gap:20px;
-      margin-top:40px;
-    }
-    .genius-item{
-      background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,165,0,0.1));
-      border:2px solid var(--gold);
-      border-radius:20px;
-      padding:20px;
-      text-align:center;
-      transition:all 0.3s;
-      position:relative;
-      overflow:hidden;
-    }
-    .genius-item:hover{
-      transform:scale(1.05);
-      box-shadow:0 10px 40px rgba(255,215,0,0.3);
-    }
-    .genius-icon{
-      font-size:48px;
-      margin-bottom:15px;
-    }
-    .genius-text{
-      font-size:16px;
-      font-weight:700;
-    }
+    .genius{background:var(--black);color:#fff;position:relative}
+    .genius-header{text-align:center;margin-bottom:50px}
+    .genius-title{font-size:clamp(36px,6vw,56px);font-weight:900;background:linear-gradient(90deg,#FFD700,#ff6600,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px}
+    .genius-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-top:40px}
+    .genius-item{background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,165,0,0.1));border:2px solid var(--gold);border-radius:20px;padding:20px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+    .genius-item:hover{transform:scale(1.05);box-shadow:0 10px 40px rgba(255,215,0,0.3)}
+    .genius-icon{font-size:48px;margin-bottom:15px}
+    .genius-text{font-size:16px;font-weight:700}
 
     /* JOBS */
     .jobs{background:var(--cream)}
-    .job-card{
-      background:#fff;
-      border:3px solid var(--gold);
-      border-radius:30px;
-      padding:30px;
-      margin-bottom:30px;
-      position:relative;
-      overflow:hidden;
-    }
-    .job-card:before{
-      content:'募集中';
-      position:absolute;
-      top:20px;right:20px;
-      background:#ff0000;
-      color:#fff;
-      padding:8px 20px;
-      border-radius:50px;
-      font-weight:900;
-      animation:blink 1s infinite;
-    }
-    .job-title{
-      font-size:32px;
-      font-weight:900;
-      color:var(--gold);
-      margin-bottom:20px;
-    }
-    .job-detail{
-      margin:20px 0;
-    }
-    .job-detail dt{
-      font-weight:900;
-      color:var(--gold);
-      font-size:18px;
-      margin-top:15px;
-    }
-    .job-detail dd{
-      margin-left:0;
-      font-size:16px;
-      line-height:1.8;
-    }
-    .job-highlight{
-      background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.2));
-      border-left:5px solid #FFD700;
-      padding:15px;
-      margin:20px 0;
-      font-weight:700;
-    }
+    .job-card{background:#fff;border:3px solid var(--gold);border-radius:30px;padding:30px;margin-bottom:30px;position:relative;overflow:hidden}
+    .job-card:before{content:'募集中';position:absolute;top:20px;right:20px;background:#ff0000;color:#fff;padding:8px 20px;border-radius:50px;font-weight:900;animation:blink 1s infinite}
+    .job-title{font-size:32px;font-weight:900;color:var(--gold);margin-bottom:20px}
+    .job-detail{margin:20px 0}
+    .job-detail dt{font-weight:900;color:var(--gold);font-size:18px;margin-top:15px}
+    .job-detail dd{margin-left:0;font-size:16px;line-height:1.8}
+    .job-highlight{background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.2));border-left:5px solid #FFD700;padding:15px;margin:20px 0;font-weight:700}
 
     /* VOICE */
     .voice{background:#fff}
-    .voice-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-    .voice-card{
-      background:var(--cream);
-      border-radius:20px;
-      padding:30px;
-      position:relative;
-      box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    }
-    .voice-card:before{
-      content:'"';
-      position:absolute;
-      top:10px;left:20px;
-      font-size:60px;
-      color:var(--gold);
-      opacity:0.3;
-    }
-    .voice-text{
-      font-size:18px;
-      line-height:1.8;
-      margin-bottom:20px;
-    }
-    .voice-name{
-      font-weight:900;
-      color:var(--gold);
-      font-size:20px;
-    }
+    .voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+    .voice-card{background:var(--cream);border-radius:20px;padding:30px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+    .voice-card:before{content:'"';position:absolute;top:10px;left:20px;font-size:60px;color:var(--gold);opacity:0.3}
+    .voice-text{font-size:18px;line-height:1.8;margin-bottom:20px}
+    .voice-name{font-weight:900;color:var(--gold);font-size:20px}
 
     /* WARNING */
-    .warning{
-      background:linear-gradient(135deg,#ff0000,#ff6600);
-      color:#fff;
-      padding:100px 20px;
-      text-align:center;
-    }
-    .warning-box{
-      max-width:800px;
-      margin:0 auto;
-      background:rgba(0,0,0,0.3);
-      border:3px solid #FFD700;
-      border-radius:30px;
-      padding:50px 30px;
-    }
-    .warning-title{
-      font-size:clamp(32px,5vw,56px);
-      font-weight:900;
-      margin-bottom:30px;
-      color:#FFD700;
-    }
-    .warning-text{
-      font-size:24px;
-      line-height:2;
-      margin-bottom:40px;
-    }
-    .warning-text strong{
-      color:#FFD700;
-      font-size:32px;
-    }
-    .countdown-big{
-      font-size:64px;
-      font-weight:900;
-      color:#FFD700;
-      text-shadow:0 0 30px rgba(255,215,0,0.5);
-      margin-bottom:40px;
-    }
+    .warning{background:linear-gradient(135deg,#ff0000,#ff6600);color:#fff;padding:100px 20px;text-align:center}
+    .warning-box{max-width:800px;margin:0 auto;background:rgba(0,0,0,0.3);border:3px solid #FFD700;border-radius:30px;padding:50px 30px}
+    .warning-title{font-size:clamp(32px,5vw,56px);font-weight:900;margin-bottom:30px;color:#FFD700}
+    .warning-text{font-size:24px;line-height:2;margin-bottom:40px}
+    .warning-text strong{color:#FFD700;font-size:32px}
+    .countdown-big{font-size:64px;font-weight:900;color:#FFD700;text-shadow:0 0 30px rgba(255,215,0,0.5);margin-bottom:40px}
 
-    /* CEO MESSAGE SECTION */
-    .ceo-message{
-      background:linear-gradient(135deg,var(--black),#2a2a2a);
-      color:#fff;
-      padding:100px 20px;
-      position:relative;
-      overflow:hidden;
-    }
-    .ceo-message:before{
-      content:'';
-      position:absolute;
-      top:-50%;right:-50%;
-      width:200%;height:200%;
-      background:radial-gradient(circle,rgba(255,215,0,0.1),transparent);
-      animation:rotate 20s linear infinite;
-    }
-    @keyframes rotate{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
-    }
-    .ceo-container{
-      max-width:1200px;
-      margin:0 auto;
-      position:relative;
-      z-index:2;
-    }
-    .ceo-header{
-      text-align:center;
-      margin-bottom:60px;
-    }
-    .ceo-title{
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      margin-bottom:20px;
-      background:linear-gradient(90deg,#FFD700,#ff6600,#FFD700);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .ceo-subtitle{
-      font-size:24px;
-      color:#FFD700;
-      font-weight:700;
-    }
-    .ceo-content{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:60px;
-      align-items:center;
-    }
-    @media(min-width:768px){
-      .ceo-content{
-        grid-template-columns:1fr 2fr;
-      }
-    }
-    .ceo-profile{
-      text-align:center;
-    }
-    .ceo-image{
-      width:280px;
-      height:280px;
-      border-radius:50%;
-      object-fit:cover;
-      border:8px solid var(--gold);
-      margin:0 auto 30px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.5);
-    }
-    .ceo-name{
-      font-size:32px;
-      font-weight:900;
-      color:#FFD700;
-      margin-bottom:10px;
-    }
-    .ceo-position{
-      font-size:18px;
-      color:#fff;
-      margin-bottom:20px;
-    }
-    .ceo-story{
-      background:rgba(255,255,255,0.05);
-      border:2px solid var(--gold);
-      border-radius:30px;
-      padding:40px;
-    }
-    .story-timeline{
-      margin-bottom:40px;
-    }
-    .timeline-item{
-      display:flex;
-      gap:20px;
-      margin-bottom:30px;
-      position:relative;
-    }
-    .timeline-year{
-      background:var(--gold);
-      color:var(--black);
-      padding:8px 16px;
-      border-radius:50px;
-      font-weight:900;
-      white-space:nowrap;
-      height:fit-content;
-    }
-    .timeline-content{
-      flex:1;
-    }
-    .timeline-content h4{
-      color:#FFD700;
-      font-size:20px;
-      margin-bottom:10px;
-    }
-    .timeline-content p{
-      font-size:16px;
-      line-height:1.8;
-      color:#fff;
-    }
-    .ceo-quote{
-      background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.2));
-      border-left:5px solid #FFD700;
-      padding:30px;
-      margin-top:40px;
-      border-radius:15px;
-    }
-    .ceo-quote-text{
-      font-size:24px;
-      font-weight:700;
-      line-height:1.8;
-      color:#fff;
-      margin-bottom:20px;
-    }
-    .ceo-quote-author{
-      text-align:right;
-      color:#FFD700;
-      font-size:18px;
-      font-weight:900;
-    }
+    /* CEO MESSAGE */
+    .ceo-message{background:linear-gradient(135deg,var(--black),#2a2a2a);color:#fff;padding:100px 20px;position:relative;overflow:hidden}
+    .ceo-message:before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,215,0,0.1),transparent);animation:rotate 20s linear infinite}
+    @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .ceo-container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+    .ceo-header{text-align:center;margin-bottom:60px}
+    .ceo-title{font-size:clamp(36px,6vw,56px);font-weight:900;margin-bottom:20px;background:linear-gradient(90deg,#FFD700,#ff6600,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .ceo-subtitle{font-size:24px;color:#FFD700;font-weight:700}
+    .ceo-content{display:grid;grid-template-columns:1fr;gap:60px;align-items:center}
+    @media(min-width:768px){.ceo-content{grid-template-columns:1fr 2fr}}
+    .ceo-profile{text-align:center}
+    .ceo-image{width:280px;height:280px;border-radius:50%;object-fit:cover;border:8px solid var(--gold);margin:0 auto 30px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+    .ceo-name{font-size:32px;font-weight:900;color:#FFD700;margin-bottom:10px}
+    .ceo-position{font-size:18px;color:#fff;margin-bottom:20px}
+    .ceo-story{background:rgba(255,255,255,0.05);border:2px solid var(--gold);border-radius:30px;padding:40px}
+    .story-timeline{margin-bottom:40px}
+    .timeline-item{display:flex;gap:20px;margin-bottom:30px;position:relative}
+    .timeline-year{background:var(--gold);color:var(--black);padding:8px 16px;border-radius:50px;font-weight:900;white-space:nowrap;height:fit-content}
+    .timeline-content{flex:1}
+    .timeline-content h4{color:#FFD700;font-size:20px;margin-bottom:10px}
+    .timeline-content p{font-size:16px;line-height:1.8;color:#fff}
+    .ceo-quote{background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.2));border-left:5px solid #FFD700;padding:30px;margin-top:40px;border-radius:15px}
+    .ceo-quote-text{font-size:24px;font-weight:700;line-height:1.8;color:#fff;margin-bottom:20px}
+    .ceo-quote-author{text-align:right;color:#FFD700;font-size:18px;font-weight:900}
 
     /* CTA */
-    .cta{
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      color:#fff;
-      text-align:center;
-      padding:100px 20px;
-    }
-    .cta h2{
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      margin-bottom:30px;
-      text-shadow:0 4px 20px rgba(0,0,0,0.3);
-    }
-    .cta-sub{
-      font-size:24px;
-      margin-bottom:40px;
-      font-weight:700;
-    }
-    .cta-buttons{
-      display:flex;
-      gap:20px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .btn-cta{
-      padding:25px 50px;
-      border-radius:50px;
-      font-weight:900;
-      font-size:24px;
-      text-decoration:none;
-      transition:all 0.3s;
-      box-shadow:0 10px 40px rgba(0,0,0,0.3);
-    }
-    .btn-apply{
-      background:#fff;
-      color:var(--gold);
-    }
-    .btn-apply:hover{
-      transform:scale(1.1);
-    }
-    .btn-tel{
-      background:transparent;
-      color:#fff;
-      border:3px solid #fff;
-    }
-
-    /* MAP */
-    .map-container{
-      width:100%;
-      height:400px;
-      border-radius:20px;
-      overflow:hidden;
-      margin:30px 0;
-      box-shadow:0 10px 40px rgba(0,0,0,0.2);
-    }
-    .map-container iframe{
-      width:100%;
-      height:100%;
-      border:0;
-    }
+    .cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;text-align:center;padding:100px 20px}
+    .cta h2{font-size:clamp(36px,6vw,56px);font-weight:900;margin-bottom:30px;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .cta-sub{font-size:24px;margin-bottom:40px;font-weight:700}
+    .cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+    .btn-cta{padding:25px 50px;border-radius:50px;font-weight:900;font-size:24px;transition:all 0.3s;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+    .btn-apply{background:#fff;color:var(--gold)}
+    .btn-apply:hover{transform:scale(1.08)}
+    .btn-tel{background:transparent;color:#fff;border:3px solid #fff}
 
     /* FOOTER */
-    footer{
-      background:var(--black);
-      color:#fff;
-      padding:60px 20px 30px;
-    }
-    .footer-content{
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:40px;
-      margin-bottom:40px;
-    }
-    .footer-section h3{
-      color:var(--gold);
-      font-size:20px;
-      margin-bottom:20px;
-    }
-    .footer-section p,
-    .footer-section a{
-      color:#ccc;
-      line-height:1.8;
-      text-decoration:none;
-    }
-    .footer-section a:hover{
-      color:var(--gold);
-    }
-    .instagram-footer{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:20px;
-    }
-    .instagram-thumb{
-      width:80px;
-      height:80px;
-      border-radius:10px;
-      overflow:hidden;
-    }
-    .instagram-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform 0.3s;
-    }
-    .instagram-thumb:hover img{
-      transform:scale(1.1);
-    }
-    .footer-bottom{
-      text-align:center;
-      padding-top:30px;
-      border-top:1px solid #444;
-      color:#999;
-    }
+    footer{background:var(--black);color:#fff;padding:60px 20px 30px}
+    .footer-content{max-width:1200px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-bottom:40px}
+    .footer-section h3{color:var(--gold);font-size:20px;margin-bottom:20px}
+    .footer-section p,.footer-section a{color:#ccc;line-height:1.8}
+    .footer-section a:hover{color:var(--gold)}
+    .instagram-footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .instagram-thumb{width:80px;height:80px;border-radius:10px;overflow:hidden}
+    .instagram-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+    .instagram-thumb:hover img{transform:scale(1.1)}
+    .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #444;color:#999}
 
-    /* FLOATING */
-    .floating-cta{
-      position:fixed;
-      bottom:20px;right:20px;
-      z-index:1000;
-      animation:bounce 2s infinite;
-    }
-    @keyframes bounce{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-    }
-    .floating-btn{
-      background:linear-gradient(135deg,#ff0000,#ff6600);
-      color:#fff;
-      padding:20px 30px;
-      border-radius:50px;
-      font-weight:900;
-      font-size:18px;
-      text-decoration:none;
-      display:block;
-      box-shadow:0 10px 30px rgba(255,0,0,0.5);
-    }
+    /* FLOATING CTA */
+    .floating-cta{position:fixed;bottom:20px;right:20px;z-index:1000;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .floating-btn{background:linear-gradient(135deg,#ff0000,#ff6600);color:#fff;padding:16px 22px;border-radius:50px;font-weight:900;font-size:18px;display:flex;align-items:center;gap:8px;box-shadow:0 10px 30px rgba(255,0,0,0.5)}
 
     /* RESPONSIVE */
     @media(max-width:768px){
@@ -1010,18 +262,37 @@
 
   <!-- URGENT BAR -->
   <div class="urgent-bar">
-    <div class="urgent-text">
-      🔥 緊急募集 🔥 社長が30万円を賭けた本気の採用 🔥 新入社員３枠限定
-    </div>
+    <div class="urgent-text">🔥 緊急募集 🔥 社長が30万円を賭けた本気の採用 🔥 新入社員３枠限定</div>
   </div>
 
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <img src="logo.png" alt="センチュリー21ホームマート" class="logo" loading="eager">
+      <img src="③-2 センチュリー21ロゴゴールド地白抜き【余白規定サイズ】改.png" alt="センチュリー21ホームマート" class="logo" loading="eager">
       <a href="https://form.run/@c21-member" class="cta-header">今すぐ応募</a>
     </div>
   </header>
+
+  <!-- SHINCHAN ICON BELT -->
+  <div class="icon-belt">
+    <div class="icon-row">
+      <div class="icon"><img src="01_shinchan.jpg" alt=""></div>
+      <div class="icon"><img src="02_shinchan.jpg" alt=""></div>
+      <div class="icon"><img src="03_shinchan.jpg" alt=""></div>
+      <div class="icon"><img src="13_shiro.jpg" alt=""></div>
+      <div class="icon"><img src="14_shiro.jpg" alt=""></div>
+      <div class="icon"><img src="15_shiro.jpg" alt=""></div>
+      <div class="icon"><img src="19_family改.jpg" alt=""></div>
+      <div class="icon"><img src="04_shinchanpng (1).jpg" alt=""></div>
+      <div class="icon"><img src="06_shinchan (1).jpg" alt=""></div>
+      <div class="icon"><img src="08_shinchan.jpg" alt=""></div>
+      <div class="icon"><img src="09_shinchan (1).jpg" alt=""></div>
+      <div class="icon"><img src="10_shinchan.jpg" alt=""></div>
+      <!-- ミニ動画アイコンも混ぜる -->
+      <div class="icon"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+      <div class="icon"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
 
   <!-- HERO with Video Background -->
   <section class="hero">
@@ -1031,17 +302,8 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">社長が30万円を賭けた約束</div>
-      <h1>
-        2026年までに<br>
-        <span class="gold">月収100万円</span>を<br>
-        超えられなければ<br>
-        社長が30万円払う
-      </h1>
-      <p class="hero-sub">
-        これは口約束じゃない。本気の保証だ。<br>
-        なぜなら、俺の作った仕組みなら<br>
-        <strong>未経験でも100万円は普通に稼げる</strong>から。
-      </p>
+      <h1>2026年までに<br><span class="gold">月収100万円</span>を<br>超えられなければ<br>社長が30万円払う</h1>
+      <p class="hero-sub">これは口約束じゃない。本気の保証だ。<br>なぜなら、俺の作った仕組みなら<br><strong>未経験でも100万円は普通に稼げる</strong>から。</p>
 
       <div class="hero-proof">
         <div class="proof-title">実際の社員の月収</div>
@@ -1056,15 +318,59 @@
         <a href="https://form.run/@c21-member" class="btn-hero btn-fire">100万円稼ぐ側になる</a>
         <a href="tel:0120438639" class="btn-hero btn-white">電話で相談する</a>
       </div>
+
+      <!-- HERO ミニ動画ストリップ -->
+      <div class="video-strip" style="margin-top:26px">
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="06_3世代のお付き合い_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="02_憧れの先輩_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
+      </div>
     </div>
   </section>
 
-  <!-- PROOF SECTION -->
+  <!-- STORY -->
+  <section class="story">
+    <div class="container">
+      <h2 class="section-title">素人から、13年。『稼げる仕組み』を作り続けてきた。</h2>
+      <div class="story-box">
+        <div class="story-text">
+          20歳、知識ゼロ・経験ゼロ・人脈ゼロで起業。最初の半年は売上ゼロ。それでも動き続け、7ヶ月目に初契約。8ヶ月目には売上100万円突破。<br><br>
+          <strong>「素人でも稼げる仕組みはある」</strong>。自分の人生で証明してきた。いまはセンチュリー21のブランドも加わり、営業のやりやすさは段違い。毎週のように不動産を買い続ける“攻めの会社”。<br>
+          次は<strong>あなたが主役</strong>になる番だ。
+        </div>
+
+        <!-- しんちゃんアイコンクラウド + ミニ動画 -->
+        <div class="icon-cloud">
+          <div class="icon-cell"><img src="01_shinchan.jpg" alt=""></div>
+          <div class="icon-cell"><img src="02_shinchan.jpg" alt=""></div>
+          <div class="icon-cell"><img src="03_shinchan.jpg" alt=""></div>
+          <div class="icon-cell"><img src="13_shiro.jpg" alt=""></div>
+          <div class="icon-cell"><img src="14_shiro.jpg" alt=""></div>
+          <div class="icon-cell"><img src="15_shiro.jpg" alt=""></div>
+          <div class="icon-cell"><img src="19_family改.jpg" alt=""></div>
+          <div class="icon-cell"><img src="04_shinchanpng (1).jpg" alt=""></div>
+          <div class="icon-cell"><img src="06_shinchan (1).jpg" alt=""></div>
+          <div class="icon-cell"><img src="08_shinchan.jpg" alt=""></div>
+          <div class="icon-cell"><img src="09_shinchan (1).jpg" alt=""></div>
+          <div class="icon-cell"><img src="10_shinchan.jpg" alt=""></div>
+          <div class="icon-cell"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+          <div class="icon-cell"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
+        </div>
+
+        <div class="story-cta" style="margin-top:22px">
+          <a href="https://form.run/@c21-member" class="btn-hero btn-fire">この仕組みで稼ぐ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF SECTION（給与明細ロジック＋アイコン） -->
   <section class="proof-section" id="proof">
     <div class="container">
       <h2 class="section-title">給与明細を完全公開</h2>
-      
       <div class="proof-grid">
+
         <div class="proof-card">
           <div class="proof-card-header">
             <div class="proof-card-title">入社2年目・24歳</div>
@@ -1072,26 +378,16 @@
           </div>
           <div class="proof-card-body">
             <div class="calculation">
-              <div class="calc-line">
-                <span>基本給</span>
-                <span>30万円</span>
-              </div>
-              <div class="calc-line">
-                <span>歩合給（売上450万×15%）</span>
-                <span>50万円</span>
-              </div>
-              <div class="calc-line">
-                <span>工事ボーナス</span>
-                <span>15万円</span>
-              </div>
-              <div class="calc-line">
-                <span>合計月収</span>
-                <span>95万円</span>
-              </div>
+              <div class="calc-line"><span>基本給</span><span>30万円</span></div>
+              <div class="calc-line"><span>歩合給（売上450万×15%）</span><span>50万円</span></div>
+              <div class="calc-line"><span>工事ボーナス</span><span>15万円</span></div>
+              <div class="calc-line"><span>合計月収</span><span>95万円</span></div>
             </div>
-            <p style="margin-top:20px;font-weight:700">
-              元コンビニバイト → 年収1140万円へ
-            </p>
+            <div class="icon-row" style="margin-top:10px">
+              <div class="icon"><img src="01_shinchan.jpg" alt=""></div>
+              <div class="icon"><img src="13_shiro.jpg" alt=""></div>
+              <div class="icon"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+            </div>
           </div>
         </div>
 
@@ -1102,26 +398,16 @@
           </div>
           <div class="proof-card-body">
             <div class="calculation">
-              <div class="calc-line">
-                <span>基本給</span>
-                <span>30万円</span>
-              </div>
-              <div class="calc-line">
-                <span>歩合給（売上650万×15%）</span>
-                <span>75万円</span>
-              </div>
-              <div class="calc-line">
-                <span>工事ボーナス</span>
-                <span>22万円</span>
-              </div>
-              <div class="calc-line">
-                <span>合計月収</span>
-                <span>127万円</span>
-              </div>
+              <div class="calc-line"><span>基本給</span><span>30万円</span></div>
+              <div class="calc-line"><span>歩合給（売上650万×15%）</span><span>75万円</span></div>
+              <div class="calc-line"><span>工事ボーナス</span><span>22万円</span></div>
+              <div class="calc-line"><span>合計月収</span><span>127万円</span></div>
             </div>
-            <p style="margin-top:20px;font-weight:700">
-              元工場勤務 → 年収1524万円へ
-            </p>
+            <div class="icon-row" style="margin-top:10px">
+              <div class="icon"><img src="02_shinchan.jpg" alt=""></div>
+              <div class="icon"><img src="14_shiro.jpg" alt=""></div>
+              <div class="icon"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
+            </div>
           </div>
         </div>
 
@@ -1132,28 +418,26 @@
           </div>
           <div class="proof-card-body">
             <div class="calculation">
-              <div class="calc-line">
-                <span>基本給</span>
-                <span>30万円</span>
-              </div>
-              <div class="calc-line">
-                <span>歩合給（売上1000万×15%）</span>
-                <span>120万円</span>
-              </div>
-              <div class="calc-line">
-                <span>工事ボーナス</span>
-                <span>31万円</span>
-              </div>
-              <div class="calc-line">
-                <span>合計月収</span>
-                <span>181万円</span>
-              </div>
+              <div class="calc-line"><span>基本給</span><span>30万円</span></div>
+              <div class="calc-line"><span>歩合給（売上1000万×15%）</span><span>120万円</span></div>
+              <div class="calc-line"><span>工事ボーナス</span><span>31万円</span></div>
+              <div class="calc-line"><span>合計月収</span><span>181万円</span></div>
             </div>
-            <p style="margin-top:20px;font-weight:700">
-              20代で年収2172万円達成
-            </p>
+            <div class="icon-row" style="margin-top:10px">
+              <div class="icon"><img src="03_shinchan.jpg" alt=""></div>
+              <div class="icon"><img src="15_shiro.jpg" alt=""></div>
+              <div class="icon"><video autoplay muted loop playsinline><source src="06_3世代のお付き合い_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
+            </div>
           </div>
         </div>
+
+      </div>
+
+      <!-- 施工イメージの動画モザイク -->
+      <div class="video-strip">
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="02_憧れの先輩_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </section>
@@ -1162,51 +446,36 @@
   <section class="money-flow">
     <div class="flow-container">
       <h2 class="flow-title">稼ぎの仕組みを完全公開</h2>
-      
       <div class="flow-steps">
         <div class="flow-step">
           <div class="flow-number">1</div>
           <h3>センチュリー21の看板</h3>
-          <p>
-            日本最大級の不動産ネットワーク<br>
-            お客様からの<strong>信頼度が違う</strong>
-          </p>
+          <p>日本最大級の不動産ネットワーク<br>お客様からの<strong>信頼度が違う</strong></p>
+          <div class="icon" style="margin:10px auto 0"><img src="19_family改.jpg" alt=""></div>
         </div>
-
         <div class="flow-step">
           <div class="flow-number">2</div>
           <h3>物件仲介で稼ぐ</h3>
-          <p>
-            2000万円の物件なら<br>
-            仲介手数料<strong>66万円</strong>
-          </p>
+          <p>2000万円の物件なら<br>仲介手数料<strong>66万円</strong></p>
+          <div class="icon" style="margin:10px auto 0"><img src="01_shinchan.jpg" alt=""></div>
         </div>
-
         <div class="flow-step">
           <div class="flow-number">3</div>
           <h3>リフォームも提案</h3>
-          <p>
-            自社施工だから<br>
-            利益率<strong>30〜40%</strong>
-          </p>
+          <p>自社施工だから<br>利益率<strong>30〜40%</strong></p>
+          <div class="icon" style="margin:10px auto 0"><img src="13_shiro.jpg" alt=""></div>
         </div>
-
         <div class="flow-step">
           <div class="flow-number">4</div>
           <h3>歩合最大15%</h3>
-          <p>
-            売上300万円なら<br>
-            歩合だけで<strong>45万円</strong>
-          </p>
+          <p>売上300万円なら<br>歩合だけで<strong>45万円</strong></p>
+          <div class="icon" style="margin:10px auto 0"><img src="10_shinchan.jpg" alt=""></div>
         </div>
-
         <div class="flow-step">
           <div class="flow-number">5</div>
           <h3>工事ボーナス10%</h3>
-          <p>
-            リフォーム利益の10%<br>
-            <strong>追加ボーナス</strong>
-          </p>
+          <p>リフォーム利益の10%<br><strong>追加ボーナス</strong></p>
+          <div class="icon" style="margin:10px auto 0"><img src="14_shiro.jpg" alt=""></div>
         </div>
       </div>
     </div>
@@ -1215,27 +484,18 @@
   <!-- SIMULATOR -->
   <section class="simulator">
     <div class="container">
-      <h2 class="section-title" style="color:#FFD700">
-        あなたの月収シミュレーター
-      </h2>
-      
+      <h2 class="section-title" style="color:#FFD700">あなたの月収シミュレーター</h2>
       <div class="sim-box">
         <div class="control-group">
           <label>物件価格</label>
           <input type="range" class="slider" id="price" min="500" max="5000" value="2000" step="100">
-          <div style="text-align:center;font-size:32px;color:#FFD700;margin-top:10px">
-            <span id="price-val">2000</span>万円
-          </div>
+          <div style="text-align:center;font-size:32px;color:#FFD700;margin-top:10px"><span id="price-val">2000</span>万円</div>
         </div>
-
         <div class="control-group">
-          <label>リフォーム利益</label>
+          <label>リフォーム利益（粗利益）</label>
           <input type="range" class="slider" id="gross" min="0" max="200" value="50" step="10">
-          <div style="text-align:center;font-size:32px;color:#FFD700;margin-top:10px">
-            <span id="gross-val">50</span>万円
-          </div>
+          <div style="text-align:center;font-size:32px;color:#FFD700;margin-top:10px"><span id="gross-val">50</span>万円</div>
         </div>
-
         <div class="control-group">
           <label>取引タイプ</label>
           <div class="toggle-group" id="hand-type">
@@ -1243,7 +503,6 @@
             <button class="toggle-btn" data-hand="両手">両手</button>
           </div>
         </div>
-
         <div class="control-group">
           <label>月間成約数</label>
           <div class="toggle-group" id="deal-count">
@@ -1258,15 +517,20 @@
           <div class="result-amount" id="result">85万円</div>
           <div class="result-detail" id="result-detail"></div>
         </div>
+
+        <!-- シミュレーター下にミニ動画 -->
+        <div class="video-strip">
+          <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+          <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SUCCESS STORIES -->
+  <!-- SUCCESS -->
   <section class="success">
     <div class="container">
       <h2 class="success-title">人生が激変した社員たち</h2>
-      
       <div class="success-grid">
         <div class="success-card">
           <span class="success-badge">2年で激変</span>
@@ -1276,18 +540,14 @@
           </div>
           <div class="success-body">
             <div class="income-change">
-              <div class="income-before">
-                <div class="income-label">Before</div>
-                <div class="income-amount">月収18万円</div>
-              </div>
+              <div class="income-before"><div class="income-label">Before</div><div class="income-amount">月収18万円</div></div>
               <div class="income-arrow">→</div>
-              <div class="income-after">
-                <div class="income-label">After</div>
-                <div class="income-amount">月収95万円</div>
-              </div>
+              <div class="income-after"><div class="income-label">After</div><div class="income-amount">月収95万円</div></div>
             </div>
-            <div class="success-message">
-              「最初は不安だったけど、社長の教え通りやったら3ヶ月で初契約。今では毎月100万円近く稼いでます。車も家も買えました。」
+            <div class="success-message">「最初は不安。でも社長の言う通りやったら3ヶ月で初契約。今では毎月100万円近く。車も家も買えました。」</div>
+            <div class="icon-row" style="margin-top:12px">
+              <div class="icon"><img src="01_shinchan.jpg" alt=""></div>
+              <div class="icon"><img src="13_shiro.jpg" alt=""></div>
             </div>
           </div>
         </div>
@@ -1300,18 +560,14 @@
           </div>
           <div class="success-body">
             <div class="income-change">
-              <div class="income-before">
-                <div class="income-label">Before</div>
-                <div class="income-amount">月収22万円</div>
-              </div>
+              <div class="income-before"><div class="income-label">Before</div><div class="income-amount">月収22万円</div></div>
               <div class="income-arrow">→</div>
-              <div class="income-after">
-                <div class="income-label">After</div>
-                <div class="income-amount">月収127万円</div>
-              </div>
+              <div class="income-after"><div class="income-label">After</div><div class="income-amount">月収127万円</div></div>
             </div>
-            <div class="success-message">
-              「ライン工から不動産営業へ。最初は無理だと思ったけど、センチュリー21の看板があるから売れる。今は部下も持ってます。」
+            <div class="success-message">「C21の看板があるから売れる。未経験でも戦える環境がここにある。」</div>
+            <div class="icon-row" style="margin-top:12px">
+              <div class="icon"><img src="02_shinchan.jpg" alt=""></div>
+              <div class="icon"><img src="14_shiro.jpg" alt=""></div>
             </div>
           </div>
         </div>
@@ -1324,21 +580,23 @@
           </div>
           <div class="success-body">
             <div class="income-change">
-              <div class="income-before">
-                <div class="income-label">Before</div>
-                <div class="income-amount">月収20万円</div>
-              </div>
+              <div class="income-before"><div class="income-label">Before</div><div class="income-amount">月収20万円</div></div>
               <div class="income-arrow">→</div>
-              <div class="income-after">
-                <div class="income-label">After</div>
-                <div class="income-amount">月収78万円</div>
-              </div>
+              <div class="income-after"><div class="income-label">After</div><div class="income-amount">月収78万円</div></div>
             </div>
-            <div class="success-message">
-              「接客経験を活かせる仕事。お客様に喜ばれて、自分も稼げる。来年には独立資金も貯まりそうです。」
+            <div class="success-message">「お客様に喜ばれて自分も稼げる。来年には独立資金が貯まりそうです。」</div>
+            <div class="icon-row" style="margin-top:12px">
+              <div class="icon"><img src="09_shinchan (1).jpg" alt=""></div>
+              <div class="icon"><img src="15_shiro.jpg" alt=""></div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- 動画差し込み -->
+      <div class="video-strip" style="margin-top:22px">
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="02_憧れの先輩_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="06_3世代のお付き合い_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </section>
@@ -1348,7 +606,6 @@
     <div class="container">
       <div class="challenge-box">
         <h2>こんな人は今すぐ応募してください</h2>
-        
         <ul class="challenge-list">
           <li>月収100万円を本気で稼ぎたい</li>
           <li>20代で年収1000万円を超えたい</li>
@@ -1368,32 +625,19 @@
       <div class="genius-header">
         <h2 class="genius-title">なぜ未経験でも稼げるのか？</h2>
       </div>
-      
       <div class="genius-grid">
-        <div class="genius-item">
-          <div class="genius-icon">🏆</div>
-          <div class="genius-text">センチュリー21<br>日本最大級のブランド力</div>
-        </div>
-        <div class="genius-item">
-          <div class="genius-icon">🔨</div>
-          <div class="genius-text">自社リフォーム<br>利益率30〜40%</div>
-        </div>
-        <div class="genius-item">
-          <div class="genius-icon">📚</div>
-          <div class="genius-text">13年間のノウハウ<br>完全マニュアル化</div>
-        </div>
-        <div class="genius-item">
-          <div class="genius-icon">👨‍🏫</div>
-          <div class="genius-text">社長直接指導<br>マンツーマン研修</div>
-        </div>
-        <div class="genius-item">
-          <div class="genius-icon">💰</div>
-          <div class="genius-text">歩合最大15%<br>業界トップクラス</div>
-        </div>
-        <div class="genius-item">
-          <div class="genius-icon">🎯</div>
-          <div class="genius-text">集客は会社が担当<br>営業に集中できる</div>
-        </div>
+        <div class="genius-item"><div class="genius-icon">🏆</div><div class="genius-text">センチュリー21<br>日本最大級のブランド力</div></div>
+        <div class="genius-item"><div class="genius-icon">🔨</div><div class="genius-text">自社リフォーム<br>利益率30〜40%</div></div>
+        <div class="genius-item"><div class="genius-icon">📚</div><div class="genius-text">13年のノウハウ<br>完全マニュアル化</div></div>
+        <div class="genius-item"><div class="genius-icon">👨‍🏫</div><div class="genius-text">社長直伝<br>マンツーマン研修</div></div>
+        <div class="genius-item"><div class="genius-icon">💰</div><div class="genius-text">歩合最大15%<br>業界トップクラス</div></div>
+        <div class="genius-item"><div class="genius-icon">🎯</div><div class="genius-text">集客は会社<br>営業に集中できる</div></div>
+      </div>
+
+      <!-- GENIUS セクション動画 -->
+      <div class="video-strip" style="margin-top:24px">
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+        <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_03_おうち応援団_15秒.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </section>
@@ -1402,66 +646,21 @@
   <section class="jobs">
     <div class="container">
       <h2 class="section-title">募集要項</h2>
-      
       <div class="job-card">
         <h3 class="job-title">不動産営業（正社員）</h3>
-        
         <dl class="job-detail">
           <dt>給与</dt>
-          <dd>
-            基本給30万円 + 歩合給（売上の10〜15%）+ 工事ボーナス<br>
-            <span style="color:#ff0000;font-weight:900">月収100万円以上可能</span>
-          </dd>
-          
-          <dt>勤務時間</dt>
-          <dd>9:00〜18:00（実働8時間）</dd>
-          
-          <dt>休日</dt>
-          <dd>週休2日制（水曜定休 + 他1日）</dd>
-          
-          <dt>応募資格</dt>
-          <dd>
-            ・普通自動車免許（AT限定可）<br>
-            ・やる気のある方<br>
-            ・学歴不問・未経験歓迎
-          </dd>
-          
-          <dt>勤務地</dt>
-          <dd>奈良県北葛城郡広陵町笠287-1</dd>
+          <dd>基本給30万円 + 歩合給（売上の10〜15%）+ 工事ボーナス<br><span style="color:#ff0000;font-weight:900">月収100万円以上可能</span></dd>
+          <dt>勤務時間</dt><dd>9:00〜18:00（実働8時間）</dd>
+          <dt>休日</dt><dd>週休2日制（水曜定休 + 他1日）</dd>
+          <dt>応募資格</dt><dd>普通自動車免許（AT限定可）／学歴不問・未経験歓迎／やる気のある方</dd>
+          <dt>勤務地</dt><dd>奈良県北葛城郡広陵町笠287-1</dd>
         </dl>
-        
-        <div class="job-highlight">
-          💰 2026年までに月収100万円達成できなければ社長が30万円支払います
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOICE -->
-  <section class="voice">
-    <div class="container">
-      <h2 class="section-title">社員の声</h2>
-      
-      <div class="voice-grid">
-        <div class="voice-card">
-          <div class="voice-text">
-            入社前は正直不安でした。でも社長の「稼がせる」という言葉は本当でした。今では両親に仕送りもできるようになりました。
-          </div>
-          <div class="voice-name">入社1年目 S.Kさん</div>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-text">
-            前職の3倍以上稼げるようになりました。センチュリー21の看板があるから、お客様からの信頼も厚いです。
-          </div>
-          <div class="voice-name">入社2年目 M.Tさん</div>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-text">
-            社長が本気で社員を稼がせようとしてくれる。こんな会社は他にないと思います。
-          </div>
-          <div class="voice-name">入社3年目 Y.Hさん</div>
+        <div class="job-highlight">💰 2026年までに月収100万円達成できなければ社長が30万円支払います</div>
+        <div class="icon-row" style="margin-top:10px">
+          <div class="icon"><img src="01_shinchan.jpg" alt=""></div>
+          <div class="icon"><img src="13_shiro.jpg" alt=""></div>
+          <div class="icon"><img src="19_family改.jpg" alt=""></div>
         </div>
       </div>
     </div>
@@ -1472,16 +671,11 @@
     <div class="warning-box">
       <h2 class="warning-title">⚠️ 最終警告 ⚠️</h2>
       <div class="warning-text">
-        募集枠は<strong>3名限定</strong><br>
-        すでに<strong>7名</strong>から問い合わせあり<br>
-        <br>
-        このチャンスを逃したら<br>
-        一生<strong>月収30万円</strong>のまま
+        募集枠は<strong>3名限定</strong><br>すでに<strong>7名</strong>から問い合わせあり<br><br>
+        このチャンスを逃したら<br>一生<strong>月収30万円</strong>のまま
       </div>
       <div class="countdown-big">残り3名</div>
-      <a href="https://form.run/@c21-member" class="btn-hero btn-fire">
-        最後のチャンスを掴む
-      </a>
+      <a href="https://form.run/@c21-member" class="btn-hero btn-fire">最後のチャンスを掴む</a>
     </div>
   </section>
 
@@ -1492,60 +686,26 @@
         <h2 class="ceo-title">社長からの熱いメッセージ</h2>
         <p class="ceo-subtitle">20歳で起業、13年間走り続けてきた男の本音</p>
       </div>
-
       <div class="ceo-content">
         <div class="ceo-profile">
           <img src="inui.jpeg" alt="代表 乾佑企" class="ceo-image" loading="lazy">
           <h3 class="ceo-name">乾 佑企</h3>
-          <p class="ceo-position">株式会社ホームマート 代表取締役<br>（32歳・20歳で創業）</p>
+          <p class="ceo-position">株式会社ホームマート 代表取締役（32歳・20歳で創業）</p>
         </div>
-
         <div class="ceo-story">
           <div class="story-timeline">
-            <div class="timeline-item">
-              <div class="timeline-year">2012年</div>
-              <div class="timeline-content">
-                <h4>20歳、知識ゼロで起業</h4>
-                <p>不動産の「ふ」の字も知らない。でも「自分の力で稼ぎたい」その一心で飛び込んだ。最初の半年は売上ゼロ。毎日が不安との戦いだった。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2013年</div>
-              <div class="timeline-content">
-                <h4>初契約、そして確信</h4>
-                <p>7ヶ月目にやっと初契約。8ヶ月目には売上100万円突破。「素人でも稼げる仕組み」があることを確信した瞬間だった。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2020年</div>
-              <div class="timeline-content">
-                <h4>センチュリー21加盟</h4>
-                <p>日本最大級の不動産ネットワークに加盟。ブランド力と自社施工の強みを掛け合わせ、他社にない価値を生み出す。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2025年</div>
-              <div class="timeline-content">
-                <h4>今、あなたを待っている</h4>
-                <p>13年かけて作り上げた「未経験でも稼げる仕組み」がある。次は、あなたが主役になる番だ。</p>
-              </div>
-            </div>
+            <div class="timeline-item"><div class="timeline-year">2012年</div><div class="timeline-content"><h4>20歳、知識ゼロで起業</h4><p>不動産の「ふ」の字も知らない。でも「自分の力で稼ぎたい」その一心で飛び込んだ。最初の半年は売上ゼロ。毎日が不安との戦いだった。</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">2013年</div><div class="timeline-content"><h4>初契約、そして確信</h4><p>7ヶ月目にやっと初契約。8ヶ月目には売上100万円突破。「素人でも稼げる仕組み」があることを確信。</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">2025年</div><div class="timeline-content"><h4>今、あなたを待っている</h4><p>13年かけて作り上げた「未経験でも稼げる仕組み」がある。次は、あなたの番だ。</p></div></div>
           </div>
-
           <div class="ceo-quote">
-            <p class="ceo-quote-text">
-              「成績が上がらないのは教える側の責任。<br>
-              未経験でも"楽しい営業"に変えていくのが私の役割です。<br><br>
-              
-              社員が社長より稼げる会社。<br>
-              それが俺の理想であり、実際にそうなっている。<br><br>
-              
-              やる気さえあれば、月収100万円は通過点。<br>
-              だから30万円を賭けられる。<br><br>
-              
-              一緒に、最強のチームを作ろう。」
-            </p>
+            <p class="ceo-quote-text">「成績が上がらないのは教える側の責任。未経験でも"楽しい営業"に変えていくのが私の役割。社員が社長より稼げる会社を、本気で作っている。」</p>
             <p class="ceo-quote-author">— 代表取締役 乾 佑企</p>
+          </div>
+          <!-- CEOの下にも動画 -->
+          <div class="video-strip" style="margin-top:18px">
+            <div class="mini-vid"><video autoplay muted loop playsinline><source src="p02_05_3世代のお付き合い_15秒.mp4" type="video/mp4"></video></div>
+            <div class="mini-vid"><video autoplay muted loop playsinline><source src="02_憧れの先輩_15秒_2025秋フェア告知あり.mp4" type="video/mp4"></video></div>
           </div>
         </div>
       </div>
@@ -1556,22 +716,13 @@
   <section class="cta">
     <div class="container">
       <h2>人生を変える最後のチャンス</h2>
-      <p class="cta-sub">
-        月収100万円への扉は<br>
-        今、あなたの前に開いている
-      </p>
-      
+      <p class="cta-sub">月収100万円への扉は、今、あなたの前に開いている</p>
       <div class="cta-buttons">
-        <a href="https://form.run/@c21-member" class="btn-cta btn-apply">
-          今すぐ応募する
-        </a>
-        <a href="tel:0120438639" class="btn-cta btn-tel">
-          電話で相談 0120-43-8639
-        </a>
+        <a href="https://form.run/@c21-member" class="btn-cta btn-apply">今すぐ応募する</a>
+        <a href="tel:0120438639" class="btn-cta btn-tel">電話で相談 0120-43-8639</a>
       </div>
-      
       <div class="map-container" style="margin-top:60px">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.123456789!2d135.123456!3d34.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzI0LjQiTiAxMzXCsDA3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.123456789!2d135.123456!3d34.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzI0LjQiTiAxMzXCsDA3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123" loading="lazy" style="width:100%;height:400px;border:0"></iframe>
       </div>
     </div>
   </section>
@@ -1582,57 +733,30 @@
       <div class="footer-grid">
         <div class="footer-section">
           <h3>株式会社ホームマート</h3>
-          <p>
-            〒635-0821<br>
-            奈良県北葛城郡広陵町笠287-1<br>
-            センチュリー21加盟店<br>
-            代表取締役：乾 佑企<br>
-            設立：2024年5月7日（創業2012年）
-          </p>
+          <p>〒635-0821<br>奈良県北葛城郡広陵町笠287-1<br>センチュリー21加盟店<br>代表取締役：乾 佑企<br>設立：2024年5月7日（創業2012年）</p>
         </div>
-        
         <div class="footer-section">
           <h3>お問い合わせ</h3>
-          <p>
-            フリーダイヤル：0120-43-8639<br>
-            営業時間：9:00〜18:00<br>
-            定休日：水曜日<br>
-            <br>
-            <a href="https://form.run/@c21-member">応募フォームはこちら</a>
-          </p>
+          <p>フリーダイヤル：0120-43-8639<br>営業時間：9:00〜18:00<br>定休日：水曜日<br><br><a href="https://form.run/@c21-member">応募フォームはこちら</a></p>
         </div>
-        
         <div class="footer-section">
           <h3>Instagram</h3>
           <p>職場の雰囲気や施工事例を毎日更新中</p>
           <div class="instagram-footer">
-            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb">
-              <img src="instagram1.jpg" alt="">
-            </a>
-            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb">
-              <img src="instagram2.jpg" alt="">
-            </a>
-            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb">
-              <img src="instagram3.jpg" alt="">
-            </a>
-            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb">
-              <img src="instagram4.jpg" alt="">
-            </a>
+            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb"><img src="instagram1.jpg" alt=""></a>
+            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb"><img src="instagram2.jpg" alt=""></a>
+            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb"><img src="instagram3.jpg" alt=""></a>
+            <a href="https://www.instagram.com/century21homemart/" target="_blank" class="instagram-thumb"><img src="instagram4.jpg" alt=""></a>
           </div>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        © 2025 Century21 HomeMart. All Rights Reserved.
-      </div>
+      <div class="footer-bottom">© 2025 Century21 HomeMart. All Rights Reserved.</div>
     </div>
   </footer>
 
   <!-- FLOATING CTA -->
   <div class="floating-cta">
-    <a href="https://form.run/@c21-member" class="floating-btn">
-      💰 月収100万円への挑戦
-    </a>
+    <a href="https://form.run/@c21-member" class="floating-btn">💰 月収100万円への挑戦</a>
   </div>
 
   <!-- JAVASCRIPT -->
@@ -1651,11 +775,10 @@
     function calc() {
       const p = parseInt(price.value);
       const g = parseInt(gross.value);
-      
       priceVal.textContent = p;
       grossVal.textContent = g;
 
-      // 仲介手数料計算（税抜）
+      // 仲介手数料（税抜） 3%+6万円
       const fee = Math.floor(p * 10000 * 0.03 + 60000);
       const feeMan = Math.round(fee / 10000);
       const brokerFee = (hand === '片手' ? feeMan : feeMan * 2) * deals;
@@ -1663,38 +786,29 @@
       // 営業売上
       const sales = brokerFee + g;
 
-      // 歩合計算
+      // 歩合
       let commission = 0;
       let rate = '';
-      if (sales < 200) {
-        commission = 0;
-        rate = '0%（200万円未満）';
-      } else if (sales < 300) {
-        commission = Math.floor(sales * 0.10);
-        rate = '10%（200〜299万円）';
-      } else {
-        commission = Math.floor(sales * 0.15);
-        rate = '15%（300万円以上）';
-      }
+      if (sales < 200) { commission = 0; rate = '0%（200万円未満）'; }
+      else if (sales < 300) { commission = Math.floor(sales * 0.10); rate = '10%（200〜299万円）'; }
+      else { commission = Math.floor(sales * 0.15); rate = '15%（300万円以上）'; }
 
-      // 工事ボーナス
+      // 工事ボーナス（粗利10%）
       const bonus = Math.floor(g * 0.10);
 
-      // 合計
+      // 合計（固定30万）
       const total = 30 + commission + bonus;
 
       result.textContent = total + '万円';
-      
       resultDetail.innerHTML = `
         <div style="font-weight:700;margin-bottom:10px">【計算内訳】</div>
         <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
           <strong>①物件を売る</strong><br>
-          ${p}万円の物件 × ${hand} × ${deals}件<br>
-          = 仲介手数料 <strong>${brokerFee}万円</strong>
+          ${p}万円の物件 × ${hand} × ${deals}件 = 仲介手数料 <strong>${brokerFee}万円</strong>
         </div>
         <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
           <strong>②リフォームも提案</strong><br>
-          工事の利益 = <strong>${g}万円</strong>
+          工事の<strong>粗利益</strong> = <strong>${g}万円</strong>
         </div>
         <div style="margin-bottom:15px;padding:10px;background:#f0f0f0;border-radius:10px">
           <strong>③売上を合計</strong><br>
@@ -1707,44 +821,33 @@
           工事ボーナス(10%): <strong>${bonus}万円</strong>
         </div>
         <div style="padding:15px;background:var(--gold);color:#fff;border-radius:10px;font-size:24px;text-align:center">
-          合計: <strong>${total}万円</strong>があなたの月収！
+          合計: <strong>${total}万円</strong> があなたの月収！
         </div>
       `;
     }
 
-    // イベントリスナー
-    document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        hand = btn.dataset.hand;
-        calc();
+    // トグル
+    document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.getElementById('hand-type').querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active'); hand = btn.dataset.hand; calc();
       });
     });
-
-    document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        deals = parseInt(btn.dataset.cnt);
-        calc();
+    document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.getElementById('deal-count').querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active'); deals = parseInt(btn.dataset.cnt); calc();
       });
     });
-
     price.addEventListener('input', calc);
     gross.addEventListener('input', calc);
-
-    // 初期計算
     calc();
 
     // スムーススクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
       });
     });
   </script>
